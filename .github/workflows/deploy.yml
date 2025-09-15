@@ -1,0 +1,39 @@
+name: Deploy NextMedya Laravel
+
+# Bu workflow'un ne zaman çalışacağını belirler
+on:
+  push:
+    branches:
+      - main # Sadece 'main' branch'ine push yapıldığında tetiklenir
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sunucuya Bağlan ve Projeyi Dağıt
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Proje dizinine git
+            cd ${{ secrets.PROJECT_PATH }}
+
+            # Kodun en güncel halini indir
+            git pull origin main
+
+            # Composer bağımlılıklarını kur (production için optimize)
+            composer install --no-interaction --prefer-dist --optimize-autoloader
+
+            # .env dosyasının yerinde olduğundan emin ol (ilk kurulumda manuel yüklenmeli)
+
+            # Veritabanı göçlerini çalıştır
+            php artisan migrate --force
+
+            # Cache'leri temizle ve yeniden oluştur (production için önemli)
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+
+            echo "Deployment Başarıyla Tamamlandı!"

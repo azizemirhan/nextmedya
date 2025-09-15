@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Next Medya",
+  "legalName": "Next Medya ve Yazılım Ajansı",
+  "url": "https://www.nextmedya.com",
+  "logo": "https://www.nextmedya.com/site/assets/img/logo.png",
+  "description": "Next Medya; web tasarım, SEO, dijital pazarlama, sosyal medya yönetimi ve e-ticaret çözümleri sunan ödüllü reklam ajansıdır. Türkiye genelinde hizmet vermektedir.",
+  "slogan": "Yeni Nesil Reklam Ajansı",
+  "foundingDate": "2005",
+  "foundingLocation": "Ankara",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Şehit Kubilay Mah. Estergon Cad. 25/8",
+    "addressLocality": "Keçiören",
+    "addressRegion": "Ankara",
+    "postalCode": "06220",
+    "addressCountry": "TR"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+90 850 771 18 34",
+    "email": "info@nextmedya.com",
+    "availableLanguage": ["tr"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61561391530431",
+    "https://www.instagram.com/nextmedyacom/",
+    "https://www.linkedin.com/company/next-medya-yaz%C4%B1l%C4%B1m-ajans%C4%B1"
+  ],
+  "areaServed": {
+    "@type": "Country",
+    "name": "Türkiye"
+  },
+  "keywords": [
+    "web tasarım", "ajans web sitesi", "dijital web tasarım", "e ticaret yazılımları", "en iyi hazır web sitesi", "en iyi web sitesi tasarımları", "en iyi web tasarım firmaları", "en iyi web tasarım siteleri", "eskişehir web tasarım", "google site açma ücretsiz", "grafik tasarım ajansı", "hazır internet sitesi", "hazır internet sitesi şablonları", "hazır kurumsal web sitesi", "hazır site", "hazır site şablonları", "hazır web siteleri", "hazır web sitesi", "hazır web sitesi fiyatları", "hazır web sitesi tasarımları", "hazır web sitesi şablonları", "hazır web tasarım", "internet siteleri", "internet sitesi", "internet sitesi tasarımı", "internet sitesi yapımı", "istanbul web design", "istanbul web tasarim", "istanbul web tasarım", "istanbul web tasarım ajansı", "istanbul web yazılım", "kişisel web sitesi", "kişisel web sitesi örnekleri", "konya web tasarım", "kurumsal logo tasarımı", "kurumsal site", "kurumsal site tasarımı", "kurumsal web site", "kurumsal web sitesi", "kurumsal web sitesi fiyatları", "kurumsal web sitesi tasarımı", "kurumsal web tasarım", "kurumsal web tasarım ajansı", "kurumsal website tasarımı", "next medya web tasarım", "profesyonel hazır web sitesi", "profesyonel web sitesi", "profesyonel web sitesi fiyatları", "profesyonel web tasarım", "seo uyumlu web sitesi", "seo web tasarım", "seo çalışması", "site acma", "site designer", "site hazırlama", "site tasarla", "site tasarım", "site tasarımı", "site yaptırma", "site yapımı", "sosyal medya ajansı", "sosyal medya reklam ajansı", "tasarım ajansı", "tasarım siteleri", "tasarım sitesi", "tasarım web", "tasarım web siteleri", "türkiye web tasarım", "web ajans", "web ajansı", "web dizayn", "web sayfa tasarımı", "web sayfasi tasarim", "web sayfasi tasarimi", "web sayfası", "web sayfası tasarımı", "web site fiyatları", "web site tasarimlari", "web site tasarımları", "web site tasarımı", "web site yapımı", "web site yazılım", "web site örnekleri", "web site şablonları", "web siteleri", "web sitesi", "web sitesi ajans", "web sitesi ajansı", "web sitesi dizayn", "web sitesi fiyatları", "web sitesi olusturma", "web sitesi oluşturma programları", "web sitesi tasarla", "web sitesi tasarlamak", "web sitesi tasarımları", "web sitesi tasarımı", "web sitesi tasarımı fiyatları", "web sitesi yaptırma", "web sitesi yapımı", "web sitesi örnekleri", "web sitesi şablonları", "web tasarim firmalari", "web tasarim sirketleri", "web tasarım ajans", "web tasarım ajansları", "web tasarım ajansı", "web tasarım firmaları", "web tasarım firması", "web tasarım fiyatları", "web tasarım hizmetleri", "web tasarım istanbul", "web tasarım kursları", "web tasarım paketleri", "web tasarım seo", "web tasarım siteleri", "web tasarım ve kodlama", "web tasarım ve yazılım", "web tasarım yazılım", "web tasarım şirketi", "web tasarım şirketleri", "web tasarımcı", "web tasarımcısı", "web yazılım", "web yazılım ajansı", "website tasarım", "webtasarım", "yazılım ajansı", "yazılım sitesi", "yazılım web sitesi", "yazılım web tasarım", "örnek web siteleri", "özel tasarım web sitesi", "özel web tasarım", "ürün tanıtımı", "arama motoru pazarlaması", "en iyi seo ajansları", "içerik hizmeti", "içerik türleri", "kaliteli içerik", "pazarlama araçları", "seo ajansları", "seo firmaları", "seo pazarlama", "seo reklam", "seo reklam hizmetleri", "seo şirketleri", "web sitesi pazarlama", "next medya reklam teknolojileri anonim şirketi", "next medya seo", "ankara dijital pazarlama", "ankara dijital reklam ajansları", "ankara sosyal medya ajansları", "aylık sosyal medya yönetimi fiyat", "dijital ajans", "dijital danışmanlık", "dijital marketing ajansı", "dijital medya ajansı", "dijital pazarlama", "dijital pazarlama ajans", "dijital pazarlama ajansları", "dijital pazarlama ajansı", "dijital pazarlama danışmanlığı", "dijital pazarlama danışmanı", "dijital pazarlama firmaları", "dijital pazarlama hizmeti", "dijital pazarlama izmir", "dijital pazarlama reklam ajansı", "dijital pazarlama stratejileri", "dijital pazarlama temelleri", "dijital pazarlama örnekleri", "dijital pazarlama şirketi", "dijital pazarlama şirketleri", "dijital performans ajansı", "dijital reklam", "dijital reklam ajans", "dijital reklam ajansi", "dijital reklam ajansı", "dijital reklamcılık", "e ihracat danışmanlık", "en iyi dijital ajanslar", "en iyi dijital pazarlama ajansları", "en iyi dijital reklam ajansları", "en iyi reklam ajansları", "en iyi sosyal medya ajansları", "google ads eğitimi", "google adwords eğitimi", "google arama motoru optimizasyonu", "google reklam hizmeti", "google reklam hizmetleri", "google site analiz", "internet reklam", "internet reklam verme", "internet reklamcılığı", "internet sitesi reklam verme", "istanbul dijital pazarlama ajansları", "istanbul dijital reklam ajansları", "istanbul reklam ajansları", "istanbul sosyal medya ajansları", "izmir dijital pazarlama ajansları", "içerik pazarlaması", "kurumsal sosyal medya yönetimi", "medya ajansı", "online pazarlama", "pazarlama ajansı", "pazarlama stratejileri", "performans pazarlama ajansı", "profesyonel sosyal medya yönetimi", "reklam ajansları", "reklam ajansları istanbul", "reklam ajansı", "reklam firmaları istanbul", "reklam hizmetleri", "reklam şirketi", "reklam şirketleri", "sem ajans", "seo analiz", "seo optimizasyonu", "seo test google", "sosyal medya ajansı ankara", "sosyal medya ajansı fiyatları", "sosyal medya danışmanlık", "sosyal medya firmaları", "sosyal medya hizmeti", "sosyal medya marketing", "sosyal medya pazarlama", "sosyal medya pazarlama ajansı", "sosyal medya reklam ajansları", "sosyal medya reklamcılığı", "sosyal medya yonetimi", "sosyal medya yönetimi ajans", "sosyal medya yönetimi ajansları", "sosyal medya yönetimi fiyat", "sosyal medya yönetimi hizmeti", "sosyal medya yönetimi paket fiyatları", "sosyal medya şirketleri", "türkiye reklam ajansları", "web sitesi reklam", "web sitesi tasarimi", "web tasarım blog", "şirket sosyal medya yönetimi"
+  ]
+}
