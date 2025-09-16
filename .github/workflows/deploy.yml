@@ -16,19 +16,19 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # 1. Önce doğru proje dizinine git (En Önemli Adım)
+            # 1. Proje dizinine git
             cd /var/www/nextmedya.com
 
             # 2. Kodun en güncel halini indir
             git pull origin main
 
-            # 3. Composer bağımlılıklarını kur
+            # 3. Composer bağımlılıklarını kur (Artık sudo'ya gerek yok)
             composer install --no-dev --optimize-autoloader
 
             # 4. Veritabanı göçlerini çalıştır
             php artisan migrate --force
 
-            # 5. TÜM eski önbelleği temizle (Yeni Eklenen Kritik Adım)
+            # 5. TÜM eski önbelleği temizle
             php artisan optimize:clear
 
             # 6. Yeni ayarları ve rotaları önbelleğe al
