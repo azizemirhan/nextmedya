@@ -3,7 +3,7 @@ name: Deploy NextMedya Laravel
 on:
   push:
     branches:
-      - main # Sadece 'main' branch'ine push yapıldığında tetiklenir
+      - main
 
 jobs:
   deploy:
@@ -16,19 +16,22 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Proje dizinine git
+            # 1. Önce doğru proje dizinine git (En Önemli Adım)
             cd /var/www/nextmedya.com
 
-            # Kodun en güncel halini indir
+            # 2. Kodun en güncel halini indir
             git pull origin main
 
-            # Composer bağımlılıklarını kur
+            # 3. Composer bağımlılıklarını kur
             composer install --no-dev --optimize-autoloader
 
-            # Veritabanı göçlerini çalıştır (yeni tablolar varsa eklenir)
+            # 4. Veritabanı göçlerini çalıştır
             php artisan migrate --force
 
-            # Cache'leri temizle ve yeniden oluştur
+            # 5. TÜM eski önbelleği temizle (Yeni Eklenen Kritik Adım)
+            php artisan optimize:clear
+
+            # 6. Yeni ayarları ve rotaları önbelleğe al
             php artisan config:cache
             php artisan route:cache
 
