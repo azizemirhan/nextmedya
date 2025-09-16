@@ -25,13 +25,6 @@
         </div>
     </div>
     <div class="container my-5">
-        <div class="row text-center mb-4">
-            <div class="col">
-                <h2>Referanslarımız</h2>
-                <p class="lead">Birlikte Çalıştığımız Değerli Markalar</p>
-            </div>
-        </div>
-
         <div class="row gy-4">
             <div class="col-6 col-md-3 col-lg-2">
                 <div class="card h-100 shadow-sm">
@@ -55,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-6 col-md-3 col-lg-2">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body d-flex justify-content-center align-items-center p-3">
@@ -140,8 +133,7 @@
             <div class="col-6 col-md-3 col-lg-2">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body d-flex justify-content-center align-items-center p-3">
-                        <img src="{{ asset('uploads/companies/antalyaagro.png') }}" class="img-fluid"
-                            alt="Antalya Agro">
+                        <img src="{{ asset('uploads/companies/antalyaagro.png') }}" class="img-fluid" alt="Antalya Agro">
                     </div>
                 </div>
             </div>
@@ -240,8 +232,6 @@
             </div>
 
         </div>
-    </div>
-    <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
                 <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
