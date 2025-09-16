@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/eliteliderconsultancy.png') }}"
+                                                <img src="{{ asset('uploads/companies/eliteleaderconsultancy.png') }}"
                                                     alt="Elite Lider Consultancy">
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/ankarabüyüksehir.png') }}"
+                                                <img src="{{ asset('uploads/companies/ankarabuyuksehir.png') }}"
                                                     alt="Ankara Büyükşehir Belediyesi">
                                             </div>
                                         </div>

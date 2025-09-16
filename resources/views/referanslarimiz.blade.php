@@ -232,7 +232,7 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row" style="margin-top: 100px;">
             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
                 <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
                     data-cursor="View<br>Demo">
