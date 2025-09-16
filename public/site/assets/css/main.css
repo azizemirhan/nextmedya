@@ -30229,3 +30229,7 @@ tr {
     display: block;
     margin: 0 auto;
   }
+
+  .sv-service-thumb img {
+    width: 100%;
+  }
