@@ -1,6 +1,5 @@
 name: Deploy NextMedya Laravel
 
-# Bu workflow'un ne zaman çalışacağını belirler
 on:
   push:
     branches:
@@ -17,27 +16,20 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # ❗❗❗ EN ÖNEMLİ ADIM: Proje dizinine git ❗❗❗
-            cd ${{ secrets.PROJECT_PATH }}
+            # Proje dizinine git
+            cd /var/www/nextmedya.com
 
             # Kodun en güncel halini indir
-            echo "Proje dizinine girildi, kodlar çekiliyor..."
             git pull origin main
 
-            # Composer bağımlılıklarını kur (production için optimize)
-            echo "Composer bağımlılıkları kuruluyor..."
-            composer install --no-interaction --prefer-dist --optimize-autoloader
+            # Composer bağımlılıklarını kur
+            composer install --no-dev --optimize-autoloader
 
-            # .env dosyasının yerinde olduğundan emin ol (ilk kurulumda manuel yüklenmeli)
-
-            # Veritabanı göçlerini çalıştır
-            echo "Veritabanı migrate ediliyor..."
+            # Veritabanı göçlerini çalıştır (yeni tablolar varsa eklenir)
             php artisan migrate --force
 
-            # Cache'leri temizle ve yeniden oluştur (production için önemli)
-            echo "Cache'ler temizleniyor..."
+            # Cache'leri temizle ve yeniden oluştur
             php artisan config:cache
             php artisan route:cache
-            php artisan view:cache
 
             echo "Deployment Başarıyla Tamamlandı!"
