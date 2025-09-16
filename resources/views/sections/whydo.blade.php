@@ -89,7 +89,7 @@
   </div>
 <div class="container" style="padding-bottom: 200px; padding-top: 30px">
   <header>
-    <h1 style="color: #4285f4">Web Sitesi Paketleri</h1>
+    <h1 style="color: #4285f4">Web Sitesi Paketlerimiz</h1>
     <p style="font-size: 30px; color: #d51920">
       İşletmeniz veya Projeleriniz için en uygun paketleri inceleyin.
     </p>
