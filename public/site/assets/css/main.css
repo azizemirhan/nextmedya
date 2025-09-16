@@ -395,7 +395,7 @@ p {
 }
 
 img {
-    max-width: 200px;
+    max-width: 100%;
 }
 
 a:not([href]):not([class]),

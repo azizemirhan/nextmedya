@@ -23,85 +23,222 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-6 col-md-6">
-                    <div class="grid">
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/antalyaagro.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/ankarabuyuksehir.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/magurex.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/dropgpt.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/erdektaliabeachhotel.png') }}" height="100"
-                                width="250" alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/koc.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/gratis.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/siemens.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/zeya.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/zirveyapiprefabrik.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/rvpress.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/reyhan.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/investmentrys.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/eliteleaderconsultancy.png') }}" height="100"
-                                width="250" alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/dag.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/antalyaekolojik.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/ankarauniversitesi.png') }}" height="100"
-                                width="250" alt="" />
-                        </div>
-                        <div class="aspect-box">
-                            <img src="{{ asset('uploads/companies/ahtkumas.png') }}" height="100" width="250"
-                                alt="" />
-                        </div>
+    </div>
+    <div class="container my-5">
+        <div class="row text-center mb-4">
+            <div class="col">
+                <h2>Referanslarımız</h2>
+                <p class="lead">Birlikte Çalıştığımız Değerli Markalar</p>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/zirveyapiprefabrik.png') }}" class="img-fluid"
+                            alt="Zirve Yapı Prefabrik">
                     </div>
                 </div>
             </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/zeya.png') }}" class="img-fluid" alt="Zeya">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/siemens.png') }}" class="img-fluid" alt="Siemens">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/reyhan.png') }}" class="img-fluid" alt="Reyhan">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/magurex.png') }}" class="img-fluid" alt="Magurex">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/koc.png') }}" class="img-fluid" alt="Koç">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/iznik.png') }}" class="img-fluid" alt="İznik">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/investmentrys.png') }}" class="img-fluid" alt="Investmentrys">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/gratis.png') }}" class="img-fluid" alt="Gratis">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/erdektaliabeachhotel.png') }}" class="img-fluid"
+                            alt="Erdek Talia Beach Hotel">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/eliteleaderconsultancy.png') }}" class="img-fluid"
+                            alt="Elite Lider Consultancy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/dropgpt.png') }}" class="img-fluid" alt="DropGPT">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/dag.png') }}" class="img-fluid" alt="Dağ">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/antalyaekolojik.png') }}" class="img-fluid"
+                            alt="Antalya Ekolojik">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/antalyaagro.png') }}" class="img-fluid"
+                            alt="Antalya Agro">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/ankarauniversitesi.png') }}" class="img-fluid"
+                            alt="Ankara Üniversitesi">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/ankarabuyuksehir.png') }}" class="img-fluid"
+                            alt="Ankara Büyükşehir Belediyesi">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/ahtkumas.png') }}" class="img-fluid" alt="Aht Kumaş">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/29.png') }}" class="img-fluid" alt="Referans 29">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/28.png') }}" class="img-fluid" alt="Referans 28">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/27.png') }}" class="img-fluid" alt="Referans 27">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/26.png') }}" class="img-fluid" alt="Referans 26">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/25.png') }}" class="img-fluid" alt="Referans 25">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/24.png') }}" class="img-fluid" alt="Referans 24">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/23.png') }}" class="img-fluid" alt="Referans 23">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/22.png') }}" class="img-fluid" alt="Referans 22">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/21.png') }}" class="img-fluid" alt="Referans 21">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/20.png') }}" class="img-fluid" alt="Referans 20">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="container">
@@ -111,9 +248,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('antalya.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('antalya.png') }}" alt="" />
                         </span>
                     </a>
                 </div>
@@ -123,9 +258,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('ankara.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('ankara.png') }}" alt="" />
                         </span>
                     </a>
                 </div>
@@ -135,9 +268,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('magurex.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('magurex.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -148,46 +279,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('gratis.png') }}"
-                                alt="" />
-                        </span>
-
-                    </a>
-                </div>
-            </div>
-             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('drop.png') }}"
-                                alt="" />
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('erdek.png') }}"
-                                alt="" />
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('koc.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('gratis.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -198,9 +290,27 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('siemens.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('drop.png') }}" alt="" />
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('erdek.png') }}" alt="" />
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('koc.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -211,22 +321,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('ankarauni.png') }}"
-                                alt="" />
-                        </span>
-
-                    </a>
-                </div>
-            </div>
-              <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('aht.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('siemens.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -237,9 +332,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('elite.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('ankarauni.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -250,9 +343,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('zirveyapi.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('aht.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -263,9 +354,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('zeya.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('elite.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -276,9 +365,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('rv.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('zirveyapi.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -289,9 +376,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('reyhan.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('zeya.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -302,48 +387,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('investment.png') }}"
-                                alt="" />
-                        </span>
-
-                    </a>
-                </div>
-            </div>
-             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('antalya2.png') }}"
-                                alt="" />
-                        </span>
-
-                    </a>
-                </div>
-            </div>
-             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('ninawest.png') }}"
-                                alt="" />
-                        </span>
-
-                    </a>
-                </div>
-            </div>
-             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
-                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
-                    data-cursor="View<br>Demo">
-                    <a class="cursor-hide" href="portfolio-details-1.html">
-                        <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('sozen.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('rv.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -354,9 +398,7 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('sozen2.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('reyhan.png') }}" alt="" />
                         </span>
 
                     </a>
@@ -367,22 +409,73 @@
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('referans1.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('investment.png') }}" alt="" />
                         </span>
 
                     </a>
                 </div>
             </div>
-             <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
                 <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
                     data-cursor="View<br>Demo">
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
-                            <img class="anim-zoomin"
-                                src="{{ asset('referans3.png') }}"
-                                alt="" />
+                            <img class="anim-zoomin" src="{{ asset('antalya2.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('ninawest.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('sozen.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('sozen2.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('referans1.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('referans3.png') }}" alt="" />
                         </span>
 
                     </a>

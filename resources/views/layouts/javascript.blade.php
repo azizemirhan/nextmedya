@@ -1,41 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.logo-slider', {
-    // Sonsuz döngü modu
-    loop: true,
-    
-    // Otomatik oynatma ayarları
-    autoplay: {
-       delay: 0, // Bekleme süresi yok
-       disableOnInteraction: false,
-    },
-    speed: 5000, 
-    // Aynı anda görünecek slayt sayısı
-    slidesPerView: 3,
-    
-    // Slaytlar arası boşluk
-    spaceBetween: 30,
-    
-    // Farklı ekran boyutları için ayarlar (Responsive Breakpoints)
-    breakpoints: {
-      // 640px ve üzeri ekranlarda
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-      // 768px ve üzeri ekranlarda
-      768: {
-        slidesPerView: 5,
-        spaceBetween: 40,
-      },
-      // 1024px ve üzeri ekranlarda
-      1024: {
-        slidesPerView: 7,
-        spaceBetween: 50,
-      },
-    }
-  });
-</script>
+
 <script>
     VANTA.DOTS({
         el: "#your-element-selector",
