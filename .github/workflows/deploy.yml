@@ -20,6 +20,8 @@ jobs:
             cd /var/www/nextmedya.com
 
             # 2. Kodun en güncel halini indir
+            git reset --hard
+
             git pull origin main
 
             # 3. Composer bağımlılıklarını kur (Artık sudo'ya gerek yok)
