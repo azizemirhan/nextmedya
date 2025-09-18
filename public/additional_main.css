@@ -787,3 +787,77 @@ body.nm-modal-open {
     font-size: 20px;
     margin-top: 20px;
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+.slider {
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+.slider .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+.slider .slide {
+    height: 100px;
+    width: 250px;
+}
+
+/* Tablet ve küçük ekranlar için */
+@media (max-width: 992px) {
+    .slider .slide img {
+        height: 160px;
+        width: 400px;
+    }
+    .slider {
+        margin-top: 10%;
+    }
+    .tp-hero-5-space {
+        padding-bottom: 50px;
+    }
+}
+
+/* Mobil ekranlar için */
+@media (max-width: 768px) {
+    .slider .slide img {
+        height: 120px;
+        width: 300px;
+    }
+    .slider {
+        margin-top: 10%;
+    }
+    .tp-hero-5-space {
+        padding-bottom: 50px;
+    }
+}
+
+/* Küçük telefon ekranları için */
+@media (max-width: 480px) {
+    .slider .slide img {
+        height: 100px;
+        width: 240px;
+    }
+
+    .slider .slide {
+        margin: 0 5px;
+    }
+    .slider {
+        margin-top: 10%;
+    }
+    .tp-hero-5-space {
+        padding-bottom: 50px;
+    }
+    #contact-button {
+        font-size: 15px;
+    }
+}

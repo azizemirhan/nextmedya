@@ -1,5 +1,5 @@
 <div class="tp-hero-5-area tp-hero-5-space fix" id="your-element-selector">
-    <div class="container-fluid">
+    <div class="container">
         <div class="col-xl-12">
             <div class="tp-hero-5-content-box">
                 <h6 class="tp-hero-5-title tp-char-animation">Profesyonel <br><span id="typed-output"></span><h6>

@@ -1,176 +1,96 @@
-<div class="tp-brand-area">
-    <div class="container container-1630">
-        <div class="tp-brand-brd-top tp-brand-ptb">
-            <div class="row align-items-center">
-                <div class="col-xxl-2 col-xl-3 col-lg-3">
-                    <div class="tp-brand-title-box">
-                        <h4 class="tp-brand-title tp_fade_bottom">Referanslarımız</h4>
-                    </div>
-                </div>
-                <div class="col-xxl-10 col-xl-9 col-lg-9">
-                    <div class="row align-items-center">
-                        <div class="col-xl-12">
-                            <div class="tp-brand-slider-wrapper">
-                                <div class="swiper-container tp-brand-slider-active fix">
-                                    <div class="swiper-wrapper brand-wrapper">
-
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/zirveyapiprefabrik.png') }}"
-                                                    alt="Zirve Yapı Prefabrik">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/zeya.png') }}" alt="Zeya">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/siemens.png') }}" alt="Siemens">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/reyhan.png') }}" alt="Reyhan">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/magurex.png') }}" alt="Magurex">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/koc.png') }}" alt="Koç">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/iznik.png') }}" alt="İznik">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/investmentrys.png') }}"
-                                                    alt="Investmentrys">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/gratis.png') }}" alt="Gratis">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/erdektaliabeachhotel.png') }}"
-                                                    alt="Erdek Talia Beach Hotel">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/eliteleaderconsultancy.png') }}"
-                                                    alt="Elite Lider Consultancy">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/dropgpt.png') }}" alt="DropGPT">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/dag.png') }}" alt="Dağ">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/antalyaekolojik.png') }}"
-                                                    alt="Antalya Ekolojik">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/antalyaagro.png') }}"
-                                                    alt="Antalya Agro">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/ankarauniversitesi.png') }}"
-                                                    alt="Ankara Üniversitesi">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/ankarabuyuksehir.png') }}"
-                                                    alt="Ankara Büyükşehir Belediyesi">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/ahtkumas.png') }}"
-                                                    alt="Aht Kumaş">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/29.png') }}" alt="Referans 29">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/28.png') }}" alt="Referans 28">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/27.png') }}" alt="Referans 27">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/26.png') }}" alt="Referans 26">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/25.png') }}" alt="Referans 25">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/24.png') }}" alt="Referans 24">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/23.png') }}" alt="Referans 23">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/22.png') }}" alt="Referans 22">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/21.png') }}" alt="Referans 21">
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-brand-item">
-                                                <img src="{{ asset('uploads/companies/20.png') }}" alt="Referans 20">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="slider" style="margin-top: -60px; background-color: #fff;">
+    <div class="slide-track">
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/zirveyapiprefabrik.png') }}" height="100" width="250"
+                alt="Zirve Yapı Prefabrik" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/zeya.png') }}" height="100" width="250" alt="Zeya" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/siemens.png') }}" height="100" width="250" alt="Siemens" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/reyhan.png') }}" height="100" width="250" alt="Reyhan" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/magurex.png') }}" height="100" width="250" alt="Magurex" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/koc.png') }}" height="100" width="250" alt="Koç" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/iznik.png') }}" height="100" width="250" alt="İznik" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/investmentrys.png') }}" height="100" width="250"
+                alt="Investmentrys" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/gratis.png') }}" height="100" width="250" alt="Gratis" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/erdektaliabeachhotel.png') }}" height="100" width="250"
+                alt="Erdek Talia Beach Hotel" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/eliteleaderconsultancy.png') }}" height="100" width="250"
+                alt="Elite Lider Consultancy" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/dropgpt.png') }}" height="100" width="250" alt="DropGPT" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/dag.png') }}" height="100" width="250" alt="Dağ" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/antalyaekolojik.png') }}" height="100" width="250"
+                alt="Antalya Ekolojik" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/antalyaagro.png') }}" height="100" width="250"
+                alt="Antalya Agro" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/ankarauniversitesi.png') }}" height="100" width="250"
+                alt="Ankara Üniversitesi" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/ankarabuyuksehir.png') }}" height="100" width="250"
+                alt="Ankara Büyükşehir Belediyesi" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/ahtkumas.png') }}" height="100" width="250" alt="Aht Kumaş" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/29.png') }}" height="100" width="250" alt="Referans 29" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/28.png') }}" height="100" width="250" alt="Referans 28" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/27.png') }}" height="100" width="250" alt="Referans 27" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/26.png') }}" height="100" width="250" alt="Referans 26" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/25.png') }}" height="100" width="250" alt="Referans 25" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/24.png') }}" height="100" width="250" alt="Referans 24" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/23.png') }}" height="100" width="250" alt="Referans 23" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/22.png') }}" height="100" width="250" alt="Referans 22" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/21.png') }}" height="100" width="250" alt="Referans 21" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/20.png') }}" height="100" width="250" alt="Referans 20" />
         </div>
     </div>
 </div>
@@ -201,7 +121,7 @@
                     </div>
                 </div>
                 <h3 style="background-color: #dee2e6; color: #fff; padding: 10px">
-                    Genel Özellikler
+                    Paket İçeriği
                 </h3>
                 <div class="plan-features">
                     <!-- Genel / Altyapı -->
@@ -315,7 +235,7 @@
                     </div>
                 </div>
                 <h3 style="background-color: #dee2e6; color: #fff; padding: 10px">
-                    Genel Özellikler
+                    Paket İçeriği
                 </h3>
                 <div class="plan-features">
                     <!-- Genel / Altyapı -->
@@ -432,7 +352,7 @@
                     </div>
                 </div>
                 <h3 style="background-color: #dee2e6; color: #fff; padding: 10px">
-                    Genel Özellikler
+                    Paket İçeriği
                 </h3>
                 <div class="plan-features">
                     <!-- Genel / Altyapı -->

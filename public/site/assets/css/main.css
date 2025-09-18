@@ -12353,12 +12353,12 @@ body.tp-magic-cursor #magic-cursor {
 }
 @media only screen and (min-width: 2000px) and (max-width: 3189px) {
     .tp-hero-5-title {
-        margin-left: 330px;
+        margin-left: 200px;
     }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1999px) {
     .tp-hero-5-title {
-        margin-left: 240px;
+        margin-left: 100px;
     }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1399px) {
@@ -12847,6 +12847,7 @@ body.tp-magic-cursor #magic-cursor {
 .tp-brand-item {
     text-align: center;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 991px),
     (max-width: 767px) {
     .tp-brand-item {
