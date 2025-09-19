@@ -22,6 +22,8 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
+    // app/Providers/RouteServiceProvider.php
+
     public function boot(): void
     {
         $this->configureRateLimiting();
@@ -34,11 +36,11 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
 
-            Route::middleware('web')
+            // YENİ ROUTE GRUBUNU BURAYA EKLEYİN
+            Route::prefix('admin')
+                ->name('admin.') // Route isimlerinin başına 'admin.' ekler (örn: admin.login)
+                ->middleware('web') // Session gibi özellikler için 'web' middleware grubunu kullanmalı
                 ->group(base_path('routes/admin.php'));
-
-            Route::middleware('web')
-                ->group(base_path('routes/vendor.php'));
         });
     }
 

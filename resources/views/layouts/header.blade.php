@@ -60,7 +60,7 @@
                                     <a href="{{ route('duzenleniyor') }}">Next Bilişim</a>
                                 </li> --}}
                                 <li>
-                                    <a href="https://www.blog.nextmedya.com/" >Blog</a>
+                                    <a href="https://www.blog.nextmedya.com/">Blog</a>
                                 </li>
                             </ul>
                         </nav>

@@ -2,25 +2,39 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // 1. Admin ve diğer yazarları oluşturalım
+        $this->call(AccountSeeder::class);
+        $this->call(AdminUserSeeder::class);
+        User::factory(9)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-        // $this->call(UserSeeder::class);
-        $this->call(BlogSeeder::class);
+        // 2. Etiketleri oluşturalım
+        $tags = Tag::factory(40)->create();
 
+        // 3. Normal (aktif/pasif karışık) kategoriler oluşturalım
+        $categories = Category::factory(15)->create();
 
+        // 4. Çöp kutusunda olan (soft-deleted) kategoriler oluşturalım
+        $trashedCategories = Category::factory(5)->trashed()->create();
+
+        // 5. Yazıları oluşturalım ve sadece normal kategorilere bağlayalım
+        Post::factory(50)->create([
+            // Yazıların kategorisini, silinmemiş olanlar arasından rastgele seç
+            'category_id' => $categories->random()->id,
+        ])->each(function ($post) use ($tags) {
+            // Her yazıya 1 ile 5 arasında rastgele etiket ata
+            $post->tags()->attach(
+                $tags->random(rand(1, 5))->pluck('id')->toArray()
+            );
+        });
     }
 }

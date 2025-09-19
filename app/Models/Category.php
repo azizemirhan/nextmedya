@@ -1,19 +1,33 @@
 <?php
 
-// app/Models/Category.php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use HasFactory;
+    protected $guarded = [];
 
-    protected $fillable = ['name', 'slug', 'description'];
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'description',
+        'seo_title',
+        'meta_description',
+        'keywords',
+        'is_active',
+        'show_in_sidebar',
+        'show_in_menu',
+        'logo_path',
+        'banner_path',
+    ];
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 }

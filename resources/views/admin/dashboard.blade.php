@@ -1,109 +1,168 @@
-
 @extends('admin.layouts.master')
-@section('custom_header')
-    @include('layouts.header-dark')
-@endsection
-@section('content3')
-    <div class="col-xxl-8 col-lg-8">
-        <div class="profile__tab-content">
-            <div class="tab-content" id="profile-tabContent">
-                <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class="profile__main">
-                        <div class="profile__main-top pb-80">
-                            <div class="row align-items-center">
-                                <div class="col-md-10">
-                                    <div class="profile__main-inner d-flex flex-wrap align-items-center">
-                                        <?php $user = auth()->user(); ?>
-                                        <form action="{{ route('profile.image.update') }}" method="POST"
-                                            enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="profile__main-thumb">
-                                                <img src="{{ $user->image ? asset('uploads/avatars/' . $user->image) : asset('site/assets/img/avatar/avata.jpg') }}"
-                                                    alt="">
-                                                <div class="profile__main-thumb-edit">
-                                                    <input id="profile-thumb-input" class="profile-img-popup" name="image"
-                                                        type="file" onchange="this.form.submit();">
-                                                    <label for="profile-thumb-input"><i
-                                                            class="fa-light fa-camera"></i></label>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <div class="profile__main-content">
+@section('content')
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 layout-spacing">
+        <div class="widget widget-t-sales-widget widget-m-sales">
+            <div class="media">
+                <div class="icon ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-activity">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <div class="media-body">
+                    <p class="widget-text">Organic</p>
+                    <p class="widget-numeric-value">1,700</p>
+                </div>
+            </div>
+            <div class="d-flex w-bottom">
+                <p class="widget-total-stats">+16% this week</p>
+                <div class="task-action">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="statistics" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-more-horizontal">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </a>
 
-                                            <h4 class="profile__main-title mt-30">{{ $user->name }}</h4>
-                                            <p> projelerinizin yönetimi, hizmet taleplerinizin takibi ve ödeme
-                                                işlemlerinizin hızlıca gerçekleştirilebilmesi için tasarlanmış kapsamlı bir
-                                                yönetim platformudur. Tüm dijital çözümlerimize tek bir merkezden
-                                                erişebilir, proje ilerlemelerini anlık olarak izleyebilir, destek
-                                                taleplerinizi yönetebilir ve iş süreçlerinizi kolaylıkla optimize
-                                                edebilirsiniz.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="profile__main-logout text-sm-end">
-
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-
-                                            <x-responsive-nav-link :href="route('logout')"
-                                                onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                                {{ __('Çıkış Yap') }}
-                                            </x-responsive-nav-link>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="dropdown-menu left" aria-labelledby="statistics" style="will-change: transform">
+                            <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
                         </div>
-                        <div class="profile__main-info">
-                            <div class="row gx-3">
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="profile__main-info-item">
-                                        <div class="profile__main-info-icon">
-                                            <span>
-                                                <img width="50" height="50"
-                                                    src="https://img.icons8.com/ios-filled/100/domain.png" alt="domain" />
-                                            </span>
-                                        </div>
-                                        <h4 class="profile__main-info-title">Sitelerim</h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="profile__main-info-item">
-                                        <div class="profile__main-info-icon">
-                                            <span>
-                                                <img width="50" height="50"
-                                                    src="https://img.icons8.com/dotty/80/laptop-settings.png"
-                                                    alt="laptop-settings" /> </span>
-                                        </div>
-                                        <h4 class="profile__main-info-title">Yazılımlarım</h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="profile__main-info-item">
-                                        <div class="profile__main-info-icon">
-                                            <span>
-                                                <img width="50" height="50"
-                                                    src="https://img.icons8.com/ios/50/licence.png" alt="licence" />
-                                            </span>
-                                        </div>
-                                        <h4 class="profile__main-info-title">Lisanslarım</h4>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6">
-                                    <div class="profile__main-info-item">
-                                        <div class="profile__main-info-icon">
-                                            <span>
-                                                <img width="50" height="50"
-                                                    src="https://img.icons8.com/ios/50/signing-a-document.png"
-                                                    alt="signing-a-document" />
-                                            </span>
-                                        </div>
-                                        <h4 class="profile__main-info-title">Sözleşmelerim</h4>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 layout-spacing">
+        <div class="widget widget-t-sales-widget widget-m-orders">
+            <div class="media">
+                <div class="icon ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-globe">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="media-body">
+                    <p class="widget-text">Direct</p>
+                    <p class="widget-numeric-value">1,560</p>
+                </div>
+            </div>
+            <div class="d-flex w-bottom">
+                <p class="widget-total-stats">-10% this week</p>
+                <div class="task-action">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="statistics" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-more-horizontal">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </a>
+
+                        <div class="dropdown-menu left" aria-labelledby="statistics" style="will-change: transform">
+                            <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 layout-spacing">
+        <div class="widget widget-t-sales-widget widget-m-customers">
+            <div class="media">
+                <div class="icon ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-link">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>
+                </div>
+                <div class="media-body">
+                    <p class="widget-text">Referral</p>
+                    <p class="widget-numeric-value">1,900</p>
+                </div>
+            </div>
+            <div class="d-flex w-bottom">
+                <p class="widget-total-stats">+30% this week</p>
+                <div class="task-action">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="statistics"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-more-horizontal">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </a>
+
+                        <div class="dropdown-menu left" aria-labelledby="statistics" style="will-change: transform">
+                            <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 layout-spacing">
+        <div class="widget widget-t-sales-widget widget-m-income">
+            <div class="media">
+                <div class="icon ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-smartphone">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                </div>
+                <div class="media-body">
+                    <p class="widget-text">Social</p>
+                    <p class="widget-numeric-value">1,390</p>
+                </div>
+            </div>
+            <div class="d-flex w-bottom">
+                <p class="widget-total-stats">+4% this week</p>
+                <div class="task-action">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" role="button" id="statistics"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-more-horizontal">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="19" cy="12" r="1"></circle>
+                                <circle cx="5" cy="12" r="1"></circle>
+                            </svg>
+                        </a>
+
+                        <div class="dropdown-menu left" aria-labelledby="statistics" style="will-change: transform">
+                            <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+                            <a class="dropdown-item" href="javascript:void(0);">Yearly</a>
                         </div>
                     </div>
                 </div>

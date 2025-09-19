@@ -15,38 +15,31 @@
                                 <li class="has-dropdown">
                                     <a href="#" style="color: black">Hizmetlerimiz</a>
                                     <ul class="tp-submenu submenu">
-                                                                                <li><a
-                                                                                        href="{{ route('kurumsalwebtasarim') }}">Kurumsal
-                                                                                        Web Tasarım</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('ampwebtasarim') }}">AMP
-                                                                                        Web Tasarım</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('kisiselwebsitesitasarimi') }}">Kişisel
-                                                                                        Web
-                                                                                        Tasarım</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('uruntanitimsitesi') }}">Ürün
-                                                                                        Tanıtım
-                                                                                        Sitesi</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('onepagewebtasarim') }}">One
-                                                                                        Page Web
-                                                                                        Tasarımı</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('pwawebtasarim') }}">PWA
-                                                                                        Web
-                                                                                        Tasarım</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                        href="{{ route('seodanismanligi') }}">Seo Danışmanlığı
-                                                                                       </a>
-                                                                                </li>
+                                        <li><a href="{{ route('kurumsalwebtasarim') }}">Kurumsal
+                                                Web Tasarım</a>
+                                        </li>
+                                        <li><a href="{{ route('ampwebtasarim') }}">AMP
+                                                Web Tasarım</a>
+                                        </li>
+                                        <li><a href="{{ route('kisiselwebsitesitasarimi') }}">Kişisel
+                                                Web
+                                                Tasarım</a>
+                                        </li>
+                                        <li><a href="{{ route('uruntanitimsitesi') }}">Ürün
+                                                Tanıtım
+                                                Sitesi</a>
+                                        </li>
+                                        <li><a href="{{ route('onepagewebtasarim') }}">One
+                                                Page Web
+                                                Tasarımı</a>
+                                        </li>
+                                        <li><a href="{{ route('pwawebtasarim') }}">PWA
+                                                Web
+                                                Tasarım</a>
+                                        </li>
+                                        <li><a href="{{ route('seodanismanligi') }}">Seo Danışmanlığı
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>

@@ -230,6 +230,13 @@
                     </div>
                 </div>
             </div>
+            <div class="col-6 col-md-3 col-lg-2">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex justify-content-center align-items-center p-3">
+                        <img src="{{ asset('uploads/companies/orge.png') }}" class="img-fluid" alt="Referans 20">
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div class="row" style="margin-top: 100px;">
@@ -466,6 +473,61 @@
                     <a class="cursor-hide" href="portfolio-details-1.html">
                         <span>
                             <img class="anim-zoomin" src="{{ asset('referans3.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('uploads/successo.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('uploads/moodexpo.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('uploads/moodmesse.png') }}" alt="" />
+                        </span>
+
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md-6 grid-item cat2 cat4">
+                <div class="tp-project-5-2-thumb anim-zoomin-wrap mb-30 p-relative not-hide-cursor"
+                    data-cursor="View<br>Demo">
+                    <a class="cursor-hide" href="portfolio-details-1.html">
+                        <span>
+                            <img class="anim-zoomin" src="{{ asset('uploads/uds-site.png') }}" alt="" />
                         </span>
 
                     </a>

@@ -8,16 +8,19 @@
             <img src="{{ asset('uploads/companies/zeya.png') }}" height="100" width="250" alt="Zeya" />
         </div>
         <div class="slide">
+            <img src="{{ asset('uploads/companies/orge.png') }}" height="100" width="250" alt="Reyhan" />
+        </div>
+        <div class="slide">
             <img src="{{ asset('uploads/companies/siemens.png') }}" height="100" width="250" alt="Siemens" />
+        </div>
+        <div class="slide">
+            <img src="{{ asset('uploads/companies/koc.png') }}" height="100" width="250" alt="Koç" />
         </div>
         <div class="slide">
             <img src="{{ asset('uploads/companies/reyhan.png') }}" height="100" width="250" alt="Reyhan" />
         </div>
         <div class="slide">
             <img src="{{ asset('uploads/companies/magurex.png') }}" height="100" width="250" alt="Magurex" />
-        </div>
-        <div class="slide">
-            <img src="{{ asset('uploads/companies/koc.png') }}" height="100" width="250" alt="Koç" />
         </div>
         <div class="slide">
             <img src="{{ asset('uploads/companies/iznik.png') }}" height="100" width="250" alt="İznik" />

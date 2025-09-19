@@ -115,27 +115,29 @@
 </script>
 <!-- Google tag (gtag.js) event - delayed navigation helper -->
 <script>
-  // Helper function to delay opening a URL until a gtag event is sent.
-  // Call it in response to an action that should navigate to a URL.
-  function gtagSendEvent(url) {
-    var callback = function () {
-      if (typeof url === 'string') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'ads_conversion_Contact_1', {
-      'event_callback': callback,
-      'event_timeout': 2000,
-      // <event_parameters>
-    });
-    return false;
-  }
+    // Helper function to delay opening a URL until a gtag event is sent.
+    // Call it in response to an action that should navigate to a URL.
+    function gtagSendEvent(url) {
+        var callback = function() {
+            if (typeof url === 'string') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'ads_conversion_Contact_1', {
+            'event_callback': callback,
+            'event_timeout': 2000,
+            // <event_parameters>
+        });
+        return false;
+    }
 </script>
 <!-- Event snippet for Sayfa görüntüleme conversion page -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-16607476877/AKvbCP7Q5cEaEI35h-89'});
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16607476877/AKvbCP7Q5cEaEI35h-89'
+    });
 </script>
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('avatar.png') }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('2-3.webp') }}">
 <link rel="stylesheet" href="{{ asset('site/assets/css/bootstrap.css') }}">
 <link rel="stylesheet" href="{{ asset('site/assets/css/animate.css') }}">
 <link rel="stylesheet" href="{{ asset('site/assets/css/swiper-bundle.css') }}">

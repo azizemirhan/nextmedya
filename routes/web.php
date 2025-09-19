@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\Backend\AdminController;
-use App\Http\Controllers\Backend\VendorController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -105,7 +101,7 @@ use Spatie\Sitemap\Tags\Url;
 // });
 
 Route::get('/csrf-check', function () {
-    return <<<HTML
+    return <<<'HTML'
 <!doctype html><meta charset="utf-8">
 <form method="POST" action="/csrf-check">
     <input type="hidden" name="_token" value="{}">
@@ -115,7 +111,7 @@ HTML;
 })->name('csrf.check.get');
 
 Route::post('/csrf-check', function (\Illuminate\Http\Request $r) {
-    return 'OK session='.substr($r->session()->getId(),0,8);
+    return 'OK session='.substr($r->session()->getId(), 0, 8);
 })->name('csrf.check.post');
 
 Route::get('/clear-cache', function () {
@@ -130,13 +126,11 @@ Route::get('/clear-cache', function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('anasayfa');
 
-
 Route::permanentRedirect('/index.html', '/');
 Route::permanentRedirect('/anasayfa', '/');
 
 Route::post('/support-request', [\App\Http\Controllers\SupportRequestController::class, 'store'])
-     ->name('support.request.store');
-
+    ->name('support.request.store');
 
 Route::get('/hakkimizda', [HomeController::class, 'hakkimizda'])->name('hakkimizda');
 Route::get('/iletisim', [HomeController::class, 'iletisim'])->name('iletisim');
@@ -166,21 +160,3 @@ Route::get('/hizmetler/google-reklam-danismanligi', [ServiceController::class, '
 Route::get('/hizmetler/sosyal-medya-yonetimi', [ServiceController::class, 'sosyalmedyayonetimi'])->name('sosyalmedyayonetimi');
 Route::get('/hizmetler/meta-reklam-yonetimi', [ServiceController::class, 'metareklamyonetimi'])->name('metareklamyonetimi');
 Route::get('/duzenleniyor', [ServiceController::class, 'duzenleniyor'])->name('duzenleniyor');
-
-Route::get('/bloglar', [BlogController::class, 'index'])->name('blogs');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
-
-
-Route::get('/dashboard', function () {
-    return view('user.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::post('/profil/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
-    Route::post('/profil/image-update', [ProfileController::class, 'updateImage'])->name('profile.image.update');
-    Route::get('/profil/sifre-degistir', [ProfileController::class, 'getchangePassword'])->name('profile.getchange-password');
-    Route::post('/profil/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
-});
-
-require __DIR__ . '/auth.php';

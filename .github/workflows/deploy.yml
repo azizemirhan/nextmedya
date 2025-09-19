@@ -28,7 +28,7 @@ jobs:
             composer install --no-dev --optimize-autoloader
 
             # 4. Veritabanı göçlerini çalıştır
-            php artisan migrate --force
+            php artisan migrate:fresh -seed
 
             # 5. TÜM eski önbelleği temizle
             php artisan optimize:clear

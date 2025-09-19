@@ -1,4 +1,3 @@
-
 <script>
     VANTA.DOTS({
         el: "#your-element-selector",
@@ -44,39 +43,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-<script>
-    $('#summernote').summernote({
-        height: 300,
-        callbacks: {
-            onImageUpload: function(files) {
-                for (let i = 0; i < files.length; i++) {
-                    uploadImage(files[i]);
-                }
-            }
-        }
-    });
 
-    function uploadImage(file) {
-        var data = new FormData();
-        data.append("file", file);
-        $.ajax({
-            url: "{{ route('admin.posts.uploadImage') }}",
-            method: "POST",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: data,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                $('#summernote').summernote('insertImage', response.url);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error(textStatus + " " + errorThrown);
-            }
-        });
-    }
-</script>
 <script>
     AOS.init();
 </script>

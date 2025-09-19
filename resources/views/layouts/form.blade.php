@@ -8,7 +8,8 @@
                         <h2 id="heading">Bilgi Talep Formu</h2>
                         <p>Talebinizi iletmek için tüm alanları doldurun</p>
                         <span style="color: red; font-size: 30px">veya</span>
-                        <a href="tel:+905326437544" class="btn btn-primary mt-20" id="contact-button">Bizimle Direkt İletişime Geçebilirsiniz</a>
+                        <a href="tel:+905326437544" class="btn btn-primary mt-20" id="contact-button">Bizimle Direkt
+                            İletişime Geçebilirsiniz</a>
                         <form id="msform" method="POST" action="{{ route('support.request.store') }}">
                             @csrf
                             <!-- Progressbar -->
