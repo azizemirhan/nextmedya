@@ -85,9 +85,9 @@ class AccountController extends Controller
         $data['next_activity_at'] = $request->filled('next_activity_at') ? $request->input('next_activity_at') : null;
 
         // 4) Logo yükleme
-        if ($request->hasFile('logo')) {
+        if ($request->hasFile('logo_path')) {
             // uploadImage başarısız olursa exception fırlatmalı, ya da false dönerse yakalayıp mesaj ver.
-            $data['logo_path'] = $this->uploadImage($request, 'logo', 'uploads/accounts');
+            $data['logo_path'] = $this->uploadImage($request, 'logo_path', 'uploads/accounts');
         } else {
             // validated içinde 'logo_path' yoksa unset şart değil ama güvenli:
             unset($data['logo_path']);

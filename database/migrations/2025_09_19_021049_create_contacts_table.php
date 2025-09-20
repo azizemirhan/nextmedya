@@ -11,45 +11,36 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-
-            // İlişki
             $table->foreignId('account_id')->nullable()->constrained('accounts')->nullOnDelete();
 
-            // Kimlik
-            $table->string('first_name');
+            $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('job_title')->nullable();
             $table->string('department')->nullable();
 
-            // İletişim (JSON)
-            $table->json('emails')->nullable();  // ["ad.soyad@..", {"value":"...","label":"work","primary":true}]
-            $table->json('phones')->nullable();  // [{"number":"...","label":"work"}, ...]
-            $table->json('addresses')->nullable();
-            $table->json('socials')->nullable(); // {"linkedin":"...", "twitter":"..."}
+            $table->string('primary_email')->nullable()->index();
+            $table->string('primary_phone')->nullable()->index();
 
-            // İzin/KVKK & tercihler
+            $table->json('emails')->nullable();
+            $table->json('phones')->nullable();
+            $table->json('addresses')->nullable();
+            $table->json('socials')->nullable();
+            $table->json('custom_fields')->nullable();
+            $table->json('credentials')->nullable();
+
+            $table->string('profile_photo_path')->nullable();
+            $table->text('notes')->nullable();
+
             $table->boolean('is_decision_maker')->default(false);
             $table->boolean('consent_email')->default(false);
             $table->boolean('consent_sms')->default(false);
-            $table->timestamp('consent_updated_at')->nullable();
-
-            // Lead bilgisi
             $table->string('source')->nullable();
-            $table->unsignedSmallInteger('score')->default(0);
-
-            // Generated kolonlar (performans)
-            $table->string('primary_email')->virtualAs("json_unquote(json_extract(`emails`, '$[0].value'))")->nullable();
-            $table->string('primary_phone')->virtualAs("json_unquote(json_extract(`phones`, '$[0].number'))")->nullable();
+            $table->integer('score')->default(0);
 
             $table->timestamps();
             $table->softDeletes();
-
-            // İndeksler
-            $table->index('account_id');
-            $table->index('primary_email');
-            $table->index('primary_phone');
-            $table->fullText(['first_name', 'last_name', 'job_title', 'department']);
         });
+
     }
 
     public function down(): void

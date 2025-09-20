@@ -12,10 +12,18 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Admin ve diğer yazarları oluşturalım
+
+        // 1. Önce kullanıcıları oluşturalım
+        $this->call(AdminUserSeeder::class); // 1 Admin oluşturur
+        User::factory(9)->create();          // 9 Member oluşturur
+
+        // 2. Sonra Rolleri/İzinleri oluşturalım VE mevcut kullanıcılara atayalım
+        $this->call(RolesAndPermissionsSeeder::class);
+
+        // 3. Diğer verileri oluşturalım
         $this->call(AccountSeeder::class);
-        $this->call(AdminUserSeeder::class);
-        User::factory(9)->create();
+        $this->call(ContactSeeder::class);
+
 
         // 2. Etiketleri oluşturalım
         $tags = Tag::factory(40)->create();

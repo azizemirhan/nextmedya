@@ -124,6 +124,10 @@ Route::get('/clear-cache', function () {
     return 'Tüm önbellekler başarıyla temizlendi.';
 });
 
+Route::get('/login', function () {
+    return 'Login sayfası henüz yapılmadı';
+})->name('login');
+
 Route::get('/', [HomeController::class, 'index'])->name('anasayfa');
 
 Route::permanentRedirect('/index.html', '/');

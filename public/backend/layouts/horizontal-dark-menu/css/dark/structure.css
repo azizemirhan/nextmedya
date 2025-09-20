@@ -26,23 +26,23 @@ body.dark {
 
 body.dark {
   /*Page title*/
-  /* 
+  /*
   =====================
       Navigation Bar
   =====================
   */
   /* User Profile Dropdown*/
-  /* 
+  /*
   ===============
       Sidebar
   ===============
   */
-  /* 
+  /*
   ===============
       Sidebar
   ===============
   */
-  /*  
+  /*
       ======================
           Footer-wrapper
       ======================
@@ -755,7 +755,7 @@ body.dark .sidebar-wrapper {
   user-select: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  top: 66px;
+  top: 106px;
   width: 100%;
   max-width: 1536px;
   margin: 0 auto;
@@ -1273,7 +1273,7 @@ body.dark.alt-menu #content {
   transition: none;
 }
 
-/*  
+/*
     ======================
         Animations
     ======================
@@ -1306,7 +1306,7 @@ body.dark.alt-menu #content {
     transform-origin: top left;
   }
 }
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================

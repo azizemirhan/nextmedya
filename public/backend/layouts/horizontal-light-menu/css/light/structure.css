@@ -224,7 +224,7 @@ body.enable-secondaryNav .layout-top-spacing {
   margin-left: 80px;
 }
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
@@ -254,8 +254,8 @@ body.enable-secondaryNav .layout-top-spacing {
   justify-content: space-between;
 }
 .header-container .theme-brand .theme-logo a img {
-  width: 34px;
-  height: 34px;
+  width: 200px;
+  height: 70px;
 }
 .header-container .theme-text {
   margin-right: 32px;
@@ -672,7 +672,7 @@ body .navbar .dark-mode, body:not(.dark) .navbar .dark-mode {
   height: 18px;
 }
 
-/* 
+/*
 ===============
     Sidebar
 ===============
@@ -764,7 +764,7 @@ body .navbar .dark-mode, body:not(.dark) .navbar .dark-mode {
   display: flex;
 }
 
-/* 
+/*
 ===============
     Sidebar
 ===============
@@ -1276,7 +1276,7 @@ body[layout=full-width] .sidebar-wrapper {
   animation-name: e-fadeInUp;
 }
 
-/*  
+/*
     ======================
         Footer-wrapper
     ======================
@@ -1328,7 +1328,7 @@ body.alt-menu #content {
   transition: none;
 }
 
-/*  
+/*
     ======================
         Animations
     ======================
@@ -1361,7 +1361,7 @@ body.alt-menu #content {
     transform-origin: top left;
   }
 }
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================
@@ -1443,7 +1443,7 @@ body.alt-menu #content {
     margin-top: 55px;
   }
   .sidebar-wrapper {
-    top: 0;
+    top: 100px;
     bottom: 0;
     z-index: 9999;
     border-radius: 0;

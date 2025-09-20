@@ -211,83 +211,51 @@
 
                     {{-- İLETİŞİM (Çoğaltılabilir) --}}
                     <div class="widget-content widget-content-area mb-3">
-                        <h3 class="">İletişim</h3>
-
-                        {{-- E-POSTA --}}
+                        <h3 class="">İletişim Bilgileri</h3>
                         <div class="mb-3">
                             <div class="d-flex align-items-center justify-content-between">
                                 <label class="form-label mb-0">E-posta</label>
-                                <button type="button" class="btn btn-sm btn-outline-primary" id="add-email">
-                                    <i class="bi bi-plus-circle"></i> Ekle
-                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary" id="add-email"><i class="bi bi-plus-circle"></i> Ekle</button>
                             </div>
-                            <div id="email-fields" class="mt-2" data-next-index="{{ $emailsCount }}">
-                                @if (count($emails))
-                                    @foreach ($emails as $i => $em)
-                                        <div class="input-group mb-2">
-                                            <input type="email" name="emails[{{ $i }}][value]"
-                                                class="form-control"
-                                                value="{{ old("emails.$i.value", $em['value'] ?? (is_string($em) ? $em : '')) }}"
-                                                placeholder="ornek@firma.com">
-                                            <input type="text" name="emails[{{ $i }}][label]"
-                                                class="form-control"
-                                                value="{{ old("emails.$i.label", $em['label'] ?? '') }}"
-                                                placeholder="Etiket (work/billing)">
-                                            <button type="button" class="btn btn-outline-danger remove-field"><i
-                                                    class="bi bi-x"></i></button>
-                                        </div>
-                                    @endforeach
-                                @else
+                            <div id="email-fields" class="mt-2" data-next-index="{{ count($contact->emails ?? []) }}">
+                                @forelse($contact->emails ?? [] as $index => $email)
                                     <div class="input-group mb-2">
-                                        <input type="email" name="emails[0][value]" class="form-control"
-                                            placeholder="ornek@firma.com">
-                                        <input type="text" name="emails[0][label]" class="form-control"
-                                            placeholder="Etiket (work/billing)">
-                                        <button type="button" class="btn btn-outline-danger remove-field"><i
-                                                class="bi bi-x"></i></button>
+                                        <input type="email" name="emails[{{ $index }}][value]" class="form-control" value="{{ $email['value'] ?? '' }}">
+                                        <input type="text" name="emails[{{ $index }}][label]" class="form-control" value="{{ $email['label'] ?? '' }}">
+                                        <button type="button" class="btn btn-outline-danger remove-field"><i class="bi bi-x"></i></button>
                                     </div>
-                                @endif
+                                @empty
+                                    <div class="input-group mb-2">
+                                        <input type="email" name="emails[0][value]" class="form-control">
+                                        <input type="text" name="emails[0][label]" class="form-control">
+                                        <button type="button" class="btn btn-outline-danger remove-field"><i class="bi bi-x"></i></button>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
-
                         {{-- TELEFON --}}
                         <div>
                             <div class="d-flex align-items-center justify-content-between">
                                 <label class="form-label mb-0">Telefon</label>
-                                <button type="button" class="btn btn-sm btn-outline-primary" id="add-phone">
-                                    <i class="bi bi-plus-circle"></i> Ekle
-                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary" id="add-phone"><i class="bi bi-plus-circle"></i> Ekle</button>
                             </div>
-                            <div id="phone-fields" class="mt-2" data-next-index="{{ $phonesCount }}">
-                                @if (count($phones))
-                                    @foreach ($phones as $i => $ph)
-                                        <div class="input-group mb-2">
-                                            <input type="text" name="phones[{{ $i }}][number]"
-                                                class="form-control"
-                                                value="{{ old("phones.$i.number", $ph['number'] ?? (is_string($ph) ? $ph : '')) }}"
-                                                placeholder="05xxxxxxxxx">
-                                            <input type="text" name="phones[{{ $i }}][label]"
-                                                class="form-control"
-                                                value="{{ old("phones.$i.label", $ph['label'] ?? '') }}"
-                                                placeholder="Etiket (mobile/office)">
-                                            <button type="button" class="btn btn-outline-danger remove-field"><i
-                                                    class="bi bi-x"></i></button>
-                                        </div>
-                                    @endforeach
-                                @else
+                            <div id="phone-fields" class="mt-2" data-next-index="{{ count($contact->phones ?? []) }}">
+                                @forelse($contact->phones ?? [] as $index => $phone)
                                     <div class="input-group mb-2">
-                                        <input type="text" name="phones[0][number]" class="form-control"
-                                            placeholder="05xxxxxxxxx">
-                                        <input type="text" name="phones[0][label]" class="form-control"
-                                            placeholder="Etiket (mobile/office)">
-                                        <button type="button" class="btn btn-outline-danger remove-field"><i
-                                                class="bi bi-x"></i></button>
+                                        <input type="text" name="phones[{{ $index }}][number]" class="form-control" value="{{ $phone['number'] ?? '' }}">
+                                        <input type="text" name="phones[{{ $index }}][label]" class="form-control" value="{{ $phone['label'] ?? '' }}">
+                                        <button type="button" class="btn btn-outline-danger remove-field"><i class="bi bi-x"></i></button>
                                     </div>
-                                @endif
+                                @empty
+                                    <div class="input-group mb-2">
+                                        <input type="text" name="phones[0][number]" class="form-control">
+                                        <input type="text" name="phones[0][label]" class="form-control">
+                                        <button type="button" class="btn btn-outline-danger remove-field"><i class="bi bi-x"></i></button>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>
-
                     {{-- SAHİP & ZAMANLAMA --}}
                     <div class="widget-content widget-content-area mb-3">
                         <h3 class="">Sahip & Zamanlama</h3>

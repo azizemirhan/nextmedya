@@ -7,7 +7,6 @@
 
         {{-- Üst Başlık & Buton --}}
 
-
         {{-- Arama & Filtre --}}
         <form method="GET" action="{{ route('admin.accounts.index') }}" class="mb-3">
             <div class="row g-2">
@@ -75,8 +74,8 @@
                                 <td>{{ $account->industry ?? '-' }}</td>
                                 <td>
                                     <span
-                                        class="badge 
-                                    @if ($account->status == 'active') bg-success 
+                                        class="badge
+                                    @if ($account->status == 'active') bg-success
                                     @elseif($account->status == 'inactive') bg-secondary
                                     @elseif($account->status == 'prospect') bg-info
                                     @elseif($account->status == 'churned') bg-danger @endif">

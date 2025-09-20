@@ -101,7 +101,7 @@
                                     <ul class="contacts-block list-unstyled">
                                         <li class="contacts-block__item">
                                             <label class="form-label mb-1">Logo Yükle</label>
-                                            <input type="file" name="logo" id="logo" class="form-control"
+                                            <input type="file" name="logo_path" id="logo" class="form-control"
                                                 accept="image/*">
                                         </li>
 

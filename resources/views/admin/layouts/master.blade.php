@@ -27,8 +27,8 @@
 
     <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.bootstrap5.css" rel="stylesheet">
+    @stack('styles')
 </head>
 
 <body class="layout-boxed enable-secondaryNav">
@@ -54,35 +54,11 @@
             <ul class="navbar-item theme-brand flex-row  text-center">
                 <li class="nav-item theme-logo">
                     <a href="index.html">
-                        <img src="{{ asset('2-3.webp') }}" alt="logo" width="100px">
+                        <img src="{{ asset('logo-dark.png') }}" alt="logo" width="300px">
                     </a>
-                </li>
-                <li class="nav-item theme-text">
-                    <a href="index.html" class="nav-link"> Next CRM </a>
                 </li>
             </ul>
 
-            <div class="search-animated toggle-search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="feather feather-search">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <form class="form-inline search-full form-inline search" role="search">
-                    <div class="search-bar">
-                        <input type="text" class="form-control search-form-control ml-lg-auto"
-                            placeholder="Arama..." />
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-x search-close">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </div>
-                </form>
-                <span class="badge badge-secondary">Ctrl + /</span>
-            </div>
 
             <ul class="navbar-item flex-row ms-lg-auto ms-0 action-area">
 
@@ -390,7 +366,7 @@
         <div class="search-overlay"></div>
 
         <!--  BEGIN SIDEBAR  -->
-        <div class="sidebar-wrapper sidebar-theme">
+        <div class="sidebar-wrapper sidebar-theme" style="margin-top: 30px">
             <nav id="sidebar">
                 <div class="navbar-nav theme-brand flex-row text-center">
                     <div class="nav-logo">
@@ -444,7 +420,7 @@
                                 <a href="{{ route('admin.dashboard') }}"> Genel Bakış </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.reports.sales') }}"> Satış Raporları </a>
+                                <a href=""> Satış Raporları </a>
                             </li>
                         </ul>
                     </li>
@@ -488,7 +464,7 @@
                                 <a href="{{ route('admin.contacts.index') }}"> Kişiler </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.deals.index') }}"> Fırsatlar (Teklifler) </a>
+                                <a href=""> Fırsatlar (Teklifler) </a>
                             </li>
                             <li>
                                 <a href="{{ route('admin.tasks.index') }}"> Görevler </a>
@@ -520,10 +496,10 @@
                         <ul class="dropdown-menu submenu list-unstyled" id="projects"
                             data-bs-parent="#accordionExample">
                             <li>
-                                <a href="{{ route('admin.projects.index') }}"> Tüm Projeler </a>
+                                <a href=""> Tüm Projeler </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.projects.create') }}"> Yeni Proje Ekle </a>
+                                <a href=""> Yeni Proje Ekle </a>
                             </li>
                             <li class="sub-submenu dropend">
                                 <a href="#invoice" data-bs-toggle="dropdown" aria-expanded="false"
@@ -537,10 +513,10 @@
                                 </a>
                                 <ul class="dropdown-menu list-unstyled sub-submenu" id="invoice">
                                     <li>
-                                        <a href="{{ route('admin.invoices.index') }}"> Fatura Listesi </a>
+                                        <a href=""> Fatura Listesi </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('admin.invoices.create') }}"> Yeni Fatura Oluştur </a>
+                                        <a href=""> Yeni Fatura Oluştur </a>
                                     </li>
                                 </ul>
                             </li>
@@ -587,7 +563,7 @@
                                 <a href="{{ route('admin.categories.index') }}"> Kategoriler </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.tags.index') }}"> Etiketler </a>
+                                <a href=""> Etiketler </a>
                             </li>
                         </ul>
                     </li>
@@ -601,21 +577,41 @@
                     </li>
 
                     <li class="menu">
-                        <a href="{{ route('admin.users.index') }}" aria-expanded="false" class="dropdown-toggle">
+                        <a href="#users" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-people" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
                                 </svg>
-                                <span>Kullanıcılar</span>
+                                <span>Kullanıcı Yönetimi</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-chevron-right">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
                             </div>
                         </a>
+                        <ul class="dropdown-menu submenu list-unstyled" id="blog"
+                            data-bs-parent="#accordionExample">
+                            <li>
+                                <a href="{{ route('admin.users.index') }}">Kullanıcı Yönetimi</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.roles.index') }}">Rol Yönetimi</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.permissions.index') }}"> İzin Yönetimi</a>
+                            </li>
+
+                        </ul>
                     </li>
 
                     <li class="menu">
-                        <a href="{{ route('admin.settings.index') }}" aria-expanded="false" class="dropdown-toggle">
+                        <a href="" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -637,7 +633,7 @@
 
         <!--  BEGIN CONTENT AREA  -->
         <div id="content" class="main-content">
-            <div class="layout-px-spacing">
+            <div class="layout-px-spacing mt-4">
                 <div class="middle-content container-xxl p-0">
                     <!--  BEGIN BREADCRUMBS  -->
                     <div class="secondary-nav">
@@ -656,8 +652,8 @@
                                         </line>
                                     </svg>
                                 </a>
-                                
-                               
+
+
                             </header>
                         </div>
                     </div>
@@ -683,6 +679,7 @@
     <script src="https://unpkg.com/@yaireo/tagify"></script>
     <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
     <script>
         // Controller'dan 'success' anahtarıyla gönderilen session mesajını yakalıyoruz.
         @if (session('success'))
