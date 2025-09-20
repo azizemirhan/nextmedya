@@ -56,7 +56,7 @@
                                     <a href="https://nextbilisim.com/" style="color: black">Next Bilişim</a>
                                 </li> --}}
                                 <li>
-                                    <a href="https://www.blog.nextmedya.com/" style="color: black">Blog</a>
+                                    <a href="{{ route('blog.index')  }}" style="color: black">Blog</a>
                                 </li>
                             </ul>
                         </nav>

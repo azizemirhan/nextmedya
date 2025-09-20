@@ -34,7 +34,7 @@
                             <h4 class="blog-details-title tp-char-animation" style="perspective: 300px;">{{ $post->title }}
                             </h4>
                             <div class="blog-details-top-author d-flex align-items-center">
-                                <img src="{{ asset('uploads/avatars/' . $post->author->image) }}" alt="">
+                                <img src="{{ asset($post->author->image) }}" alt="">
                                 <p style="color: white; font-size:20px">{{ $post->author->name }}</p>
                             </div>
                         </div>

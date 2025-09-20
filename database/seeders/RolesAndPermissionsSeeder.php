@@ -2,6 +2,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use App\Models\Role;
 use App\Models\Permission;
 use App\Models\User;
@@ -10,35 +11,73 @@ class RolesAndPermissionsSeeder extends Seeder
 {
     public function run(): void
     {
-        // Spatie paketine ait olan ve bizim sistemimizde gereksiz olan satır kaldırıldı.
-
         // --- ROLleri Oluştur ---
-        $superAdminRole = Role::create(['name' => 'Super Admin', 'slug' => 'super-admin']);
-        $memberRole = Role::create(['name' => 'Member', 'slug' => 'member']);
+        $superAdminRole = Role::firstOrCreate(['slug' => 'super-admin'], ['name' => 'Super Admin']);
+        $memberRole = Role::firstOrCreate(['slug' => 'member'], ['name' => 'Member']);
 
-        // --- İZİNleri Oluştur ---
-        Permission::create(['name' => 'Create Board', 'slug' => 'create-board']);
-        Permission::create(['name' => 'Update Board', 'slug' => 'update-board']);
-        Permission::create(['name' => 'Delete Board', 'slug' => 'delete-board']);
+        // --- Tüm İzinleri Tek Bir Dizide Tanımla ---
+        $permissions = [
+            // User Management
+            'view-users', 'create-users', 'update-users', 'delete-users',
 
-        Permission::create(['name' => 'Create List', 'slug' => 'create-list']);
-        Permission::create(['name' => 'Update List', 'slug' => 'update-list']);
-        Permission::create(['name' => 'Delete List', 'slug' => 'delete-list']);
+            // Role & Permission Management
+            'view-roles', 'create-roles', 'update-roles', 'delete-roles',
 
-        Permission::create(['name' => 'Create Task', 'slug' => 'create-task']);
-        Permission::create(['name' => 'Update Task', 'slug' => 'update-task']);
-        Permission::create(['name' => 'Delete Task', 'slug' => 'delete-task']);
-        Permission::create(['name' => 'Assign Task', 'slug' => 'assign-task']);
+            // CRM - Accounts
+            'view-accounts', 'create-accounts', 'update-accounts', 'delete-accounts',
+
+            // CRM - Contacts
+            'view-contacts', 'create-contacts', 'update-contacts', 'delete-contacts',
+
+            // Project Management - Boards
+            'view-boards', 'create-boards', 'update-boards', 'delete-boards',
+
+            // Project Management - Lists
+            'create-lists', 'update-lists', 'delete-lists',
+
+            // Project Management - Tasks
+            'view-tasks', 'create-tasks', 'update-tasks', 'delete-tasks', 'assign-tasks', 'move-tasks',
+
+            // Blog - Posts
+            'view-posts', 'create-posts', 'update-posts', 'delete-posts', 'publish-posts',
+
+            // Blog - Taxonomies
+            'manage-categories', 'manage-tags',
+
+            // Services & Packages
+            'manage-services',
+
+            // System
+            'access-terminal',
+        ];
+
+        // --- İzinleri Oluştur ---
+        foreach ($permissions as $permissionSlug) {
+            Permission::firstOrCreate(['slug' => $permissionSlug], [
+                // 'delete-board' -> 'Delete Board'
+                'name' => Str::of($permissionSlug)->replace('-', ' ')->title()
+            ]);
+        }
 
         // --- İzinleri Rollere Ata ---
-        // Member rolü sadece temel işlemleri yapabilsin
-        $memberRole->permissions()->attach(
-            Permission::whereIn('slug', [
-                'create-list', 'create-task', 'update-task'
-            ])->pluck('id')
-        );
+
+        // 1. Super Admin'e TÜM izinleri ver.
+        // (Not: AuthServiceProvider'daki Gate::before kuralı sayesinde bu aslında gereklidir,
+        // ancak arayüzde görmek için atama yapmak iyi bir pratiktir.)
+        $allPermissions = Permission::pluck('id');
+        $superAdminRole->permissions()->sync($allPermissions);
+
+        // 2. Member rolüne sadece belirli izinleri ver.
+        $memberPermissions = Permission::whereIn('slug', [
+            'view-boards', 'view-tasks', 'create-tasks', 'update-tasks', 'delete-tasks', 'move-tasks',
+            'create-lists',
+            'view-accounts', 'view-contacts',
+        ])->pluck('id');
+        $memberRole->permissions()->sync($memberPermissions);
+
 
         // --- Kullanıcılara Rol Ata ---
+
         // 1. Super Admin'i bul ve rolünü ata
         $adminUser = User::where('email', 'admin@example.com')->first();
         if ($adminUser) {

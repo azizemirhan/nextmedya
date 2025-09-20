@@ -81,7 +81,7 @@
                             <article class="postbox__item mb-80">
                                 <div class="postbox__thumb">
                                     <a href="{{ route('blog.show', $post->slug) }}">
-                                        <img src="{{ asset($post->featured_image) }}" width="1000px"
+                                        <img src="{{ asset($post->featured_image) }}" width="100%"
                                             alt="{{ $post->title }}">
                                     </a>
                                 </div>
@@ -106,7 +106,7 @@
                         @endforeach
                         <div class="basic-pagination">
                             <nav>
-                                {{ $posts->onEachSide(1)->links('vendor.pagination.default') }}
+                                {{ $posts->links('vendor.pagination.custom-blog') }}
                             </nav>
                         </div>
                     </div>

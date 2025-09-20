@@ -164,3 +164,10 @@ Route::get('/hizmetler/google-reklam-danismanligi', [ServiceController::class, '
 Route::get('/hizmetler/sosyal-medya-yonetimi', [ServiceController::class, 'sosyalmedyayonetimi'])->name('sosyalmedyayonetimi');
 Route::get('/hizmetler/meta-reklam-yonetimi', [ServiceController::class, 'metareklamyonetimi'])->name('metareklamyonetimi');
 Route::get('/duzenleniyor', [ServiceController::class, 'duzenleniyor'])->name('duzenleniyor');
+
+Route::get('/lock-screen', [\App\Http\Controllers\Auth\LockScreenController::class, 'showLockScreen'])->name('lock-screen');
+Route::post('/unlock', [\App\Http\Controllers\Auth\LockScreenController::class, 'unlock'])->name('unlock');
+
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/{post:slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
+

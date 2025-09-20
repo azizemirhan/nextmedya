@@ -1,1154 +1,269 @@
-<div class="sidebar-wrapper sidebar-theme">
+<div class="sidebar-wrapper sidebar-theme" style="margin-top: 30px">
     <nav id="sidebar">
-      <div class="navbar-nav theme-brand flex-row text-center">
-        <div class="nav-logo">
-          <div class="nav-item theme-logo">
-            <a href="./index.html">
-              <img
-                src="{{ asset('backend/src/assets/img/logo.svg') }}"
-                class="navbar-logo"
-                alt="logo"
-              />
-            </a>
-          </div>
-          <div class="nav-item theme-text">
-            <a href="./index.html" class="nav-link"> EQUATION </a>
-          </div>
+        <div class="navbar-nav theme-brand flex-row text-center">
+            <div class="nav-logo">
+                <div class="nav-item theme-logo">
+                    <a href="./index.html">
+                        <img src="{{ asset('backend/src/assets/img/logo.svg') }}" class="navbar-logo"
+                             alt="logo"/>
+                    </a>
+                </div>
+                <div class="nav-item theme-text">
+                    <a href="./index.html" class="nav-link"> EQUATION </a>
+                </div>
+            </div>
+            <div class="nav-item sidebar-toggle">
+                <div class="btn-toggle sidebarCollapse">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left">
+                        <polyline points="11 17 6 12 11 7"></polyline>
+                        <polyline points="18 17 13 12 18 7"></polyline>
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div class="nav-item sidebar-toggle">
-          <div class="btn-toggle sidebarCollapse">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-chevrons-left"
-            >
-              <polyline points="11 17 6 12 11 7"></polyline>
-              <polyline points="18 17 13 12 18 7"></polyline>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="shadow-bottom"></div>
-      <ul class="list-unstyled menu-categories" id="accordionExample">
-        <li class="menu active">
-          <a
-            href="#dashboard"
-            data-bs-toggle="dropdown"
-            aria-expanded="true"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-home"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-              <span>Dashboard</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="dashboard"
-            data-bs-parent="#accordionExample"
-          >
-            <li class="active">
-              <a href="./index.html"> Analytics </a>
-            </li>
-            <li>
-              <a href="./index2.html"> Sales </a>
-            </li>
-          </ul>
-        </li>
+        <div class="shadow-bottom"></div>
+        <ul class="list-unstyled menu-categories" id="accordionExample">
 
-        <li class="menu menu-heading">
-          <div class="heading">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-minus"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line></svg
-            ><span>APPLICATIONS</span>
-          </div>
-        </li>
-
-        <li class="menu">
-          <a
-            href="#apps"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-cpu"
-              >
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <rect x="9" y="9" width="6" height="6"></rect>
-                <line x1="9" y1="1" x2="9" y2="4"></line>
-                <line x1="15" y1="1" x2="15" y2="4"></line>
-                <line x1="9" y1="20" x2="9" y2="23"></line>
-                <line x1="15" y1="20" x2="15" y2="23"></line>
-                <line x1="20" y1="9" x2="23" y2="9"></line>
-                <line x1="20" y1="14" x2="23" y2="14"></line>
-                <line x1="1" y1="9" x2="4" y2="9"></line>
-                <line x1="1" y1="14" x2="4" y2="14"></line>
-              </svg>
-              <span>Apps</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="apps"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./app-calendar.html"> Calendar </a>
-            </li>
-            <li>
-              <a href="./app-chat.html"> Chat </a>
-            </li>
-            <li>
-              <a href="./app-mailbox.html"> Mailbox </a>
-            </li>
-            <li>
-              <a href="./app-todoList.html"> Todo List </a>
-            </li>
-            <li>
-              <a href="./app-notes.html"> Notes </a>
-            </li>
-            <li>
-              <a href="./app-scrumboard.html"> Scrumboard </a>
-            </li>
-            <li>
-              <a href="./app-contacts.html"> Contacts </a>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#invoice"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-                >Invoice
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul class="dropdown-menu list-unstyled sub-submenu" id="invoice">
-                <li>
-                  <a href="./app-invoice-list.html"> List </a>
-                </li>
-                <li>
-                  <a href="./app-invoice-preview.html"> Preview </a>
-                </li>
-                <li>
-                  <a href="./app-invoice-add.html"> Add </a>
-                </li>
-                <li>
-                  <a href="./app-invoice-edit.html"> Edit </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#ecommerce"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-                >Ecommerce
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="ecommerce"
-                data-bs-parent="#apps"
-              >
-                <li>
-                  <a href="./app-ecommerce-product-shop.html"> Shop </a>
-                </li>
-                <li>
-                  <a href="./app-ecommerce-product.html"> Product </a>
-                </li>
-                <li>
-                  <a href="./app-ecommerce-product-list.html"> List </a>
-                </li>
-                <li>
-                  <a href="./app-ecommerce-product-add.html"> Create </a>
-                </li>
-                <li>
-                  <a href="./app-ecommerce-product-edit.html"> Edit </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#blog"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-                >Blog
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="blog"
-                data-bs-parent="#apps"
-              >
-                <li>
-                  <a href="./app-blog-grid.html"> Grid </a>
-                </li>
-                <li>
-                  <a href="./app-blog-list.html"> List </a>
-                </li>
-                <li>
-                  <a href="./app-blog-post.html"> Post </a>
-                </li>
-                <li>
-                  <a href="./app-blog-create.html"> Create </a>
-                </li>
-                <li>
-                  <a href="./app-blog-edit.html"> Edit </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-
-        <li class="menu menu-heading">
-          <div class="heading">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-minus"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line></svg
-            ><span>USER INTERFACE</span>
-          </div>
-        </li>
-
-        <li class="menu">
-          <a
-            href="#components"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-box"
-              >
-                <path
-                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                ></path>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
-              </svg>
-              <span>Components</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="components"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./component-tabs.html"> Tabs </a>
-            </li>
-            <li>
-              <a href="./component-accordion.html"> Accordions </a>
-            </li>
-            <li>
-              <a href="./component-modal.html"> Modals </a>
-            </li>
-            <li>
-              <a href="./component-cards.html"> Cards </a>
-            </li>
-            <li>
-              <a href="./component-bootstrap-carousel.html">Carousel</a>
-            </li>
-            <li>
-              <a href="./component-splide.html">Splide</a>
-            </li>
-            <li>
-              <a href="./component-sweetalert.html"> Sweet Alerts </a>
-            </li>
-            <li>
-              <a href="./component-timeline.html"> Timeline </a>
-            </li>
-            <li>
-              <a href="./component-notifications.html"> Notifications </a>
-            </li>
-            <li>
-              <a href="./component-media-object.html"> Media Object </a>
-            </li>
-            <li>
-              <a href="./component-list-group.html"> List Group </a>
-            </li>
-            <li>
-              <a href="./component-pricing-table.html"> Pricing Tables </a>
-            </li>
-            <li>
-              <a href="./component-lightbox.html"> Lightbox </a>
-            </li>
-            <li>
-              <a href="./component-drag-drop.html"> Drag and Drop </a>
-            </li>
-            <li>
-              <a href="./component-fonticons.html"> Font Icons </a>
-            </li>
-            <li>
-              <a href="./component-flags.html"> Flag Icons </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="menu">
-          <a
-            href="#elements"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-zap"
-              >
-                <polygon
-                  points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
-                ></polygon>
-              </svg>
-              <span>Elements</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="elements"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./element-alerts.html"> Alerts </a>
-            </li>
-            <li>
-              <a href="./element-avatar.html"> Avatar </a>
-            </li>
-            <li>
-              <a href="./element-badges.html"> Badges </a>
-            </li>
-            <li>
-              <a href="./element-breadcrumbs.html"> Breadcrumbs </a>
-            </li>
-            <li>
-              <a href="./element-buttons.html"> Buttons </a>
-            </li>
-            <li>
-              <a href="./element-buttons-group.html"> Button Groups </a>
-            </li>
-            <li>
-              <a href="./element-color-library.html"> Color Library </a>
-            </li>
-            <li>
-              <a href="./element-dropdown.html"> Dropdown </a>
-            </li>
-            <li>
-              <a href="./element-infobox.html"> Infobox </a>
-            </li>
-            <li>
-              <a href="./element-loader.html"> Loader </a>
-            </li>
-            <li>
-              <a href="./element-pagination.html"> Pagination </a>
-            </li>
-            <li>
-              <a href="./element-popovers.html"> Popovers </a>
-            </li>
-            <li>
-              <a href="./element-progressbar.html"> Progress Bar </a>
-            </li>
-            <li>
-              <a href="./element-search.html"> Search </a>
-            </li>
-            <li>
-              <a href="./element-tooltips.html"> Tooltips </a>
-            </li>
-            <li>
-              <a href="./element-treeview.html"> Treeview </a>
-            </li>
-            <li>
-              <a href="./element-typography.html"> Typography </a>
-            </li>
-          </ul>
-        </li>
-
-        <li class="menu menu-heading">
-          <div class="heading">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-minus"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line></svg
-            ><span>TABLES AND FORMS</span>
-          </div>
-        </li>
-
-        <li class="menu">
-          <a
-            href="#tables"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-layers"
-              >
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-              <span>Tables</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="tables"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./table-basic.html"> Tables </a>
+            <li class="menu active">
+                <a href="#dashboard" data-bs-toggle="dropdown" aria-expanded="true" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        <span>Dashboard</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="dropdown-menu submenu list-unstyled" id="dashboard"
+                    data-bs-parent="#accordionExample">
+                    <li class="active">
+                        <a href="{{ route('admin.dashboard') }}"> Genel Bakış </a>
+                    </li>
+                    <li>
+                        <a href=""> Satış Raporları </a>
+                    </li>
+                </ul>
             </li>
 
-            <li class="sub-submenu dropend">
-              <a
-                href="#datatable"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Datatable
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="datatable"
-                data-bs-parent="#tables"
-              >
-                <li>
-                  <a href="./table-datatable-basic.html"> Basic </a>
-                </li>
-                <li>
-                  <a href="./table-datatable-striped-table.html"> Striped </a>
-                </li>
-                <li>
-                  <a href="./table-datatable-custom.html"> Custom </a>
-                </li>
-                <li>
-                  <a href="./table-datatable-miscellaneous.html">
-                    Miscellaneous
-                  </a>
-                </li>
-              </ul>
+            <li class="menu menu-heading">
+                <div class="heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>YÖNETİM</span></div>
             </li>
-          </ul>
-        </li>
 
-        <li class="menu">
-          <a
-            href="#forms"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-clipboard"
-              >
-                <path
-                  d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-                ></path>
-                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-              </svg>
-              <span>Forms</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="forms"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./form-bootstrap-basic.html"> Basic </a>
+            <li class="menu">
+                <a href="#crm" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>Müşteri Yönetimi</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="dropdown-menu submenu list-unstyled" id="crm"
+                    data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('admin.accounts.index') }}"> Şirketler </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.contacts.index') }}"> Kişiler </a>
+                    </li>
+                    <li>
+                        <a href=""> Fırsatlar (Teklifler) </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.tasks.index') }}"> Görevler </a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="./form-input-group-basic.html"> Input Group </a>
-            </li>
-            <li>
-              <a href="./form-layouts.html"> Layouts </a>
-            </li>
-            <li>
-              <a href="./form-validation.html"> Validation </a>
-            </li>
-            <li>
-              <a href="./form-input-mask.html"> Input Mask </a>
-            </li>
-            <li>
-              <a href="./form-tom-select.html"> Tom Select </a>
-            </li>
-            <li>
-              <a href="./form-tagify.html"> Tagify </a>
-            </li>
-            <li>
-              <a href="./form-bootstrap-touchspin.html"> TouchSpin </a>
-            </li>
-            <li>
-              <a href="./form-maxlength.html"> Maxlength </a>
-            </li>
-            <li>
-              <a href="./form-checkbox.html"> Checkbox </a>
-            </li>
-            <li>
-              <a href="./form-radio.html"> Radio </a>
-            </li>
-            <li>
-              <a href="./form-switches.html"> Switches </a>
-            </li>
-            <li>
-              <a href="./form-wizard.html"> Wizards </a>
-            </li>
-            <li>
-              <a href="./form-fileupload.html"> File Upload </a>
-            </li>
-            <li>
-              <a href="./form-quill.html"> Quill Editor </a>
-            </li>
-            <li>
-              <a href="./form-markdown.html"> Markdown Editor </a>
-            </li>
-            <li>
-              <a href="./form-date-time-picker.html"> Date Time Picker </a>
-            </li>
-            <li>
-              <a href="./form-slider.html"> Slider </a>
-            </li>
-            <li>
-              <a href="./form-clipboard.html"> Clipboard </a>
-            </li>
-            <li>
-              <a href="./form-autoComplete.html"> Auto Complete </a>
-            </li>
-          </ul>
-        </li>
 
-        <li class="menu">
-          <a
-            href="#pages"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-file"
-              >
-                <path
-                  d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
-                ></path>
-                <polyline points="13 2 13 9 20 9"></polyline>
-              </svg>
-              <span>Pages</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="pages"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./pages-knowledge-base.html"> Knowledge Base </a>
+            <li class="menu">
+                <a href="#projects" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2">
+                            </rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <span>Proje Yönetimi</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="dropdown-menu submenu list-unstyled" id="projects"
+                    data-bs-parent="#accordionExample">
+                    <li>
+                        <a href=""> Tüm Projeler </a>
+                    </li>
+                    <li>
+                        <a href=""> Yeni Proje Ekle </a>
+                    </li>
+                    <li class="sub-submenu dropend">
+                        <a href="#invoice" data-bs-toggle="dropdown" aria-expanded="false"
+                           class="dropdown-toggle collapsed">Faturalar
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round"
+                                 class="feather feather-chevron-right">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </a>
+                        <ul class="dropdown-menu list-unstyled sub-submenu" id="invoice">
+                            <li>
+                                <a href=""> Fatura Listesi </a>
+                            </li>
+                            <li>
+                                <a href=""> Yeni Fatura Oluştur </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="./pages-faq.html"> FAQ </a>
-            </li>
-            <li>
-              <a href="./pages-contact-us.html"> Contact Form </a>
-            </li>
-            <li>
-              <a href="./user-profile.html"> Users </a>
-            </li>
-            <li>
-              <a href="./user-account-settings.html"> Account Settings </a>
-            </li>
-            <li>
-              <a href="./pages-error404.html" target="_blank"> Error </a>
-            </li>
-            <li>
-              <a href="./pages-maintenence.html" target="_blank">
-                Maintanence
-              </a>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#login"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Sign In
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="login"
-                data-bs-parent="#pages"
-              >
-                <li>
-                  <a target="_blank" href="./auth-boxed-signin.html"> Boxed </a>
-                </li>
-                <li>
-                  <a target="_blank" href="./auth-cover-signin.html"> Cover </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#signup"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Sign Up
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="signup"
-                data-bs-parent="#pages"
-              >
-                <li>
-                  <a target="_blank" href="./auth-boxed-signup.html"> Boxed </a>
-                </li>
-                <li>
-                  <a target="_blank" href="./auth-cover-signup.html"> Cover </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#unlock"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Unlock
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="unlock"
-                data-bs-parent="#pages"
-              >
-                <li>
-                  <a target="_blank" href="./auth-boxed-lockscreen.html">
-                    Boxed
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="./auth-cover-lockscreen.html">
-                    Cover
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#reset"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Reset
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="reset"
-                data-bs-parent="#pages"
-              >
-                <li>
-                  <a target="_blank" href="./auth-boxed-password-reset.html">
-                    Boxed
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="./auth-cover-password-reset.html">
-                    Cover
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#twoStep"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Two Step
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="twoStep"
-                data-bs-parent="#pages"
-              >
-                <li>
-                  <a
-                    target="_blank"
-                    href="./auth-boxed-2-step-verification.html"
-                  >
-                    Boxed
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    href="./auth-cover-2-step-verification.html"
-                  >
-                    Cover
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
 
-        <li class="menu">
-          <a
-            href="#more"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            class="dropdown-toggle"
-          >
-            <div class="">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-plus-circle"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="16"></line>
-                <line x1="8" y1="12" x2="16" y2="12"></line>
-              </svg>
-              <span>More</span>
-            </div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-chevron-right"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-          </a>
-          <ul
-            class="dropdown-menu submenu list-unstyled"
-            id="more"
-            data-bs-parent="#accordionExample"
-          >
-            <li>
-              <a href="./map-leaflet.html"> Maps </a>
+            <li class="menu menu-heading">
+                <div class="heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>İÇERİK</span></div>
             </li>
-            <li>
-              <a href="./charts-apex.html"> Charts </a>
+
+            <li class="menu">
+                <a href="#blog" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        <span>Blog Yönetimi</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="dropdown-menu submenu list-unstyled" id="blog"
+                    data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('admin.posts.index') }}"> Tüm Yazılar </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.posts.create') }}"> Yeni Yazı Ekle </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.categories.index') }}"> Kategoriler </a>
+                    </li>
+                    <li>
+                        <a href=""> Etiketler </a>
+                    </li>
+                </ul>
             </li>
-            <li>
-              <a href="./widgets.html"> Widgets </a>
+
+            <li class="menu menu-heading">
+                <div class="heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>SİSTEM</span></div>
             </li>
-            <li class="sub-submenu dropend">
-              <a
-                href="#layouts"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                class="dropdown-toggle collapsed"
-              >
-                Layouts
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-chevron-right"
-                >
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu list-unstyled sub-submenu"
-                id="layouts"
-                data-bs-parent="#more"
-              >
-                <li>
-                  <a href="./layout-blank-page.html"> Blank Page </a>
-                </li>
-                <li>
-                  <a href="./layout-empty.html"> Empty Page </a>
-                </li>
-                <li>
-                  <a href="./layout-full-width.html"> Full Width </a>
-                </li>
-              </ul>
+
+            <li class="menu">
+                <a href="#users" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-people" viewBox="0 0 16 16">
+                            <path
+                                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                        </svg>
+                        <span>Kullanıcı Yönetimi</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round"
+                             class="feather feather-chevron-right">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </div>
+                </a>
+                <ul class="dropdown-menu submenu list-unstyled" id="blog"
+                    data-bs-parent="#accordionExample">
+                    <li>
+                        <a href="{{ route('admin.users.index') }}">Kullanıcı Yönetimi</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.roles.index') }}">Rol Yönetimi</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.permissions.index') }}"> İzin Yönetimi</a>
+                    </li>
+
+                </ul>
             </li>
-            <li>
-              <a target="_blank" href="../../documentation/index.html">
-                Documentation
-              </a>
+
+            <li class="menu">
+                <a href="" aria-expanded="false" class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg>
+                        <span>Genel Ayarlar</span>
+                    </div>
+                </a>
             </li>
-            <li>
-              <a target="_blank" href="../../documentation/changelog.html">
-                Changelog
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+
+        </ul>
     </nav>
-  </div>
+</div>

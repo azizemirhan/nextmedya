@@ -37,7 +37,6 @@ class PostController extends Controller
             'dateModified' => now()->format('Y-m-d'),
         ];
 
-        // Düzeltilmiş satır
 
         return view('admin.posts.create', compact('categories', 'tags', 'users', 'defaultSchema'));
     }
@@ -124,7 +123,7 @@ class PostController extends Controller
         // 2. Slug, yazar ve resim yolu gibi ek verileri hazırla
         $validatedData['slug'] = Str::slug($validatedData['title']);
         $validatedData['user_id'] = auth()->guard('admin')->id();
-        $validatedData['featured_image_path'] = $this->uploadImage($request, 'featured_image', 'tum-yuklemeler/posts/featured');
+        $validatedData['featured_image'] = $this->uploadImage($request, 'featured_image', 'tum-yuklemeler/posts/featured');
 
         // 3. Yazıyı oluştur
         $post = Post::create($validatedData);

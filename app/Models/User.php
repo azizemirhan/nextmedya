@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Traits\HasRoles;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -23,6 +24,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
+        'username',
+        'image',
+        'phone',
+        // YENİ EKLENEN ALANLAR
+        'profession',
+        'country',
+        'address',
+        'location',
+        'website',
+        'socials',
+        'notes',
     ];
 
     /**
@@ -42,6 +55,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+        'socials' => 'array', // socials sütununu otomatik olarak diziye çevirir
     ];
 
     public function boards(): BelongsToMany
@@ -54,4 +69,11 @@ class User extends Authenticatable
     public function roles() {
         return $this->belongsToMany(Role::class, 'role_user');
     }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class, 'user_id');
+    }
+
+
 }

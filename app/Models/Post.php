@@ -4,47 +4,81 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
     use HasFactory, SoftDeletes;
 
-    /**
-     * Factory ile create() metodunu kullanırken toplu atama (mass assignment)
-     * hatası almamak için bu satırı eklemek önemlidir.
-     */
     protected $guarded = [];
 
     protected $casts = [
         'published_at' => 'datetime',
-        'manual_schema_json' => 'array', // <-- YENİ
-        'generated_schema_json' => 'array', // <-- YENİ
+        'manual_schema_json' => 'array',
+        'generated_schema_json' => 'array',
     ];
 
-    /**
-     * Yazının yazarını getiren ilişki (bir yazı bir kullanıcıya aittir).
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+    // --- İLİŞKİLER ---
 
     /**
-     * Yazının kategorisini getiren ilişki (bir yazı bir kategoriye aittir).
+     * Bu metod, hatayı çözen kısımdır.
+     * Bir yazının yazarını (User modelini) döndürür.
      */
-    public function category()
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    /**
-     * YAZIYA AİT ETİKETLERİ GETİREN İLİŞKİ (ÇOKTAN-ÇOĞA)
-     * EKSİK OLAN VE HATAYA NEDEN OLAN METOT BUDUR.
-     */
-    public function tags()
+    public function user(): BelongsTo
     {
-        // Bir yazının birden çok etiketi olabilir.
-        return $this->belongsToMany(Tag::class);
+        // Bu metod da 'author' ile aynı işi yapar.
+        return $this->belongsTo(User::class, 'user_id');
     }
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag');
+    }
+
+    public function lastModifiedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'last_modified_by');
+    }
+
+    // --- SCOPE'LAR ---
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published')->where('published_at', '<=', now());
+    }
+
+    // --- BOOT METODU (SLUG İÇİN) ---
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($post) {
+            $post->slug = $post->slug ?? Str::slug($post->title);
+        });
+
+        static::updating(function ($post) {
+            if ($post->isDirty('title') && empty($post->slug)) {
+                $post->slug = Str::slug($post->title);
+            }
+        });
+    }
+
+    // --- HELPER METOTLAR ---
+    public function getPublishedDateFormattedAttribute(): string
+    {
+        return $this->published_at ? $this->published_at->format('d M, Y') : '';
+    }
+
+
 }

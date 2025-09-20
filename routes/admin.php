@@ -47,7 +47,15 @@ Route::middleware('is_admin')->group(function () {
 
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
 
-    Route::get('terminal', [\App\Http\Controllers\Admin\TerminalController::class, 'index'])->name('terminal.index');
+    Route::get('asdaspdm1232058193412319123ki13p21s3o1dsadasdas', [\App\Http\Controllers\Admin\TerminalController::class, 'index'])->name('terminal.index');
+
+    Route::get('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [\App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
+
+    Route::get('/lock', function() {
+        session(['locked' => true]);
+        return redirect()->route('lock-screen');
+    })->name('lock');
 
     Route::prefix('api')->group(function () {
 
