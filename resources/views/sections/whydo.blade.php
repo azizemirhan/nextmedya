@@ -7,7 +7,7 @@
             <img src="{{ asset('uploads/companies/zeya.png') }}" height="100" width="250"/>
         </div>
         <div class="slide">
-            <img src="{{ asset('uploads/companies/siemens.png') }}" height="100" width="250"/>
+            <img src="{{ asset('uploads/companies/siemens.png') }}" height="100" width="250" alt=""/>
         </div>
         <div class="slide">
             <img src="{{ asset('uploads/companies/30.png') }}" height="100" width="250"/>

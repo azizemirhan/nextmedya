@@ -16,7 +16,7 @@
                         <div class="service-details__banner-text mb-80">
                             <p class="mb-30 tp_title_anim">
                                 Müşterilerimize özel geliştirilen modern web tasarım, yazılım ve e-ticaret projelerimizi
-                                keşfedin. Yüksek performanslı, mobil uyumlu ve SEO dostu çözümler üretiyoruz.
+                                keşfedin. Yüksek performanslı, mobil uyumlu ve SEO dostu çözümler üretiyoruz
                             </p>
                         </div>
                     </div>
