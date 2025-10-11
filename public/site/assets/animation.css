@@ -1,0 +1,352 @@
+#interactive-animation-container {
+    position: relative;
+    height: 1000px;
+}
+
+#laptop {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: 1;
+}
+
+#scrolling-text-section {
+    /* Değişkenleri ve temel stilleri global :root yerine bu ID'ye taşıdık */
+    --start: 0;
+    --end: 360;
+    --lightness: 65%;
+    --base-chroma: 0.3;
+    --font-size-min: 14;
+    --font-size-max: 20;
+    --font-ratio-min: 1.1;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+
+    /* Sitenizin arka planına uyum sağlaması için transparent yapabilir veya renk belirleyebilirsiniz */
+    background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    color: black;
+
+    color-scheme: light;
+    /* Varsayılan temayı aydınlık olarak ayarladık */
+    font-family: 'Geist', 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+
+    /* grid ve place-items kuralları buradan kaldırıldı */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    /* Arka plan grid'inin doğru konumlanması için */
+    opacity: 0;
+    pointer-events: none;
+    /* Dışarıya taşmaları engellemek için */
+}
+
+#scrolling-text-section *,
+#scrolling-text-section *:after,
+#scrolling-text-section *:before {
+    box-sizing: border-box;
+}
+
+#scrolling-text-section :where(.fluid) {
+    --fluid-min: calc(var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0)));
+    --fluid-max: calc(var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0)));
+    --fluid-preferred: calc((var(--fluid-max) - var(--fluid-min)) / (var(--font-width-max) - var(--font-width-min)));
+    --fluid-type: clamp((var(--fluid-min) / 16) * 1rem, ((var(--fluid-min) / 16) * 1rem) - (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) + (var(--fluid-preferred) * 100vi), (var(--fluid-max) / 16) * 1rem);
+    font-size: var(--fluid-type);
+    color: white;
+}
+
+#scrolling-text-section header {
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    width: 100%;
+    padding-inline: 5rem;
+}
+
+#scrolling-text-section h1 {
+    --font-size-min: 24;
+    --font-level: 8;
+    text-wrap: pretty;
+    line-height: 0.8;
+    margin: 0;
+    background: linear-gradient(black 60%, color-mix(in oklch, white, black));
+    background-clip: text;
+    color: #fff;
+}
+
+#scrolling-text-section main {
+    width: 100%;
+}
+
+#scrolling-text-section section:first-of-type {
+    --font-level: 6;
+    display: flex;
+    line-height: 1.25;
+    width: 100%;
+    padding-left: 5rem;
+}
+
+#scrolling-text-section section:first-of-type h2 {
+    position: sticky;
+    top: calc(50% - 0.5lh);
+    font-size: inherit;
+    margin: 0;
+    display: inline-block;
+    height: fit-content;
+    font-weight: 600;
+}
+
+#scrolling-text-section ul {
+    font-weight: 600;
+    padding-inline: 0;
+    margin: 0;
+    list-style-type: none;
+    --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
+}
+
+#scrolling-text-section li:not(:last-of-type) {
+    color: oklch(var(--lightness) var(--base-chroma) calc(var(--start) + (var(--step) * var(--i))));
+}
+
+#scrolling-text-section section:last-of-type {
+    min-height: 30vh;
+    place-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+#scrolling-text-section section:last-of-type h2 {
+    --font-level: 6;
+    margin-top: 10%;
+}
+
+#scrolling-text-section h2,
+#scrolling-text-section li:last-of-type {
+    background: linear-gradient(black 50%, color-mix(in oklch, white, black 25%));
+    background-clip: text;
+    color: #0000;
+}
+
+/* Diğer elementler */
+#scrolling-text-section footer,
+#scrolling-text-section .bear-link {
+    display: none;
+    /* Bu gereksiz elementleri gizleyelim */
+}
+
+/* === YENİ: MOBİL UYUMLULUK İÇİN MEDIA QUERY === */
+@media (max-width: 768px) {
+
+    #scrolling-text-section header,
+    #scrolling-text-section section:first-of-type {
+        padding-inline: 1.5rem;
+        /* Kenar boşluklarını mobil için azalttık */
+    }
+}
+
+.images-leaning {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 800px;
+    margin: 10em auto 0;
+    min-height: 330px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 32.4em;
+    background-position: 50% 100%;
+}
+
+.images-leaning > div {
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    bottom: 7.8em;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.images-leaning > div:before {
+    content: '';
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 7%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(120deg, transparent 42%, rgba(0, 0, 0, 0.15) 45%, rgba(0, 0, 0, 0.35) 65%), linear-gradient(20deg, transparent 38%, rgba(0, 0, 0, 0.25) 45%, rgba(0, 0, 0, 0.23) 55%, rgba(0, 0, 0, 0.13) 75%), radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.15) 3%, transparent 40%);
+    transform: rotate(-8deg);
+}
+
+.images-leaning > div:after {
+    content: '';
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.3), transparent 70%), linear-gradient(45deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.3) 80%);
+    transform: perspective(20em) rotateY(1deg) rotateZ(-5deg) skewY(-2deg) skewX(-1deg) scaleX(var(--resize));
+}
+
+.images-leaning > div > img {
+    width: 60%;
+    height: 100%;
+    display: block;
+    position: relative;
+    z-index: 2;
+    border-left: 0.2em solid;
+    -o-border-image: linear-gradient(105deg, transparent 0.5%, #aaa 0.7%) 1;
+    border-image: linear-gradient(105deg, transparent 0.5%, #aaa 0.7%) 1;
+    box-shadow: 0.1em 0.2em 0 -0.1em #666;
+    filter: saturate(90%);
+    transform: perspective(20em) rotateY(1deg) rotateZ(-5deg) skewY(-2deg) skewX(-1deg) scaleX(var(--resize));
+}
+
+.images-leaning > div:nth-of-type(4) {
+    --resize: 0.99;
+    margin-left: -40.4em;
+}
+
+.images-leaning > div:nth-of-type(4):before {
+    background-size: 100% 85%, 100% 15%, 100% 10%;
+    background-position: 0.1em 0, 0 100%, -3em 83%;
+}
+
+.images-leaning > div:nth-of-type(3) {
+    --resize: 0.96;
+    margin-left: -15.3em;
+    transform: scaleY(0.98) translate(-8em, -2.1em);
+}
+
+.images-leaning > div:nth-of-type(3):before {
+    background-size: 100% 84%, 100% 16%, 100% 10%;
+    background-position: 0.4em 0, 0 100%, -3em 81%;
+}
+
+.images-leaning > div:nth-of-type(2) {
+    --resize: 0.925;
+    margin-left: 10em;
+    transform: scaleY(0.965) translate(-17em, -4.2em);
+}
+
+.images-leaning > div:nth-of-type(2):before {
+    background-size: 100% 83%, 100% 17%, 100% 10%;
+    background-position: 0.6em 0, 0.1em 100%, -3em 81%;
+}
+
+.images-leaning > div:nth-of-type(1) {
+    --resize: 0.895;
+    margin-left: 35.2em;
+    transform: scaleY(0.94) translate(-26.6em, -6.2em);
+}
+
+.images-leaning > div:nth-of-type(1):before {
+    background-size: 100% 82%, 100% 18%, 100% 10%;
+    background-position: 0.8em 0, 0.1em 100%, -3em 80%;
+}
+
+
+.images-basic {
+    width: 600px;
+    padding: 5em 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.images-basic > div {
+    width: 130px;
+}
+
+.images-basic img {
+    width: 100%;
+    display: block;
+}
+
+/* =================================================================== */
+/* === YENİ: EĞİK RESİMLER BÖLÜMÜ İÇİN MOBİL UYUMLULUK === */
+/* =================================================================== */
+
+@media (max-width: 768px) {
+    #scrolling-text-section header {
+        min-height: 30vh;
+        margin-top: 320px;
+    }
+    /* Ana konteynerin masaüstü için olan sabit ayarlarını sıfırlıyoruz */
+    .images-leaning {
+        min-width: unset; /* 800px'lik minimum genişliği kaldır */
+        width: 100%;
+        margin: 4em auto; /* Dikeyde boşluk bırak */
+        min-height: unset; /* Sabit yüksekliği kaldır */
+        padding: 0 1rem; /* Kenarlardan biraz boşluk bırak */
+
+        /* Resimleri alt alta dizmek için flexbox kullan */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem; /* Resimler arasına boşluk koy */
+    }
+
+    /* Her bir resim kutusunun mutlak konumlandırmasını sıfırlıyoruz */
+    .images-leaning > div {
+        position: static; /* Mutlak konumlandırmayı iptal et */
+        width: 90%; /* Ekran genişliğinin %90'ını kaplasın */
+        max-width: 350px; /* Çok da büyümesin */
+        margin: 0; /* Negatif margin'leri sıfırla */
+        transform: none; /* Eğme ve kaydırma efektlerini sıfırla */
+        left: auto;
+        bottom: auto;
+    }
+
+    /* Resimlerin kendi içindeki transform'u da sıfırlıyoruz */
+    .images-leaning > div > img {
+        width: 100%; /* Kendi kutusunu doldursun */
+        transform: none;
+    }
+
+    /* Karmaşık gölge ve parlama efektlerini mobilde gizleyerek daha temiz bir görünüm sağlıyoruz */
+    .images-leaning > div:before,
+    .images-leaning > div:after {
+        display: none;
+    }
+
+}
+
+
+/* animation.css dosyasındaki @media (max-width: 768px) bloğunun içine ekleyin */
+/* VARSA, ESKİ .images-leaning ile ilgili TÜM MOBİL KURALLARINI SİLİN */
+
+.images-leaning {
+    /* Konteynerin masaüstündeki gibi davranmasını sağlıyoruz */
+    position: relative;
+    /* Mobilde daha fazla dikey boşluk bırakalım */
+    margin: 10rem auto;
+    /* Konteynerin yüksekliğini mobilde biraz azaltıyoruz */
+    min-height: 250px;
+
+    /* --- SİHİRLİ DOKUNUŞ: ÖLÇEKLENDİRME --- */
+    /* Tüm bölümü mobil ekran için orantılı olarak küçültüyoruz. */
+    transform: scale(0.7);
+    /* Küçülttükten sonraki boşlukları ayarlıyoruz */
+    transform-origin: center center;
+}
+
+/* Önceki kodda bu elemanları gizlemiştik, ancak ölçeklendirme
+   yaparken bu elemanların görünür kalması gerekiyor.
+   Bu nedenle, eğer gizlediyseniz, bu kuralı silebilirsiniz veya
+   display: block; olarak değiştirebilirsiniz.
+   Eğer hiç kural tanımlamadıysanız bu adımı atlayabilirsiniz.
+*/
+.images-leaning > div:before,
+.images-leaning > div:after {
+    display: block; /* Veya bu seçiciler için olan display:none kuralını silin */
+}

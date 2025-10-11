@@ -1,0 +1,287 @@
+
+.hero-banner {
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    min-height: 600px;
+    margin-bottom: 3.125rem;
+    padding-top: 10vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+#webgl-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#webgl-canvas canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.bubbleContainer {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+                "koral . person-four . logo logo . person-five marigold-2 person-two"
+                ". person-three . marigold-1 logo logo . person-one . aqua";
+    grid-template-columns: repeat(10, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    z-index: 1;
+}
+
+.bubble {
+    animation: bubbleKeyframes 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 24px rgba(59, 130, 246, 0.4));
+}
+
+.person-1 {
+    grid-area: person-one;
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    animation-delay: 0.2s;
+}
+
+.person-2 {
+    grid-area: person-two;
+    width: 5.9375rem;
+    height: 5.9375rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    animation-delay: 0.8s;
+}
+
+.person-3 {
+    grid-area: person-three;
+    width: 5.25rem;
+    height: 5.25rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    animation-delay: 0.4s;
+}
+
+.person-4 {
+    grid-area: person-four;
+    width: 4.4375rem;
+    height: 4.4375rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    animation-delay: 0.6s;
+}
+
+.person-5 {
+    grid-area: person-five;
+    width: 3.3125rem;
+    height: 3.3125rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    animation-delay: 1s;
+}
+
+.koral-bubble {
+    grid-area: koral;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    animation-delay: 0s;
+}
+
+.marigold-bubble {
+    grid-area: marigold-1;
+    width: 1.9375rem;
+    height: 1.9375rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    animation-delay: 0.3s;
+}
+
+.marigold-bubble-2 {
+    grid-area: marigold-2;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e40af, #1e3a8a);
+    animation-delay: 0.9s;
+}
+
+.aqua-bubble {
+    grid-area: aqua;
+    align-self: flex-end;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    animation-delay: 0.5s;
+}
+
+.innovation-logo {
+    position: relative;
+    grid-area: logo;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    margin-bottom: 2.5rem;
+    z-index: 2;
+    animation: fadeInScale 1.5s ease-out;
+}
+
+.innovation-logo h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: bold;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    color: #fff;
+    background-clip: text;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.innovation-logo p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #fff;
+}
+
+@keyframes bubbleKeyframes {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1.4rem);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        height: auto;
+        min-height: 500px;
+        padding-top: 5vh;
+    }
+
+    .bubbleContainer {
+        grid-template-areas:
+                    "koral . person-four . logo logo logo . person-five marigold-2 person-two"
+                    ". person-three . marigold-1 logo logo logo . person-one . aqua";
+    }
+
+    .person-1 {
+        width: 5rem;
+        height: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .person-2 {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    .person-3 {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+    }
+
+    .person-4 {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .person-5 {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.content-card h3 {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    margin-bottom: 15px;
+}
+
+.content-card p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}

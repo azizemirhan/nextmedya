@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+        <loc>http://127.0.0.1:8000</loc>
+        <lastmod>2025-10-04T15:39:45+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/anasayfa</loc>
+        <lastmod>2025-10-04T15:35:04+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hakkimizda</loc>
+        <lastmod>2025-09-29T12:17:25+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz</loc>
+        <lastmod>2025-09-27T15:26:34+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/iletisim</loc>
+        <lastmod>2025-10-02T10:32:30+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/projelerimiz</loc>
+        <lastmod>2025-10-04T08:36:33+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz/genel-muteahhitlik</loc>
+        <lastmod>2025-10-04T07:49:44+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz/kentsel-donusum</loc>
+        <lastmod>2025-09-29T13:28:45+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz/kat-karsiligi-projeler</loc>
+        <lastmod>2025-10-04T07:46:34+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz/anahtar-teslim-projeler</loc>
+        <lastmod>2025-10-04T07:43:25+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/hizmetlerimiz/proje-gelistirme-ve-danismanlik</loc>
+        <lastmod>2025-10-04T07:38:37+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/kentsel-donusumde-dikkat-edilmesi-gerekenler</loc>
+        <lastmod>2025-10-04T15:24:16+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/kat-karsiligi-projelerde-basari-icin-ipuclari</loc>
+        <lastmod>2025-10-04T08:09:54+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/depreme-dayanikli-yapilarin-onemi</loc>
+        <lastmod>2025-10-04T15:23:14+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/kategori/yatirimci-rehberi</loc>
+        <lastmod>2025-10-04T15:22:55+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/kategori/yapi-guvenligi</loc>
+        <lastmod>2025-10-04T15:23:39+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://127.0.0.1:8000/bloglar/kategori/kentsel-donusum</loc>
+        <lastmod>2025-10-04T15:22:05+00:00</lastmod>
+
+            </url>
+</urlset>

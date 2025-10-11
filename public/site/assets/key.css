@@ -1,0 +1,256 @@
+#interactive-keypad-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif, system-ui;
+    box-sizing: border-box;
+}
+
+#interactive-keypad-section *,
+#interactive-keypad-section *:after,
+#interactive-keypad-section *:before {
+    box-sizing: border-box;
+}
+
+/* Exploding Effect Layer */
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-form-container {
+    transition-delay: 0s;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+#interactive-keypad-section .interactive-keypad-container {
+    translate: calc(-50% - 1rem) 0;
+    transition-delay: 0s, 0.26s;
+    margin-left: 30%;
+}
+
+@media (max-width: 768px) {
+    #interactive-keypad-section[data-exploded='true'] .interactive-keypad-container {
+        translate: 0 calc(50% + 1rem);
+    }
+}
+
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-base {
+    --depth: 2.5;
+}
+
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-single {
+    --depth: -1;
+}
+
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-single-left {
+    --depth: -2;
+}
+
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-double {
+    --depth: 0;
+}
+
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-base,
+#interactive-keypad-section[data-exploded='true'] .interactive-keypad-key {
+    translate: 0 calc(var(--depth) * 10vh);
+    transition-delay: 0.52s;
+}
+
+.interactive-keypad-container {
+    transition-delay: 0.26s, 0.52s;
+}
+
+.interactive-keypad-key,
+.interactive-keypad-base {
+    transition-property: translate;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-out;
+}
+
+/* Debug/Layout Layer */
+.interactive-keypad-form-container {
+    transition-property: opacity, filter;
+    transition-duration: 0.26s;
+    transition-delay: 0.26s;
+    transition-timing-function: ease-out;
+    width: 50ch;
+    max-width: calc(100vw - 2rem);
+}
+
+.interactive-keypad-form-container h1 {
+    letter-spacing: -0.05rem;
+    line-height: 1;
+}
+
+.interactive-keypad-form-container p {
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.interactive-keypad-form-container form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.interactive-keypad-form-container input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    background: canvas;
+    border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
+    border-radius: 6px;
+    outline-color: red;
+}
+
+.interactive-keypad-form-container button {
+    padding-inline: 1.5rem;
+    border-radius: 6px;
+    background: canvas;
+    border: 1px solid color-mix(in oklch, canvasText, #0000 75%);
+    cursor: pointer;
+    color: canvasText;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .interactive-keypad-container {
+        order: 1;
+    }
+
+    .interactive-keypad-form-container {
+        order: 2;
+    }
+}
+
+/* Demo/Component Layer */
+.interactive-keypad-container {
+    opacity: 0; /* Initially hidden, made visible by JS */
+    position: relative;
+    aspect-ratio: 400 / 310;
+    display: flex;
+    place-items: center;
+    width: clamp(280px, 35vw, 400px);
+    -webkit-tap-highlight-color: #0000;
+    transition-property: translate, transform, opacity;
+    transition-duration: 0.26s;
+    transition-timing-function: ease-out;
+    transform-style: preserve-3d;
+}
+
+.interactive-keypad-key {
+    transform-style: preserve-3d;
+    border: 0;
+    background: #0000;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.interactive-keypad-key[data-pressed='true'],
+.interactive-keypad-key:active {
+    .interactive-keypad-content {
+        translate: 0 calc(var(--travel) * 1%);
+    }
+}
+
+.interactive-keypad-content {
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+    transition: translate 0.12s ease-out;
+    container-type: inline-size;
+}
+
+.interactive-keypad-single .interactive-keypad-text {
+    width: 52%;
+    height: 62%;
+    translate: 45% -16%;
+}
+
+.interactive-keypad-text {
+    height: 46%;
+    width: 86%;
+    position: absolute;
+    font-size: 12cqi;
+    z-index: 21;
+    top: 5%;
+    left: 0;
+    mix-blend-mode: normal;
+    color: hsl(0 0% 94%);
+    translate: 8% 10%;
+    transform: rotateX(36deg) rotateY(45deg) rotateX(-90deg) rotate(0deg);
+    text-align: left;
+    padding: 1ch;
+}
+
+.interactive-keypad-single {
+    position: absolute;
+    width: 40.5%;
+    left: 54%;
+    bottom: 36%;
+    height: 46%;
+    clip-path: polygon(0 0, 54% 0, 89% 24%, 100% 70%, 54% 100%, 46% 100%, 0 69%, 12% 23%, 47% 0%);
+    mask: url(https://assets.codepen.io/605876/keypad-single.png?format=auto&quality=86) 50% 50% / 100% 100%;
+}
+
+.interactive-keypad-single.interactive-keypad-single-left {
+    left: 29.3%;
+    bottom: 54.2%;
+}
+
+.interactive-keypad-single .interactive-keypad-text {
+    font-size: 18cqi;
+}
+
+.interactive-keypad-single img {
+    top: 0;
+    opacity: 1;
+    width: 96%;
+    position: absolute;
+    left: 50%;
+    translate: -50% 1%;
+}
+
+.interactive-keypad-mask {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.interactive-keypad-double {
+    position: absolute;
+    width: 64%;
+    height: 65%;
+    left: 6%;
+    bottom: 17.85%;
+    clip-path: polygon(34% 0, 93% 44%, 101% 78%, 71% 100%, 66% 100%, 0 52%, 0 44%, 7% 17%, 30% 0);
+    mask: url(https://assets.codepen.io/605876/keypad-double.png?format=auto&quality=86) 50% 50% / 100% 100%;
+}
+
+.interactive-keypad-double img {
+    top: 0;
+    opacity: 1;
+    width: 99%;
+    position: absolute;
+    left: 50%;
+    translate: -50% 1%;
+}
+
+.interactive-keypad-key img {
+    filter: hue-rotate(calc(var(--hue, 0) * 1deg)) saturate(var(--saturate, 1)) brightness(var(--brightness, 1));
+}
+
+.interactive-keypad-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.interactive-keypad-container img {
+    transition: translate 0.12s ease-out;
+    width: 100%;
+}
+
+/* Tweakpane adjustments - can be kept as is, it's a specific library style */
+div.tp-dfwv {
+    width: 280px;
+}

@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'NextFont';
+    src: url('./fonts/Vastron.woff2') format('woff2'),
+    url('./fonts/Vastron.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
