@@ -30,6 +30,16 @@ if (!function_exists('optimized_image')) {
         $avifPath = $pathWithoutExt . '.avif';
         $hasAvif = file_exists(public_path($avifPath));
 
+        // Get image dimensions for CLS prevention
+        $dimensionsAttr = '';
+        $imagePath = public_path($path);
+        if (file_exists($imagePath) && function_exists('getimagesize')) {
+            $imageInfo = @getimagesize($imagePath);
+            if ($imageInfo && isset($imageInfo[0]) && isset($imageInfo[1])) {
+                $dimensionsAttr = ' width="' . $imageInfo[0] . '" height="' . $imageInfo[1] . '"';
+            }
+        }
+
         if ($hasAvif || $hasWebp) {
             $html = '<picture>';
 
@@ -42,7 +52,7 @@ if (!function_exists('optimized_image')) {
             }
 
             $lazyAttr = $lazy ? ' loading="lazy"' : '';
-            $html .= '<img src="' . asset($path) . '" alt="' . e($alt) . '" class="' . e($class) . '"' . $lazyAttr . '>';
+            $html .= '<img src="' . asset($path) . '" alt="' . e($alt) . '" class="' . e($class) . '"' . $dimensionsAttr . $lazyAttr . '>';
             $html .= '</picture>';
 
             return $html;
@@ -50,7 +60,7 @@ if (!function_exists('optimized_image')) {
 
         // Fallback to regular img tag with lazy loading
         $lazyAttr = $lazy ? ' loading="lazy"' : '';
-        return '<img src="' . asset($path) . '" alt="' . e($alt) . '" class="' . e($class) . '"' . $lazyAttr . '>';
+        return '<img src="' . asset($path) . '" alt="' . e($alt) . '" class="' . e($class) . '"' . $dimensionsAttr . $lazyAttr . '>';
     }
 }
 
