@@ -6,10 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\ConvertImagesToWebP' => $baseDir . '/app/Console/Commands/ConvertImagesToWebP.php',
     'App\\Console\\Commands\\CreateUserCommand' => $baseDir . '/app/Console/Commands/CreateUserCommand.php',
     'App\\Console\\Commands\\FetchEmails' => $baseDir . '/app/Console/Commands/FetchEmails.php',
     'App\\Console\\Commands\\FixSettingsCommand' => $baseDir . '/app/Console/Commands/FixSettingsCommand.php',
     'App\\Console\\Commands\\GenerateSitemap' => $baseDir . '/app/Console/Commands/GenerateSitemap.php',
+    'App\\Console\\Commands\\ResizeImages' => $baseDir . '/app/Console/Commands/ResizeImages.php',
     'App\\Console\\Commands\\TerminalSession' => $baseDir . '/app/Console/Commands/TerminalSession.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

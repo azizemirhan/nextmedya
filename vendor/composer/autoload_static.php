@@ -857,10 +857,12 @@ class ComposerStaticInitcab5b506659fca94f71d21ef2a79bcd0
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\ConvertImagesToWebP' => __DIR__ . '/../..' . '/app/Console/Commands/ConvertImagesToWebP.php',
         'App\\Console\\Commands\\CreateUserCommand' => __DIR__ . '/../..' . '/app/Console/Commands/CreateUserCommand.php',
         'App\\Console\\Commands\\FetchEmails' => __DIR__ . '/../..' . '/app/Console/Commands/FetchEmails.php',
         'App\\Console\\Commands\\FixSettingsCommand' => __DIR__ . '/../..' . '/app/Console/Commands/FixSettingsCommand.php',
         'App\\Console\\Commands\\GenerateSitemap' => __DIR__ . '/../..' . '/app/Console/Commands/GenerateSitemap.php',
+        'App\\Console\\Commands\\ResizeImages' => __DIR__ . '/../..' . '/app/Console/Commands/ResizeImages.php',
         'App\\Console\\Commands\\TerminalSession' => __DIR__ . '/../..' . '/app/Console/Commands/TerminalSession.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
