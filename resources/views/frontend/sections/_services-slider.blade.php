@@ -10,7 +10,7 @@ $services = $dynamicData ?? collect();
 <section class="gap project-style-one light-bg-color">
     <div class="heading">
         <figure>
-            <img src="/site/assets/images/heading-icon.png" alt="Heading Icon">
+            @optimizedImage('site/assets/images/heading-icon.png', 'Heading Icon', '')
         </figure>
         <span>{{ $smallTitle }}</span>
         <h2>{{ $mainTitle }}</h2>
@@ -24,7 +24,11 @@ $services = $dynamicData ?? collect();
                 <div class="project-post"> {{-- Proje stili aynı kalabilir --}}
                     <figure>
                         {{-- Service modelinizde bir 'image' alanı olduğunu varsayıyoruz --}}
-                        <img src="{{ isset($service->image) ? asset($service->image) : 'https://placehold.co/640x395' }}" alt="{{ $service->getTranslation('title', app()->getLocale()) }}">
+                        @if(isset($service->image))
+                            @optimizedImage($service->image, $service->getTranslation('title', app()->getLocale()), '')
+                        @else
+                            <img src="https://placehold.co/640x395" alt="{{ $service->getTranslation('title', app()->getLocale()) }}">
+                        @endif
                     </figure>
                     <div class="project-data">
                         {{-- Service için bir detay sayfası varsa link verebilirsiniz --}}

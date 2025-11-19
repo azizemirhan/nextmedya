@@ -129,9 +129,7 @@
                         <div class="brand-logos">
                             @foreach($brandLogos as $logo)
                                 @if(data_get($logo, 'logo_image'))
-                                    <img src="{{ asset(data_get($logo, 'logo_image')) }}"
-                                         alt="{{ data_get($logo, 'logo_alt.' . app()->getLocale(), 'Brand Logo') }}"
-                                         class="brand-logo">
+                                    @optimizedImage(data_get($logo, 'logo_image'), data_get($logo, 'logo_alt.' . app()->getLocale(), 'Brand Logo'), 'brand-logo')
                                 @else
                                     <span class="brand-logo">{{ data_get($logo, 'logo_alt.' . app()->getLocale(), 'LOGO') }}</span>
                                 @endif

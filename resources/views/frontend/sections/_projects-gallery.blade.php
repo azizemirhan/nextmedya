@@ -89,10 +89,7 @@
                     <div class="izokoc-project-card" id="{{ $uniqueId }}">
                         {{-- Ana Görsel --}}
                         <div class="izokoc-project-image-wrapper">
-                            <img src="{{ $mainImage }}"
-                                 alt="{{ $companyName }}"
-                                 class="izokoc-project-main-image"
-                                 loading="lazy">
+                            {!! optimized_image(str_replace(url('/'), '', $mainImage), $companyName, 'izokoc-project-main-image') !!}
 
                             <div class="izokoc-project-overlay">
                                 <div class="izokoc-overlay-content">
@@ -148,7 +145,7 @@
                                        data-lightbox="{{ $uniqueId }}"
                                        data-title="{{ $companyName }} - {{ __('Görsel') }} {{ $galleryIndex + 1 }}"
                                        style="display:none;">
-                                        <img src="{{ $galleryImage }}" alt="{{ $companyName }}">
+                                        {!! optimized_image(str_replace(url('/'), '', $galleryImage), $companyName, '') !!}
                                     </a>
                                 @endforeach
                             </div>
