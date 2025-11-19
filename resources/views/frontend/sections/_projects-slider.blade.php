@@ -11,7 +11,7 @@
 <section class="gap project-style-one light-bg-color">
     <div class="heading">
         <figure>
-            <img src="{{ asset('site/assets/images/heading-icon.png') }}" alt="Heading Icon">
+            @optimizedImage('site/assets/images/heading-icon.png', 'Heading Icon', '')
         </figure>
         <span>{{ $smallTitle }}</span>
         <h2>{{ $mainTitle }}</h2>
@@ -24,7 +24,7 @@
                     <div class="col-lg-12">
                         <div class="project-post">
                             <figure>
-                                <img src="{{ asset($project->image_path) }}" alt="{{ $project->getTranslation('title', app()->getLocale()) }}">
+                                @optimizedImage($project->image_path, $project->getTranslation('title', app()->getLocale()), '')
                             </figure>
                             <div class="project-data">
                                 <h3><a href="#">{{ $project->getTranslation('title', app()->getLocale()) }}</a></h3>

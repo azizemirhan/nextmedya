@@ -46,7 +46,7 @@
                                 <div class="izokoc-timeline-item__content">
                                     @if($milestoneImage)
                                         <div class="izokoc-timeline-item__image">
-                                            <img src="{{ asset($milestoneImage) }}" alt="{{ $milestoneTitle }}">
+                                            @optimizedImage($milestoneImage, $milestoneTitle, '')
                                         </div>
                                     @endif
                                     <div class="izokoc-timeline-item__text">

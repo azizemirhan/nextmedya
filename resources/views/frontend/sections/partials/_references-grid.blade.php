@@ -20,9 +20,7 @@
                 <!-- Logo Container -->
                 <div class="nextmedya-ref-logo-container">
                     @if($companyLogo)
-                        <img src="{{ asset($companyLogo) }}"
-                             alt="{{ $companyName }}"
-                             class="nextmedya-ref-logo">
+                        @optimizedImage($companyLogo, $companyName, 'nextmedya-ref-logo')
                     @else
                         <div class="nextmedya-ref-placeholder">
                             <i class="fas fa-building"></i>

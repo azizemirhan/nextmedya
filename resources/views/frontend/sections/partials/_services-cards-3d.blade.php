@@ -38,7 +38,7 @@
                     @endif
 
                     @if($serviceImage)
-                        <img src="{{ asset($serviceImage) }}" alt="{{ $serviceTitle }}" class="nextmedya-service-image">
+                        @optimizedImage($serviceImage, $serviceTitle, 'nextmedya-service-image')
                     @endif
 
                     <div class="nextmedya-card-overlay">

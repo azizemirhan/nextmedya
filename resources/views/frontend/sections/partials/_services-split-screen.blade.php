@@ -37,7 +37,7 @@
                         <!-- Image -->
                         @if($serviceImage)
                             <div class="nextmedya-split-image">
-                                <img src="{{ asset($serviceImage) }}" alt="{{ $serviceTitle }}">
+                                @optimizedImage($serviceImage, $serviceTitle, '')
                             </div>
                         @endif
 
