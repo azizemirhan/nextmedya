@@ -1,16 +1,16 @@
 {
-  "_vendor-9762a06d.js": {
-    "file": "js/vendor-9762a06d.js"
+  "_vendor-axios-2129cfb8.js": {
+    "file": "js/vendor-axios-2129cfb8.js"
   },
   "resources/css/app.css": {
-    "file": "css/app-151338aa.css",
+    "file": "css/app-19afc53a.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
   "resources/js/app.js": {
-    "file": "js/app-d0126a56.js",
+    "file": "js/app-5b9e01b7.js",
     "imports": [
-      "_vendor-9762a06d.js"
+      "_vendor-axios-2129cfb8.js"
     ],
     "isEntry": true,
     "src": "resources/js/app.js"
