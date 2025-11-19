@@ -1,0 +1,18 @@
+{
+  "_vendor-9762a06d.js": {
+    "file": "js/vendor-9762a06d.js"
+  },
+  "resources/css/app.css": {
+    "file": "css/app-151338aa.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "js/app-d0126a56.js",
+    "imports": [
+      "_vendor-9762a06d.js"
+    ],
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
