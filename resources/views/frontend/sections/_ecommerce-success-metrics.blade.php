@@ -86,7 +86,7 @@
                                             </div>
                                             <div class="nextmedya-testimonial-author">
                                                 @if($clientPhoto)
-                                                    <img src="{{ asset($clientPhoto) }}" alt="{{ $clientName }}">
+                                                    @optimizedImage($clientPhoto, $clientName, '')
                                                 @endif
                                                 <div>
                                                     <strong>{{ $clientName }}</strong>

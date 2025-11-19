@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-lg-6">
                     <figure>
-                        <img src="{{ $image }}" alt="Client Images">
+                        @optimizedImage($image, 'Client Images', '')
                     </figure>
                 </div>
             </div>

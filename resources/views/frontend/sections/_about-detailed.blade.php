@@ -5,10 +5,18 @@
                 <div class="about-data-left">
                     <figure>
                         {{-- Resim content'te varsa onu, yoksa placeholder göster --}}
-                        <img src="{{ isset($content['image_one']) ? asset($content['image_one']) : 'https://placehold.co/370x500' }}" alt="About One">
+                        @if(isset($content['image_one']))
+                            @optimizedImage($content['image_one'], 'About One', '')
+                        @else
+                            <img src="https://placehold.co/370x500" alt="About One">
+                        @endif
                     </figure>
                     <figure class="about-image">
-                        <img src="{{ isset($content['image_two']) ? asset($content['image_two']) : 'https://placehold.co/265x325' }}" alt="About Two">
+                        @if(isset($content['image_two']))
+                            @optimizedImage($content['image_two'], 'About Two', '')
+                        @else
+                            <img src="https://placehold.co/265x325" alt="About Two">
+                        @endif
                     </figure>
                 </div>
             </div>
@@ -20,7 +28,11 @@
                     <div class="about-info">
                         <p>{{ $content['content'] ?? 'Default content text...' }}</p>
                         <figure>
-                            <img src="{{ isset($content['signature_image']) ? asset($content['signature_image']) : '/site/assets/images/signature.png' }}" alt="Signature">
+                            @if(isset($content['signature_image']))
+                                @optimizedImage($content['signature_image'], 'Signature', '')
+                            @else
+                                @optimizedImage('site/assets/images/signature.png', 'Signature', '')
+                            @endif
                         </figure>
                         <h3>{{ $content['signature_name'] ?? 'Walimes Jonnie' }}</h3>
                         <h4>{{ $content['signature_title'] ?? 'Director of Constro Company' }}</h4>

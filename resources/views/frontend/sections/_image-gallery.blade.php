@@ -57,12 +57,7 @@
                          aria-label="{{ $imageAlt ?: 'Galeri resmi ' . ($index + 1) }}">
 
                         <div class="image-container">
-                            <img src="{{ $thumbnailUrl }}"
-                                 alt="{{ $imageAlt }}"
-                                 class="gallery-image"
-                                 loading="lazy"
-                                 data-src="{{ $imageUrl }}"
-                                 onerror="this.onerror=null; this.src='{{ asset('images/placeholder.jpg') }}';">
+                            @optimizedImage($thumbnailUrl ?? $imageUrl, $imageAlt, 'gallery-image')
                         </div>
 
                         {{-- Resim başlığı veya açıklaması varsa göster --}}

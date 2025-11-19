@@ -18,7 +18,7 @@
             {{-- Video Bölümü --}}
             <div class="col-xl-6 col-lg-6 noPaddingRight">
                 <div class="video_01 mrm15 text-right">
-                    <img src="{{ $mainImage }}" alt="{{ $title }}" class="about-main-image">
+                    @optimizedImage(data_get($content, 'main_image') ?? 'images/home/1.jpg', $title, 'about-main-image')
 
                     @if($videoUrl)
                         <div class="vp">

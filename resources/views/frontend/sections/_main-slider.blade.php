@@ -20,9 +20,7 @@
                     <div class="izokoc-slide {{ $loop->first ? 'active' : '' }}" data-slide-index="{{ $index }}">
                         {{-- Background Image --}}
                         <div class="izokoc-slide__background">
-                            <img src="{{ asset($slider->image_path) }}"
-                                 alt="{{ $slider->getTranslation('title', app()->getLocale()) }}"
-                                 loading="{{ $loop->first ? 'eager' : 'lazy' }}">
+                            {!! optimized_image($slider->image_path, $slider->getTranslation('title', app()->getLocale()), '', !$loop->first) !!}
                             <div class="izokoc-slide__overlay"></div>
                         </div>
 

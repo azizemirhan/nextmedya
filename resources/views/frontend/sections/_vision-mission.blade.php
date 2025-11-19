@@ -24,7 +24,7 @@
     {{-- Arka Plan --}}
     @if($backgroundImage)
         <div class="izokoc-vm-background">
-            <img src="{{ asset($backgroundImage) }}" alt="{{ $mainTitle }}">
+            @optimizedImage($backgroundImage, $mainTitle, '')
             <div class="izokoc-vm-background__overlay"></div>
         </div>
     @endif
@@ -54,7 +54,7 @@
 
                         @if($visionImage)
                             <div class="izokoc-vm-card__image">
-                                <img src="{{ asset($visionImage) }}" alt="{{ $visionTitle }}">
+                                @optimizedImage($visionImage, $visionTitle, '')
                             </div>
                         @endif
 
@@ -84,7 +84,7 @@
 
                         @if($missionImage)
                             <div class="izokoc-vm-card__image">
-                                <img src="{{ asset($missionImage) }}" alt="{{ $missionTitle }}">
+                                @optimizedImage($missionImage, $missionTitle, '')
                             </div>
                         @endif
 

@@ -15,7 +15,7 @@
             @if($image)
                 <div class="col-lg-6">
                     <div class="content-image-wrapper">
-                        <img src="{{ $image }}" alt="{{ $title }}" class="img-fluid rounded">
+                        @optimizedImage(data_get($content, 'image'), $title, 'img-fluid rounded')
                     </div>
                 </div>
             @endif

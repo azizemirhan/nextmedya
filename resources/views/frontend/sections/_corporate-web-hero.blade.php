@@ -43,7 +43,7 @@
 
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
                 <div class="nextmedya-hero-image-wrapper">
-                    <img src="{{ $heroImage }}" alt="Kurumsal Web Tasarım" class="nextmedya-hero-image">
+                    @optimizedImage(data_get($content, 'hero_image') ?? 'https://placehold.co/800x600', 'Kurumsal Web Tasarım', 'nextmedya-hero-image')
                 </div>
             </div>
         </div>

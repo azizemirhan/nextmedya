@@ -39,9 +39,7 @@
                             <!-- Image -->
                             @if($post->featured_image)
                                 <div class="card-img-wrapper">
-                                    <img src="{{ asset($post->featured_image) }}"
-                                         class="card-img-top"
-                                         alt="{{ $post->title }}">
+                                    @optimizedImage($post->featured_image, $post->title, 'card-img-top')
                                 </div>
                             @else
                                 <div class="card-img-placeholder bg-secondary d-flex align-items-center justify-content-center">

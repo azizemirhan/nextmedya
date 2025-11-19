@@ -19,7 +19,7 @@
             <div class="col-lg-5">
                 <div class="cta-data">
                     <figure>
-                        <img src="{{ $image }}" alt="{{ $mainTitle }}">
+                        @optimizedImage(data_get($content, 'image') ?? 'https://placehold.co/860x600', $mainTitle, '')
                     </figure>
                 </div>
             </div>
