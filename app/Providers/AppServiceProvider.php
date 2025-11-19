@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Menu;
 use App\Models\Setting;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
@@ -75,6 +76,34 @@ class AppServiceProvider extends ServiceProvider
             View::share('activeLanguages', collect(['tr' => ['name' => 'Turkish', 'native' => 'Türkçe']]));
             app()->setLocale('tr');
         }
+
+        // Register Blade directives for image optimization
+        $this->registerBladeDirectives();
+    }
+
+    /**
+     * Register custom Blade directives for image optimization
+     */
+    private function registerBladeDirectives(): void
+    {
+        // @optimizedImage('path/to/image.jpg', 'Alt text', 'css-class')
+        Blade::directive('optimizedImage', function ($expression) {
+            return "<?php echo optimized_image({$expression}); ?>";
+        });
+
+        // @responsiveImage('path/to/image.jpg', ['thumb' => 320, 'medium' => 768], 'Alt text', 'css-class')
+        Blade::directive('responsiveImage', function ($expression) {
+            return "<?php echo responsive_image({$expression}); ?>";
+        });
+
+        // @lazyImage directive for simple lazy loading
+        Blade::directive('lazyImage', function ($expression) {
+            $args = explode(',', $expression);
+            $path = $args[0] ?? "''";
+            $alt = $args[1] ?? "''";
+            $class = $args[2] ?? "''";
+            return "<?php echo '<img src=\"' . asset({$path}) . '\" alt=\"' . e({$alt}) . '\" class=\"' . e({$class}) . '\" loading=\"lazy\">'; ?>";
+        });
     }
 
     /**

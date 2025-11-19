@@ -11,79 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script>
-// WhatsApp Popup Açılışını İzleme
-function trackWhatsAppPopupOpen() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'whatsapp_popup_open',
-        'element_type': 'popup_button',
-        'page_url': window.location.href,
-        'timestamp': new Date().toISOString()
-    });
-    
-    console.log('WhatsApp Popup Open Tracked:', {
-        event: 'whatsapp_popup_open',
-        page_url: window.location.href
-    });
-}
-
-// WhatsApp Link Tıklamasını İzleme (Geliştirilmiş Versiyon)
-function trackWhatsAppClick(element, position, phoneNumber, contactType) {
-    window.dataLayer = window.dataLayer || [];
-    
-    // Telefon numarasını formatla
-    const formattedPhone = phoneNumber.startsWith('+') ? phoneNumber : '+' + phoneNumber;
-    
-    // Event data
-    const eventData = {
-        'event': 'whatsapp_click',
-        'whatsapp_number': formattedPhone,
-        'contact_type': contactType || 'support',
-        'intent': 'contact',
-        'page_url': window.location.href,
-        'element_position': position,
-        'element_text': element.querySelector('.wa__member_name')?.textContent.trim() || 'WhatsApp Contact',
-        'timestamp': new Date().toISOString(),
-        // Meta CAPI için ek veriler
-        'currency': 'TRY',
-        'value': 25
-    };
-    
-    // DataLayer'a push
-    dataLayer.push(eventData);
-    
-    // Debug
-    console.log('WhatsApp Click Tracked:', eventData);
-    
-    // Meta Pixel için (eğer varsa)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact', {
-            contact_method: 'whatsapp',
-            phone_number: formattedPhone
-        });
-        console.log('Facebook Pixel Contact event triggered');
-    }
-    
-    return true;
-}
-
-// Sayfa yüklendiğinde popup'ı izlemeye hazır hale getir
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('WhatsApp tracking initialized');
-    
-    // Tüm WhatsApp linklerini otomatik izle (fallback)
-    const waLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
-    waLinks.forEach(function(link) {
-        if (!link.hasAttribute('onclick')) {
-            link.addEventListener('click', function() {
-                const phone = this.href.match(/phone=(\d+)/)?.[1] || 'unknown';
-                trackWhatsAppClick(this, 'auto_detected', phone, 'general');
-            });
-        }
-    });
-});
-</script>
     @if(request()->cookie('gtm_tracking') == 'submitted')
         <script>
         // GTM Data Layer Push - Form Submit Success via Cookie
@@ -117,22 +44,26 @@ document.addEventListener('DOMContentLoaded', function() {
         </script>
     @endif
 
-    <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XP6H673X4B"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-XP6H673X4B');
-        </script>
-   <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WB4GNHTX');</script>
-    <!-- End Google Tag Manager -->
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Analytics - Deferred -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+    </script>
+
+    <!-- Google Tag Manager - Deferred -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WB4GNHTX');
+    </script>
     @hasSection ('page_meta')
 
         @yield('page_meta')
@@ -199,345 +130,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     @endif
 
-    <link rel="icon"
+    <link rel="icon" href="{{ isset($settings['site_favicon']) ? asset($settings['site_favicon']->value) : '/favicon.ico' }}">
 
-          href="{{ isset($settings['site_favicon']) ? asset($settings['site_favicon']->value) : '/favicon.ico' }}">
+    <!-- Font Preloading for Critical Performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"></noscript>
 
-    <link rel="stylesheet" href="{{ asset('site/css/style.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('site/css/footer.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('site/css/google.css') }}">
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('site/css/fontawesome-all.css') }}"/>
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('site/css/line-awesome.css') }}"/>
-
-    <script src="https://cdn.jsdelivr.net/npm/icofont@1.0.0/main.min.js"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-<style>
-        /* WhatsApp Floating Button */
-        .whatsapp-float-wrapper {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        /* Ana Buton */
-        .whatsapp-button {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        .whatsapp-button:active {
-            transform: scale(0.95);
-        }
-
-        /* WhatsApp İkonu */
-        .whatsapp-icon {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        /* Pulse Animasyonu */
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            }
-            50% {
-                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7);
-            }
-        }
-
-        /* Bildirim Badge */
-        .notification-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #ff3e4e;
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            border: 2px solid white;
-            animation: bounce 1s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
-        /* Tooltip */
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 75px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: white;
-            color: #333;
-            padding: 10px 16px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .whatsapp-tooltip::after {
-            content: '';
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-left: 6px solid white;
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-        }
-
-        .whatsapp-button:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-            right: 70px;
-        }
-
-        /* Popup Chat Box */
-        .whatsapp-popup {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 320px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(0.8) translateY(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-        }
-
-        .whatsapp-popup.active {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1) translateY(0);
-        }
-
-        /* Popup Header */
-        .popup-header {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            padding: 20px;
-            color: white;
-        }
-
-        .popup-header-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .popup-header-subtitle {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-        }
-
-        .popup-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Popup Body */
-        .popup-body {
-            padding: 20px;
-        }
-
-        .popup-message {
-            background: #f0f2f5;
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        /* Contact List */
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.2s;
-            border: 2px solid transparent;
-        }
-
-        .contact-item:hover {
-            background: #e9f7ef;
-            border-color: #25D366;
-            transform: translateX(-4px);
-        }
-
-        .contact-avatar {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            flex-shrink: 0;
-        }
-
-        .contact-avatar svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-name {
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 3px;
-        }
-
-        .contact-role {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .contact-status {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 11px;
-            color: #25D366;
-            margin-top: 3px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #25D366;
-            border-radius: 50%;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-
-        .contact-arrow {
-            color: #999;
-            font-size: 18px;
-        }
-
-        /* Response Time Badge */
-        .response-time {
-            text-align: center;
-            padding: 8px;
-            background: #fff3cd;
-            color: #856404;
-            font-size: 11px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 480px) {
-            .whatsapp-float-wrapper {
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .whatsapp-popup {
-                width: calc(100vw - 40px);
-                right: -10px;
-            }
-
-            .whatsapp-tooltip {
-                display: none;
-            }
-        }
-
-        /* Smooth Animations */
-        * {
-            -webkit-tap-highlight-color: transparent;
-        }
+    <!-- Critical CSS - Inline for Above-the-Fold Content -->
+    <style>
+        /* Critical above-the-fold styles */
+        body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+        .container{max-width:1200px;margin:0 auto;padding:0 15px}
+        img{max-width:100%;height:auto}
     </style>
+
+    <!-- Bootstrap CSS - Deferred with media trick -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+
+    <!-- Main CSS - Deferred -->
+    <link rel="preload" href="{{ asset('site/css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('site/css/footer.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('site/css/google.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Icon Fonts - Deferred (Consolidated FontAwesome only) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- WhatsApp Widget CSS - Deferred -->
+    <link rel="preload" href="{{ asset('site/css/whatsapp-widget.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback for browsers that don't support preload -->
+    <script>
+        !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media!==o&&(a.media=o)}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     @stack('styles')
 
 </head>
@@ -659,205 +285,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 
-<script src="
+<!-- JavaScript - All Deferred for Performance -->
+<script defer src="{{ asset('site/js/script.js') }}"></script>
+<script defer src="{{ asset('site/js/footer.js') }}"></script>
+<script defer src="{{ asset('site/js/google.js') }}"></script>
+<script defer src="{{ asset('site/js/whatsapp-tracking.js') }}"></script>
 
-https://cdn.jsdelivr.net/npm/icofont@1.0.0/main.min.js
-
-"></script>
-
-<script src="{{ asset('site/js/script.js') }}"></script>
-
-<script src="{{ asset('site/js/footer.js') }}"></script>
-
-<script src="{{ asset('site/js/google.js') }}"></script>
-<script>
-// ==========================================
-// GTM ENTEGRE WHATSAPP TRACKING
-// ==========================================
-
-// Popup Açma/Kapama
-let popupOpenTime = null;
-let isPopupOpen = false;
-
-function toggleWhatsAppPopup() {
-    const popup = document.getElementById('whatsappPopup');
-    isPopupOpen = !isPopupOpen;
-    
-    if (isPopupOpen) {
-        popup.classList.add('active');
-        popupOpenTime = Date.now();
-        trackWhatsAppPopupOpen();
-    } else {
-        popup.classList.remove('active');
-        trackWhatsAppPopupClose();
-    }
-}
-
-function closeWhatsAppPopup() {
-    const popup = document.getElementById('whatsappPopup');
-    popup.classList.remove('active');
-    isPopupOpen = false;
-    trackWhatsAppPopupClose();
-}
-
-// Popup dışına tıklandığında kapat
-document.addEventListener('click', function(event) {
-    const popup = document.getElementById('whatsappPopup');
-    const button = document.querySelector('.whatsapp-button');
-    
-    if (isPopupOpen && 
-        !popup.contains(event.target) && 
-        !button.contains(event.target)) {
-        closeWhatsAppPopup();
-    }
-});
-
-// ==========================================
-// GTM TRACKING FUNCTIONS
-// ==========================================
-
-// 1. Popup Açılış Tracking
-function trackWhatsAppPopupOpen() {
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'whatsapp_popup_open',
-        'element_type': 'floating_button',
-        'page_url': window.location.href,
-        'page_title': document.title,
-        'timestamp': new Date().toISOString()
-    });
-    
-    console.log('✅ WhatsApp Popup Opened:', {
-        event: 'whatsapp_popup_open',
-        page_url: window.location.href
-    });
-}
-
-// 2. Popup Kapanış Tracking
-function trackWhatsAppPopupClose() {
-    const timeOnPopup = popupOpenTime ? Math.round((Date.now() - popupOpenTime) / 1000) : 0;
-    
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'whatsapp_popup_close',
-        'element_type': 'popup',
-        'time_on_popup': timeOnPopup + 's',
-        'page_url': window.location.href,
-        'timestamp': new Date().toISOString()
-    });
-    
-    console.log('✅ WhatsApp Popup Closed:', {
-        event: 'whatsapp_popup_close',
-        time_on_popup: timeOnPopup + 's'
-    });
-}
-
-// 3. WhatsApp Link Click Tracking
-function trackWhatsAppClick(element, position, phoneNumber, contactType) {
-    const timeOnPopup = popupOpenTime ? Math.round((Date.now() - popupOpenTime) / 1000) : 0;
-    const formattedPhone = phoneNumber.startsWith('+') ? phoneNumber : '+' + phoneNumber;
-    
-    // Contact bilgilerini al
-    const contactName = element.querySelector('.contact-name')?.textContent.trim() || 'Unknown';
-    const contactRole = element.querySelector('.contact-role')?.textContent.trim() || 'Unknown';
-    
-    // DataLayer Event
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-        'event': 'whatsapp_click',
-        'whatsapp_number': formattedPhone,
-        'contact_type': contactType,
-        'contact_name': contactName,
-        'contact_role': contactRole,
-        'element_position': position,
-        'intent': 'contact',
-        'page_url': window.location.href,
-        'page_title': document.title,
-        'time_to_click': timeOnPopup + 's',
-        'timestamp': new Date().toISOString(),
-        // E-commerce tracking için
-        'currency': 'TRY',
-        'value': 25,
-        // Meta CAPI için
-        'event_source_url': window.location.href,
-        'action_source': 'website'
-    });
-    
-    console.log('✅ WhatsApp Click Tracked:', {
-        event: 'whatsapp_click',
-        number: formattedPhone,
-        contact: contactName,
-        position: position,
-        time_to_click: timeOnPopup + 's'
-    });
-    
-    // Meta Pixel tracking (eğer varsa)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Contact', {
-            contact_method: 'whatsapp',
-            phone_number: formattedPhone,
-            content_name: contactName
-        });
-        console.log('✅ Facebook Pixel Contact event triggered');
-    }
-    
-    return true;
-}
-
-// ==========================================
-// SAYFA YÜKLENME TRACKING
-// ==========================================
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ WhatsApp Widget Initialized');
-    console.log('📊 GTM Tracking Ready');
-    
-    // DataLayer hazır mı kontrol et
-    window.dataLayer = window.dataLayer || [];
-    
-    // Widget görünüm tracking (opsiyonel)
-    dataLayer.push({
-        'event': 'whatsapp_widget_view',
-        'page_url': window.location.href,
-        'timestamp': new Date().toISOString()
-    });
-    
-    // Tüm WhatsApp linklerini otomatik bul ve izle (fallback)
-    const waLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"], a[href*="api.whatsapp.com"]');
-    console.log(`🔍 Found ${waLinks.length} WhatsApp links`);
-    
-    waLinks.forEach(function(link, index) {
-        if (!link.hasAttribute('onclick')) {
-            link.addEventListener('click', function(e) {
-                const phone = this.href.match(/phone=(\d+)|wa\.me\/(\d+)/)?.[1] || 
-                             this.href.match(/phone=(\d+)|wa\.me\/(\d+)/)?.[2] || 
-                             'unknown';
-                trackWhatsAppClick(this, 'auto_detected_' + index, phone, 'general');
-            });
-            console.log(`✅ Auto-tracking added to link ${index + 1}`);
+<!-- Google Analytics Script - Deferred -->
+<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XP6H673X4B"></script>
+<script defer>
+    window.addEventListener('load', function() {
+        if (typeof gtag !== 'undefined') {
+            gtag('js', new Date());
+            gtag('config', 'G-XP6H673X4B');
         }
     });
-});
-
-// ESC tuşu ile popup'ı kapat
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && isPopupOpen) {
-        closeWhatsAppPopup();
-    }
-});
-
-// ==========================================
-// DEBUG FUNCTIONS (Test için)
-// ==========================================
-
-// Console'da test etmek için
-window.testWhatsAppTracking = function() {
-    console.log('🧪 Testing WhatsApp Tracking...');
-    console.log('DataLayer:', window.dataLayer);
-    console.log('Current Events:', window.dataLayer.filter(e => e.event && e.event.includes('whatsapp')));
-};
-
-// console'da çalıştırın: testWhatsAppTracking()
 </script>
 {{-- JavaScript for Advanced Coupon System with Turkish Routes --}}
 
