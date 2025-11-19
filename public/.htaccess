@@ -125,6 +125,12 @@
 
         # Permissions-Policy (Feature Policy)
         Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+        # Content Security Policy (CSP) - Basic protection
+        Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-src 'self' https:;"
+
+        # Strict-Transport-Security (HSTS) - Force HTTPS
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
     </IfModule>
 
     RewriteEngine On
