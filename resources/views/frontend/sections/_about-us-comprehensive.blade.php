@@ -60,7 +60,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 @if($heroImage)
-                    <img src="{{ asset($heroImage) }}" alt="{{ $heroTitle }}" class="img-fluid rounded-4 shadow-lg">
+                    @optimizedImage($heroImage, $heroTitle, 'img-fluid rounded-4 shadow-lg')
                 @endif
             </div>
         </div>
@@ -74,7 +74,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 order-lg-2" data-aos="fade-left">
                     @if($storyImage)
-                        <img src="{{ asset($storyImage) }}" alt="{{ $storyTitle }}" class="img-fluid rounded-4 shadow">
+                        @optimizedImage($storyImage, $storyTitle, 'img-fluid rounded-4 shadow')
                     @endif
                 </div>
                 <div class="col-lg-6 order-lg-1" data-aos="fade-right">
@@ -249,7 +249,7 @@
                             <h4 class="fw-bold mb-2">{{ $title }}</h4>
                             <p class="text-muted mb-3">{!! $description !!}</p>
                             @if($image)
-                                <img src="{{ asset($image) }}" alt="{{ $title }}" class="img-fluid rounded-3">
+                                @optimizedImage($image, $title, 'img-fluid rounded-3')
                             @endif
                         </div>
                     </div>
@@ -280,7 +280,7 @@
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}">
                         <div class="award-card h-100 p-4 bg-white rounded-4 shadow-sm text-center">
                             @if($awardImage)
-                                <img src="{{ asset($awardImage) }}" alt="{{ $awardName }}" class="award-logo mb-3">
+                                @optimizedImage($awardImage, $awardName, 'award-logo mb-3')
                             @endif
                             <h5 class="fw-bold mb-2">{{ $awardName }}</h5>
                             <p class="text-primary mb-2">{{ $awardOrg }}</p>

@@ -103,7 +103,11 @@
                 </a>
             </div>
 
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <button class="mobile-menu-toggle"
+                    id="mobileMenuToggle"
+                    aria-label="{{ __('Menüyü Aç/Kapat') }}"
+                    aria-expanded="false"
+                    aria-controls="mobileSidebar">
                 <span></span>
                 <span></span>
                 <span></span>

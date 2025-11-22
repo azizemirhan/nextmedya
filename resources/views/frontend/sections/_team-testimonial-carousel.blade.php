@@ -89,7 +89,7 @@
                                                 @if($sectionType === 'team')
                                                     <div class="tmcar-team-card">
                                                         <div class="tmcar-team-card__image">
-                                                            <img src="{{ data_get($item, 'image', 'https://placehold.co/400x500') }}" alt="{{ data_get($item, 'name.' . app()->getLocale()) }}">
+                                                            @optimizedImage(data_get($item, 'image', 'https://placehold.co/400x500'), data_get($item, 'name.' . app()->getLocale()), '')
                                                             <div class="tmcar-team-card__overlay">
                                                                 <div class="tmcar-team-card__social">
                                                                     @if(data_get($item, 'social.linkedin'))
@@ -130,7 +130,7 @@
                                                         </div>
                                                         <p class="tmcar-testimonial-card__text">{{ data_get($item, 'testimonial.' . app()->getLocale()) }}</p>
                                                         <div class="tmcar-testimonial-card__author">
-                                                            <img src="{{ data_get($item, 'image') }}" alt="{{ data_get($item, 'name.' . app()->getLocale()) }}" class="tmcar-testimonial-card__avatar">
+                                                            @optimizedImage(data_get($item, 'image'), data_get($item, 'name.' . app()->getLocale()), 'tmcar-testimonial-card__avatar')
                                                             <div class="tmcar-testimonial-card__info">
                                                                 <h4 class="tmcar-testimonial-card__name">{{ data_get($item, 'name.' . app()->getLocale()) }}</h4>
                                                                 <p class="tmcar-testimonial-card__position">{{ data_get($item, 'position.' . app()->getLocale()) }}</p>

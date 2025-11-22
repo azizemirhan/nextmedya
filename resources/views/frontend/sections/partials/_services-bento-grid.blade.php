@@ -44,7 +44,7 @@
                     <!-- Background Image (if large card) -->
                     @if($serviceImage && $sizeClass === 'bento-large')
                         <div class="nextmedya-bento-bg-image">
-                            <img src="{{ asset($serviceImage) }}" alt="{{ $serviceTitle }}">
+                            @optimizedImage($serviceImage, $serviceTitle, '')
                         </div>
                     @endif
 

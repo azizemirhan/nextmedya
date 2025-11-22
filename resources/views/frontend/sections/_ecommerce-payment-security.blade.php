@@ -15,7 +15,7 @@
             <!-- Left Side: Image -->
             <div class="col-lg-5" data-aos="fade-right">
                 <div class="nextmedya-payment-image-wrapper">
-                    <img src="{{ $leftImage }}" alt="Güvenli Ödeme" class="nextmedya-payment-image">
+                    @optimizedImage(data_get($content, 'left_image') ?? 'https://placehold.co/600x700', 'Güvenli Ödeme', 'nextmedya-payment-image')
                     <div class="nextmedya-security-badge">
                         <i class="fas fa-lock"></i>
                         <div>
@@ -54,7 +54,7 @@
                                             <span class="nextmedya-popular-tag">Popüler</span>
                                         @endif
                                         @if($methodLogo)
-                                            <img src="{{ asset($methodLogo) }}" alt="{{ $methodName }}">
+                                            @optimizedImage($methodLogo, $methodName, '')
                                         @endif
                                         <div class="nextmedya-method-info">
                                             <strong>{{ $methodName }}</strong>
@@ -106,7 +106,7 @@
                                 @endphp
                                 <div class="nextmedya-trust-badge">
                                     @if($badgeImage)
-                                        <img src="{{ asset($badgeImage) }}" alt="{{ $badgeText }}">
+                                        @optimizedImage($badgeImage, $badgeText, '')
                                     @endif
                                     @if($badgeText)
                                         <span>{{ $badgeText }}</span>

@@ -71,7 +71,7 @@
                                                     <p class="nextmedya-feature-description">{!! $featureDescription !!}</p>
                                                 </div>
                                                 @if($featureImage)
-                                                    <img src="{{ asset($featureImage) }}" alt="{{ $featureTitle }}" class="nextmedya-feature-img">
+                                                    @optimizedImage($featureImage, $featureTitle, 'nextmedya-feature-img')
                                                 @endif
                                             </div>
                                         </div>

@@ -184,8 +184,9 @@
                                         <span class="next-feature-badge">{{ $badgeText }}</span>
                                     @endif
                                     @if($featureDescription)
-                                        <button class="next-feature-info-btn" 
-                                                data-feature-title="{{ $featureText }}" 
+                                        <button class="next-feature-info-btn"
+                                                aria-label="{{ __('Özellik Detayları') }}: {{ $featureText }}"
+                                                data-feature-title="{{ $featureText }}"
                                                 data-feature-description="{{ $featureDescription }}"
                                                 onclick="openFeatureModal(this)">
                                             <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16">

@@ -32,7 +32,7 @@
                             $altText = data_get($reference, 'alt_text.' . app()->getLocale(), 'Marka Logosu');
                         @endphp
                         <div class="nx-brand-card">
-                            <img src="{{ $logoUrl }}" alt="{{ $altText }}" class="nx-brand-logo">
+                            {!! optimized_image(str_replace(url('/'), '', $logoUrl), $altText, 'nx-brand-logo') !!}
                         </div>
                     @endforeach
                 </div>
@@ -45,7 +45,7 @@
                         $altText = data_get($reference, 'alt_text.' . app()->getLocale(), 'Marka Logosu');
                     @endphp
                     <div class="nx-brand-card">
-                        <img src="{{ $logoUrl }}" alt="{{ $altText }}" class="nx-brand-logo">
+                        {!! optimized_image(str_replace(url('/'), '', $logoUrl), $altText, 'nx-brand-logo') !!}
                     </div>
                 @endforeach
             </div>

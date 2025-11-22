@@ -81,7 +81,7 @@
         <div class="row hero-section">
             <div class="col-lg-6">
                 <div class="hero-image-wrapper">
-                    <img src="{{ $heroImage }}" alt="Construction">
+                    @optimizedImage($heroImage, 'Construction', '')
                     <div class="experience-badge">
                         <div class="experience-number">{{ $yearsExperience }}</div>
                         <div class="experience-text">{{ $yearsLabel }}</div>
@@ -130,7 +130,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="service-card {{ data_get($card, 'image') ? 'with-image' : '' }}">
                         @if(data_get($card, 'image'))
-                            <img src="{{ asset(data_get($card, 'image')) }}" alt="" class="service-bg-image">
+                            @optimizedImage(data_get($card, 'image'), data_get($card, 'title.'.app()->getLocale(), 'Service'), 'service-bg-image')
                         @endif
 
                         <div class="service-content">

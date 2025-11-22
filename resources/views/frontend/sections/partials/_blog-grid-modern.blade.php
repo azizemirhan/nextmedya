@@ -18,7 +18,7 @@
                 <!-- Card Image -->
                 <div class="nextmedya-card-image">
                     <a href="{{ $postUrl }}">
-                        <img src="{{ $featuredImage }}" alt="{{ $post->title }}">
+                        @optimizedImage($featuredImage, $post->title, '')
                         <div class="nextmedya-image-overlay"></div>
                     </a>
 
@@ -46,7 +46,7 @@
                         @if($showAuthor && $post->author)
                             <div class="nextmedya-meta-author">
                                 @if($post->author->avatar)
-                                    <img src="{{ $post->author->avatar }}" alt="{{ $post->author->name }}">
+                                    @optimizedImage($post->author->avatar, $post->author->name, '')
                                 @else
                                     <div class="nextmedya-author-avatar">
                                         {{ substr($post->author->name, 0, 1) }}

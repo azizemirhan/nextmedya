@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="about-data-left">
-                    <figure><img src="{{ $imageOne }}" alt="About One"></figure>
-                    <figure class="about-image"><img src="{{ $imageTwo }}" alt="About Two"></figure>
+                    <figure>@optimizedImage($content['image_one'] ?? 'https://placehold.co/370x500', 'About One', '')</figure>
+                    <figure class="about-image">@optimizedImage($content['image_two'] ?? 'https://placehold.co/265x325', 'About Two', '')</figure>
                 </div>
             </div>
             <div class="col-lg-6">

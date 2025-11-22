@@ -29,7 +29,7 @@
                     <div class="nx-service-card">
                         <div class="nx-service-image-wrapper">
                             @if(isset($service['image']))
-                                <img src="{{ $imageUrl }}" alt="{{ $cardTitle }}" class="nx-service-image" width="600px" height="300px">
+                                @optimizedImage($service['image'], $cardTitle, 'nx-service-image')
                             @else
                                 <div class="nx-service-image-placeholder">
                                     <i class="{{ $iconClass }}" style="font-size: 40px; color: #333;"></i>

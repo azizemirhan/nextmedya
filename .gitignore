@@ -1,3 +1,36 @@
+# Laravel & PHP
+/vendor/
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment & Config
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+
+# IDE & Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build outputs
+/public/hot
+/public/storage
+/public/build/assets/
+/storage/*.key
+
+# Logs
+*.log
+
+# SSH Keys & Certificates
 id_rsa
 id_rsa.pub
 *.pem

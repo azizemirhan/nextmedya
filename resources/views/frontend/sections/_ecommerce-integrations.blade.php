@@ -44,7 +44,7 @@
                                                     <span class="nextmedya-premium-badge">Premium</span>
                                                 @endif
                                                 @if($integrationLogo)
-                                                    <img src="{{ asset($integrationLogo) }}" alt="{{ $integrationName }}" class="nextmedya-integration-logo">
+                                                    @optimizedImage($integrationLogo, $integrationName, 'nextmedya-integration-logo')
                                                 @endif
                                                 <h5>{{ $integrationName }}</h5>
                                                 <p>{{ $integrationDescription }}</p>
@@ -84,7 +84,7 @@
                                 @endif
                                 @if($integrationLogo)
                                     <div class="nextmedya-integration-logo-wrapper">
-                                        <img src="{{ asset($integrationLogo) }}" alt="{{ $integrationName }}">
+                                        @optimizedImage($integrationLogo, $integrationName, '')
                                     </div>
                                 @endif
                                 <h5>{{ $integrationName }}</h5>
@@ -141,7 +141,7 @@
                                         @endif
                                         @if($integrationLogo)
                                             <div class="nextmedya-integration-logo-box">
-                                                <img src="{{ asset($integrationLogo) }}" alt="{{ $integrationName }}">
+                                                @optimizedImage($integrationLogo, $integrationName, '')
                                             </div>
                                         @endif
                                         <div class="nextmedya-integration-info">

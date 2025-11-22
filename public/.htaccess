@@ -4,6 +4,63 @@
     </IfModule>
 
     # =====================================================
+    # SERVE PRE-COMPRESSED FILES (Brotli & Gzip)
+    # =====================================================
+    # Check for Brotli (.br) files first, then Gzip (.gz)
+    RewriteEngine On
+    
+    # Serve Brotli compressed CSS files if they exist and client accepts Brotli
+    RewriteCond %{HTTP:Accept-encoding} br
+    RewriteCond %{REQUEST_FILENAME}\.br -s
+    RewriteRule ^(.*)\.css$ $1\.css\.br [QSA]
+
+    # Serve Brotli compressed JS files if they exist and client accepts Brotli
+    RewriteCond %{HTTP:Accept-encoding} br
+    RewriteCond %{REQUEST_FILENAME}\.br -s
+    RewriteRule ^(.*)\.js$ $1\.js\.br [QSA]
+
+    # Serve Gzip compressed CSS files if they exist and client accepts Gzip
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*)\.css$ $1\.css\.gz [QSA]
+
+    # Serve Gzip compressed JS files if they exist and client accepts Gzip
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}\.gz -s
+    RewriteRule ^(.*)\.js$ $1\.js\.gz [QSA]
+
+    # Serve correct content types and prevent double compression
+    <FilesMatch "\.(js|css)\.gz$">
+        <IfModule mod_headers.c>
+            Header set Content-Encoding gzip
+            Header append Vary Accept-Encoding
+        </IfModule>
+    </FilesMatch>
+
+    <FilesMatch "\.(js|css)\.br$">
+        <IfModule mod_headers.c>
+            Header set Content-Encoding br
+            Header append Vary Accept-Encoding
+        </IfModule>
+    </FilesMatch>
+
+    <FilesMatch "\.js\.gz$">
+        ForceType application/javascript
+    </FilesMatch>
+
+    <FilesMatch "\.css\.gz$">
+        ForceType text/css
+    </FilesMatch>
+
+    <FilesMatch "\.js\.br$">
+        ForceType application/javascript
+    </FilesMatch>
+
+    <FilesMatch "\.css\.br$">
+        ForceType text/css
+    </FilesMatch>
+
+    # =====================================================
     # GZIP/DEFLATE COMPRESSION - Mobile Performance
     # =====================================================
     <IfModule mod_deflate.c>
@@ -125,9 +182,13 @@
 
         # Permissions-Policy (Feature Policy)
         Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    </IfModule>
 
-    RewriteEngine On
+        # Content Security Policy (CSP) - Basic protection
+        Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; frame-src 'self' https:;"
+
+        # Strict-Transport-Security (HSTS) - Force HTTPS
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    </IfModule>
 
     # Non-www to www redirect
     RewriteCond %{HTTP_HOST} ^nextmedya\.com$ [NC]

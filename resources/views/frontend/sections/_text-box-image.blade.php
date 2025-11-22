@@ -80,7 +80,7 @@
             <div class="col-lg-6">
                 <div class="txtbox-image-wrapper" data-aos="fade-{{ $imagePosition === 'left' ? 'right' : 'left' }}">
                     <div class="txtbox-image">
-                        <img src="{{ $image }}" alt="{{ $sectionTitle }}" class="txtbox-image__img">
+                        @optimizedImage(data_get($content, 'image') ?? 'https://placehold.co/600x700', $sectionTitle, 'txtbox-image__img')
                         <div class="txtbox-image__overlay"></div>
                         <div class="txtbox-image__pattern"></div>
                     </div>

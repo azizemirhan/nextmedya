@@ -1,7 +1,6 @@
 import './bootstrap';
 
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
+// Alpine.js loaded via CDN in master.blade.php
+// import Alpine from 'alpinejs';
+// window.Alpine = Alpine;
+// Alpine.start();
