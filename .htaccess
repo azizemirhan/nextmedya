@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HTTP'den HTTPS'ye yönlendirme
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # WWW olmayan domaini WWW'li domain'e yönlendir
+    RewriteCond %{HTTP_HOST} ^nextmedya\.com$ [NC]
+    RewriteRule ^(.*)$ https://www.nextmedya.com/$1 [L,R=301]
+
+    # Ana dizinden 'public' dizinine yönlendirme
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
