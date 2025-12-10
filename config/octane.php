@@ -133,13 +133,13 @@ return [
     'swoole' => [
         'options' => [
             'log_file' => storage_path('logs/swoole_http.log'),
-            'log_level' => env('APP_DEBUG') ? SWOOLE_LOG_INFO : SWOOLE_LOG_ERROR,
+            'log_level' => env('APP_DEBUG') ? (defined('SWOOLE_LOG_INFO') ? SWOOLE_LOG_INFO : 3) : (defined('SWOOLE_LOG_ERROR') ? SWOOLE_LOG_ERROR : 4),
             'package_max_length' => 10 * 1024 * 1024,
             'http_compression' => false, // Disabled: Let Cloudflare handle compression
 
             // Worker Configuration
-            'worker_num' => env('OCTANE_WORKERS', swoole_cpu_num() * 2),
-            'task_worker_num' => env('OCTANE_TASK_WORKERS', swoole_cpu_num()),
+            'worker_num' => env('OCTANE_WORKERS', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 4),
+            'task_worker_num' => env('OCTANE_TASK_WORKERS', function_exists('swoole_cpu_num') ? swoole_cpu_num() : 2),
             'max_request' => env('OCTANE_MAX_REQUESTS', 10000), // Prevent memory leaks
             'reload_async' => true,
             'max_wait_time' => 60,
