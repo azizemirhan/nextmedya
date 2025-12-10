@@ -29,6 +29,30 @@ export default defineConfig({
                     }
                 })
             ]
+        },
+
+        // Sass configuration - suppress deprecation warnings from Bootstrap
+        preprocessorOptions: {
+            scss: {
+                // Suppress Sass deprecation warnings from node_modules (Bootstrap)
+                api: 'modern-compiler', // Use modern Sass API
+                silenceDeprecations: [
+                    'legacy-js-api',
+                    'import',
+                    'global-builtin',
+                    'color-functions',
+                    'if-function'
+                ],
+                logger: {
+                    warn(message, options) {
+                        // Suppress warnings from node_modules (Bootstrap)
+                        if (options.deprecation && options.stack?.includes('node_modules')) {
+                            return;
+                        }
+                        console.warn(message);
+                    }
+                }
+            }
         }
     },
 

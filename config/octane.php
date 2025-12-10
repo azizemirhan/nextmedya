@@ -105,8 +105,8 @@ return [
         OperationTerminated::class => [
             FlushOnce::class,
             FlushTemporaryContainerInstances::class,
-            // DisconnectFromDatabases::class,
-            // CollectGarbage::class,
+            DisconnectFromDatabases::class, // Prevent connection leaks
+            CollectGarbage::class, // Free memory periodically
         ],
 
         WorkerErrorOccurred::class => [
@@ -133,8 +133,26 @@ return [
     'swoole' => [
         'options' => [
             'log_file' => storage_path('logs/swoole_http.log'),
+            'log_level' => env('APP_DEBUG') ? (defined('SWOOLE_LOG_INFO') ? SWOOLE_LOG_INFO : 3) : (defined('SWOOLE_LOG_ERROR') ? SWOOLE_LOG_ERROR : 4),
             'package_max_length' => 10 * 1024 * 1024,
-            'http_compression' => false,
+            'http_compression' => false, // Disabled: Let Cloudflare handle compression
+
+            // Worker Configuration
+            'worker_num' => env('OCTANE_WORKERS', function_exists('swoole_cpu_num') ? swoole_cpu_num() * 2 : 4),
+            'task_worker_num' => env('OCTANE_TASK_WORKERS', function_exists('swoole_cpu_num') ? swoole_cpu_num() : 2),
+            'max_request' => env('OCTANE_MAX_REQUESTS', 10000), // Prevent memory leaks
+            'reload_async' => true,
+            'max_wait_time' => 60,
+
+            // Socket Optimization
+            'open_tcp_nodelay' => true,
+            'tcp_fastopen' => true,
+            'socket_buffer_size' => 2 * 1024 * 1024,
+
+            // Memory & Performance
+            'buffer_output_size' => 2 * 1024 * 1024,
+            'enable_coroutine' => true,
+            'max_coroutine' => 100000,
         ],
     ],
 
@@ -187,8 +205,8 @@ return [
     */
 
     'cache' => [
-        'rows' => 1000,
-        'bytes' => 10000,
+        'rows' => env('OCTANE_CACHE_ROWS', 10000), // Increased from 1000
+        'bytes' => env('OCTANE_CACHE_BYTES', 100000), // Increased from 10000
     ],
 
     /*

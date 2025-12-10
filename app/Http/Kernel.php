@@ -44,7 +44,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\SetLocale::class,
             // Performance Optimization Middleware
             \App\Http\Middleware\SetCacheHeaders::class,
-            \App\Http\Middleware\SetCompressionHeaders::class,
+            // \App\Http\Middleware\SetCompressionHeaders::class, // Disabled: Let Cloudflare/CDN handle compression
         ],
 
         'api' => [
