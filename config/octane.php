@@ -121,6 +121,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Swoole Options
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the options that will be passed to the Swoole
+    | server key. You may look at the Swoole documentation to see all
+    | of the supported options: https://www.swoole.co.uk/docs/modules/swoole-server-configuration
+    |
+    */
+
+    'swoole' => [
+        'options' => [
+            'log_file' => storage_path('logs/swoole_http.log'),
+            'package_max_length' => 10 * 1024 * 1024,
+            'http_compression' => false,
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Warm / Flush Bindings
     |--------------------------------------------------------------------------
     |
