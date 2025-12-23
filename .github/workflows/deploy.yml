@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Manuel tetikleme için
+  workflow_dispatch: # Manuel tetikleme için
 
 jobs:
   deploy:
     name: 🚀 Deploy to Hetzner
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
@@ -24,35 +24,36 @@ jobs:
           port: 22
           script: |
             cd /var/www/nextmedya
-            
+
             echo "📥 Pulling latest code..."
             git fetch origin main
             git reset --hard origin/main
-            
+
             echo "📦 Installing composer dependencies..."
             composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-            
+
+            echo "🔐 Fixing storage permissions..."
+            chown -R www-data:www-data storage bootstrap/cache
+            chmod -R 775 storage bootstrap/cache
+
             echo "🗃️ Running migrations..."
             php artisan migrate --force
-            
+
             echo "🧹 Clearing and caching..."
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
             php artisan event:cache
-            
+
             echo "🗑️ Clearing application cache..."
-            php artisan cache:clear-app || true
-            
-            echo "🔥 Warming up caches..."
-            php artisan cache:warm || true
-            
-            echo "♻️ Reloading Octane..."
-            php artisan octane:reload || true
-            
+            php artisan cache:clear || true
+
+            echo "♻️ Restarting Octane via Supervisor..."
+            supervisorctl restart octane:*
+
             echo "👷 Restarting queue workers..."
-            php artisan queue:restart || true
-            
+            supervisorctl restart queue-default:* queue-high:*
+
             echo "✅ Deployment completed!"
 
       - name: ✅ Deployment successful
