@@ -100,7 +100,7 @@ trait ImageUploadTrait
     }
 
     /**
-     * Core logic to process image: Resize -> Convert to WebP -> Save
+     * Core logic to process files: Videos saved directly, Images resized and converted to WebP
      *
      * @param UploadedFile $file
      * @param string $directory
@@ -114,11 +114,26 @@ trait ImageUploadTrait
             mkdir(public_path($directory), 0755, true);
         }
 
-        // Dosya adı oluşturma
+        // Dosya uzantısını al
+        $extension = strtolower($file->getClientOriginalExtension());
         $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $safeName = Str::slug($namePrefix ? $namePrefix . '_' . $originalName : $originalName);
-        $fileName = time() . '_' . $safeName . '.webp';
         
+        // Video dosyaları için direkt kaydet (resim işleme yapma)
+        $videoExtensions = ['mp4', 'webm', 'mov', 'avi', 'mkv', 'ogg', 'ogv', 'm4v'];
+        
+        if (in_array($extension, $videoExtensions)) {
+            $fileName = time() . '_' . $safeName . '.' . $extension;
+            $targetPath = public_path($directory . '/' . $fileName);
+            
+            // Video dosyasını doğrudan taşı
+            $file->move(public_path($directory), $fileName);
+            
+            return $directory . '/' . $fileName;
+        }
+        
+        // Resim dosyaları için WebP'ye dönüştür
+        $fileName = time() . '_' . $safeName . '.webp';
         $targetPath = public_path($directory . '/' . $fileName);
 
         // Intervention Image ile oku

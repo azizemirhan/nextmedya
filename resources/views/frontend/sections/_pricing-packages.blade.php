@@ -236,7 +236,7 @@
             </button>
         </div>
         <div class="next-feature-modal-body">
-            <p id="featureModalDescription"></p>
+            <div id="featureModalDescription"></div>
         </div>
     </div>
 </div>
@@ -563,8 +563,14 @@
     }
 
     .next-price-old {
-        text-decoration: line-through;
-        color: #cbd5e0;
+        display: inline-block;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
     }
 
     .next-price-new {
@@ -1017,7 +1023,7 @@
             const description = button.dataset.featureDescription;
             
             document.getElementById('featureModalTitle').textContent = title;
-            document.getElementById('featureModalDescription').textContent = description;
+            document.getElementById('featureModalDescription').innerHTML = description;
             document.getElementById('featureModal').style.display = 'flex';
             
             // Animasyon için body overflow hidden

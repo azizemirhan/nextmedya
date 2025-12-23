@@ -445,4 +445,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Suggestion tag'lere tıklandığında
-    const suggestionTags = document.q});
+    const suggestionTags = document.querySelectorAll('.suggestion-tag');
+    suggestionTags.forEach(tag => {
+        tag.addEventListener('click', function () {
+            const searchInput = document.querySelector('.search-modal-input');
+            if (searchInput) {
+                searchInput.value = this.textContent;
+                searchInput.focus();
+            }
+        });
+    });
+});

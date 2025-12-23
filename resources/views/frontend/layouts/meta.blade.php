@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('site/assets/css/fontawesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/mega-menu-enhanced.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/style-dark.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/color.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('site/assets/css/responsive.css') }}">

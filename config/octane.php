@@ -133,7 +133,7 @@ return [
     'swoole' => [
         'options' => [
             'log_file' => storage_path('logs/swoole_http.log'),
-            'package_max_length' => 10 * 1024 * 1024,
+            'package_max_length' => 250 * 1024 * 1024,
             'http_compression' => false,
         ],
     ],
@@ -238,6 +238,6 @@ return [
     |
     */
 
-    'max_execution_time' => 30,
+    'max_execution_time' => 300,
 
 ];

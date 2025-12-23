@@ -33,11 +33,11 @@ class AdminLoginController extends Controller
                     return response()->json([
                         'success' => true,
                         'message' => 'Giriş başarılı! Yönlendiriliyorsunuz...',
-                        'redirect' => route('admin.dashboard')
+                        'redirect' => route('admin.dashboard', [], false)
                     ], 200);
                 }
 
-                return redirect()->route('admin.dashboard');
+                return redirect(route('admin.dashboard', [], false));
             }
 
             // Admin değilse, çıkış yaptır

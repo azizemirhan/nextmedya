@@ -477,7 +477,7 @@
     }
 
     .progress-step.active .step-circle {
-        background: linear-gradient(135deg, #00acc1 0%, #00838f 100%);
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
         color: white;
         transform: scale(1.1);
     }
@@ -494,7 +494,7 @@
     }
 
     .progress-step.active .step-label {
-        color: #00acc1;
+        color: #3b82f6;
         font-weight: 600;
     }
 
@@ -510,7 +510,7 @@
 
     .progress-bar-fill {
         height: 100%;
-        background: linear-gradient(90deg, #00acc1 0%, #00838f 100%);
+        background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
         transition: width 0.3s ease;
     }
 
@@ -540,7 +540,7 @@
         font-weight: 600;
         color: #2d3748;
         margin-bottom: 30px;
-        border-bottom: 3px solid #00acc1;
+        border-bottom: 3px solid #3b82f6;
         padding-bottom: 15px;
     }
 
@@ -556,7 +556,7 @@
         background: #f7fafc;
         padding: 20px;
         border-radius: 8px;
-        border-left: 4px solid #00acc1;
+        border-left: 4px solid #3b82f6;
     }
 
     /* Meeting Type Cards */
@@ -587,14 +587,14 @@
     }
 
     .meeting-type-card input[type="radio"]:checked + .card-content {
-        border-color: #00acc1;
-        background: linear-gradient(135deg, #e0f7fa20 0%, #b2ebf220 100%);
-        box-shadow: 0 5px 20px rgba(0, 172, 193, 0.3);
+        border-color: #3b82f6;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
     }
 
     .meeting-type-card .card-content i {
         font-size: 2.5rem;
-        color: #00acc1;
+        color: #3b82f6;
         margin-bottom: 15px;
     }
 
@@ -643,14 +643,14 @@
     }
 
     .contact-method-card input[type="checkbox"]:checked + .card-content {
-        border-color: #00acc1;
-        background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-        box-shadow: 0 3px 15px rgba(0, 172, 193, 0.3);
+        border-color: #3b82f6;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        box-shadow: 0 3px 15px rgba(59, 130, 246, 0.3);
     }
 
     .contact-method-card .card-content i {
         font-size: 2rem;
-        color: #00acc1;
+        color: #3b82f6;
     }
 
     .contact-method-card .card-content span {
@@ -676,13 +676,13 @@
     }
 
     .btn-primary {
-        background: linear-gradient(135deg, #00acc1 0%, #00838f 100%);
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
         border: none;
     }
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(0, 172, 193, 0.4);
+        box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
     }
 
     .btn-success {

@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  # Laravel Octane App (Swoole)
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: nextmedya_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - nextmedya_network
+    depends_on:
+      - db
+      - redis
+    command: php artisan octane:start --server=swoole --host=0.0.0.0 --port=8000 --workers=4 --task-workers=2
+
+  # Nginx Web Server (Reverse Proxy)
+  nginx:
+    image: nginx:alpine
+    container_name: nextmedya_nginx
+    restart: unless-stopped
+    ports:
+      - "8888:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - nextmedya_network
+    depends_on:
+      - app
+
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: nextmedya_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nextmedya
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: nextmedya
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3307:3306"
+    volumes:
+      - nextmedya_db_data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - nextmedya_network
+
+  # Redis Cache & Queue
+  redis:
+    image: redis:alpine
+    container_name: nextmedya_redis
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    networks:
+      - nextmedya_network
+
+  # Queue Worker
+  queue:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: nextmedya_queue
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - nextmedya_network
+    depends_on:
+      - db
+      - redis
+    command: php artisan queue:work redis --sleep=3 --tries=3 --max-time=3600
+
+  # Node.js for Asset Building
+  node:
+    image: node:20-alpine
+    container_name: nextmedya_node
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - nextmedya_network
+    profiles:
+      - build
+
+networks:
+  nextmedya_network:
+    driver: bridge
+
+volumes:
+  nextmedya_db_data:
+    driver: local

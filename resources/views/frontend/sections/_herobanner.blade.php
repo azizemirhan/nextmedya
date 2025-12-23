@@ -41,29 +41,17 @@
         $brandLogos = json_decode($brandLogos, true) ?? [];
     }
 
-    // Floating Cards
-    $floatingCards = data_get($content, 'floating_cards', []);
-    if (is_string($floatingCards)) {
-        $floatingCards = json_decode($floatingCards, true) ?? [];
+    // Floating Logo Cards (Partner/Referans Logoları)
+    $floatingLogos = data_get($content, 'floating_logos', []);
+    if (is_string($floatingLogos)) {
+        $floatingLogos = json_decode($floatingLogos, true) ?? [];
     }
     
-    // Varsayılan floating cards
-    if (empty($floatingCards)) {
-        $floatingCards = [
-            [
-                'card_icon' => 'fas fa-chart-line',
-                'card_value' => ['tr' => '+%90', 'en' => '+90%'],
-                'card_label' => ['tr' => 'Seo Sıralama Artışı', 'en' => 'SEO Ranking Increase'],
-                'card_position' => 'card-1'
-            ],
-            [
-                'card_icon' => 'fas fa-users',
-                'card_value' => ['tr' => 'Yeni', 'en' => 'New'],
-                'card_label' => ['tr' => 'Müşteriler Edinin', 'en' => 'Müşteriler Edinin'],
-                'card_position' => 'card-2'
-            ]
-        ];
-    }
+    // Varsayılan floating logo pozisyonları
+    $floatingPositions = [
+        'logo-pos-1', 'logo-pos-2', 'logo-pos-3', 
+        'logo-pos-4', 'logo-pos-5', 'logo-pos-6'
+    ];
 
     // Video Ayarları - YENİ EKLENEN BÖLÜM
     $displayType = data_get($content, 'display_type', 'dashboard'); // 'dashboard' veya 'video'
@@ -90,7 +78,7 @@
                 </div>
 
                 {{-- Ana Başlık --}}
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                <h1 style="font-size: 38px;" class="hero-title" data-aos="fade-up" data-aos-delay="200">
                     {{ $mainTitlePart1 }}<br>
                     <span class="highlight">{{ $mainTitlePart2 }}</span>
                 </h1>
@@ -144,22 +132,33 @@
             </div>
 
             {{-- Görsel Alan --}}
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="400">
                 <div class="visual-container">
-                    {{-- Floating Cards --}}
-                    @foreach($floatingCards as $index => $card)
-                        <div class="floating-card {{ data_get($card, 'card_position', 'card-' . ($index + 1)) }}"
-                             data-aos="zoom-in"
-                             data-aos-delay="{{ 600 + ($index * 100) }}">
-                            <div class="card-icon">
-                                <i class="{{ data_get($card, 'card_icon', 'fas fa-chart-line') }}"></i>
-                            </div>
-                            <div class="card-text">
-                                <span class="card-value">{{ data_get($card, 'card_value.' . app()->getLocale()) }}</span>
-                                <span class="card-label">{{ data_get($card, 'card_label.' . app()->getLocale()) }}</span>
-                            </div>
+                    {{-- Floating Logo Cards --}}
+                    @if(!empty($floatingLogos))
+                        @foreach($floatingLogos as $index => $logo)
+                            @if(data_get($logo, 'logo_image'))
+                                <div class="floating-logo-card {{ data_get($logo, 'logo_position', 'logo-pos-' . ($index + 1)) }}"
+                                     data-aos="zoom-in"
+                                     data-aos-delay="{{ 600 + ($index * 100) }}">
+                                    <img src="{{ asset(data_get($logo, 'logo_image')) }}" 
+                                         alt="{{ data_get($logo, 'logo_alt.' . app()->getLocale(), 'Partner Logo') }}"
+                                         class="floating-logo-img"
+                                         loading="lazy">
+                                </div>
+                            @endif
+                        @endforeach
+                    @else
+                        {{-- Varsayılan placeholder logolar --}}
+                        <div class="floating-logo-card logo-pos-1" data-aos="zoom-in" data-aos-delay="600">
+                            <div class="logo-placeholder">LOGO 1</div>
                         </div>
-                    @endforeach
+                        <div class="floating-logo-card logo-pos-2" data-aos="zoom-in" data-aos-delay="700">
+                            <div class="logo-placeholder">LOGO 2</div>
+                        </div>
+                        <div class="floating-logo-card logo-pos-3" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="logo-placeholder">LOGO 3</div>
+                        </div>
+                    @endif
 
                     {{-- Ana İçerik: Video veya Dashboard --}}
                     <div class="main-visual">

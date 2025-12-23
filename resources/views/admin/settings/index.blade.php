@@ -84,6 +84,13 @@
                                             <input type="text" name="copyright_text[{{$code}}]" class="form-control"
                                                    value="{{ old('copyright_text.'.$code, $settings['copyright_text']->value[$code] ?? '') }}">
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Copyright Sloganı ({{ strtoupper($code) }})</label>
+                                            <input type="text" name="copyright_tagline[{{$code}}]" class="form-control"
+                                                   value="{{ old('copyright_tagline.'.$code, $settings['copyright_tagline']->value[$code] ?? '') }}"
+                                                   placeholder="Örn: Geleceğin medyası, bugünden başlar.">
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -103,6 +110,18 @@
                                     <label class="form-label">Genel E-posta Adresi</label>
                                     <input type="email" name="contact_email" class="form-control"
                                            value="{{ $settings['contact_email']->value ?? '' }}">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Çalışma Saatleri</label>
+                                    <input type="text" name="footer_contact_hours" class="form-control"
+                                           value="{{ $settings['footer_contact_hours']->value ?? '' }}"
+                                           placeholder="Pzt - Cum: 09:00 - 18:00">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Copyright Başlangıç Yılı</label>
+                                    <input type="number" name="copyright_start_year" class="form-control"
+                                           value="{{ $settings['copyright_start_year']->value ?? date('Y') }}"
+                                           min="2000" max="{{ date('Y') }}">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label class="form-label">Adres</label>
@@ -129,6 +148,11 @@
                                     <label class="form-label">LinkedIn URL</label>
                                     <input type="url" name="social_linkedin" class="form-control"
                                            value="{{ $settings['social_linkedin']->value ?? '' }}">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">YouTube URL</label>
+                                    <input type="url" name="social_youtube" class="form-control"
+                                           value="{{ $settings['social_youtube']->value ?? '' }}">
                                 </div>
                             </div>
                         </div>
@@ -271,7 +295,8 @@
 
                                     // Controller'dan gelen ve şu an aktif olan dillerin kodlarını al
                                     // $activeLanguages değişkeni SettingController@index metodundan geliyor
-                                    $currentActiveLanguageCodes = array_keys($activeLanguages);
+                                    $langArray = is_array($activeLanguages) ? $activeLanguages : (method_exists($activeLanguages, 'toArray') ? $activeLanguages->toArray() : []);
+                                    $currentActiveLanguageCodes = array_keys($langArray);
                                 @endphp
 
                                 @foreach($allSupportedLanguages as $code => $lang)

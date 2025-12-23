@@ -136,42 +136,37 @@ return [
                 ]
             ],
 
-            // Floating Cards
+            // Floating Logo Cards (Yüzen Logo Kartları)
             [
-                'name' => 'floating_cards',
-                'label' => 'Yüzen Kartlar',
+                'name' => 'floating_logos',
+                'label' => 'Yüzen Logo Kartları',
                 'type' => 'repeater',
                 'fields' => [
                     [
-                        'name' => 'card_icon',
-                        'label' => 'Kart İkonu',
-                        'type' => 'text',
-                        'default' => 'fas fa-chart-line'
+                        'name' => 'logo_image',
+                        'label' => 'Logo Görseli',
+                        'type' => 'file'
                     ],
                     [
-                        'name' => 'card_value',
-                        'label' => 'Kart Değeri',
-                        'type' => 'text',
-                        'translatable' => true,
-                        'default' => '+%75'
-                    ],
-                    [
-                        'name' => 'card_label',
-                        'label' => 'Kart Etiketi',
+                        'name' => 'logo_alt',
+                        'label' => 'Logo Alt Metni',
                         'type' => 'text',
                         'translatable' => true,
-                        'default' => 'Satış Artışı'
+                        'default' => 'Partner Logo'
                     ],
                     [
-                        'name' => 'card_position',
-                        'label' => 'Kart Pozisyonu',
+                        'name' => 'logo_position',
+                        'label' => 'Logo Pozisyonu',
                         'type' => 'select',
                         'options' => [
-                            'card-1' => 'Sol Üst',
-                            'card-2' => 'Sağ Üst',
-                            'card-3' => 'Alt'
+                            'logo-pos-1' => 'Sol Üst',
+                            'logo-pos-2' => 'Sağ Üst',
+                            'logo-pos-3' => 'Sol Alt',
+                            'logo-pos-4' => 'Sağ Alt',
+                            'logo-pos-5' => 'Sol Orta',
+                            'logo-pos-6' => 'Sağ Orta'
                         ],
-                        'default' => 'card-1'
+                        'default' => 'logo-pos-1'
                     ]
                 ]
             ],

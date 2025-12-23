@@ -27,62 +27,46 @@ class MenuSeeder extends Seeder
             ]);
             $menu->save();
 
-            // 2) Eski item'ları temizle
-            $menu->items()->delete();
+            // 2) TÜM eski item'ları temizle
+            MenuItem::where('menu_id', $menu->id)->delete();
 
-            // 3) KÖK MENÜLER
+            // 3) KÖK MENÜLER (5 adet)
             $order = 1;
 
             // Ana Sayfa
-            $home = $this->makeItem(
+            $this->makeItem(
                 $menu,
                 ['tr' => 'Ana Sayfa', 'en' => 'Home'],
                 '/',
                 $order++
             );
 
-            // WEB ÇÖZÜMLERİ - MEGA MENU
-            $webCozumleri = $this->makeMegaMenuItem(
-                $menu,
-                ['tr' => 'Web Çözümleri', 'en' => 'Web Solutions'],
-                '#',
-                $order++
-            );
-
-            // HİZMETLERİMİZ - Normal Dropdown
-            $hizmetler = $this->makeItem(
+            // HİZMETLERİMİZ - MEGA MENU (4 Kolon)
+            $hizmetler = $this->makeMegaMenuItem(
                 $menu,
                 ['tr' => 'Hizmetlerimiz', 'en' => 'Our Services'],
                 '/hizmetlerimiz',
                 $order++
             );
 
-            // FİYATLAR
-            $fiyatlar = $this->makeItem(
+            // KURUMSAL - Normal Dropdown
+            $kurumsal = $this->makeItem(
                 $menu,
-                ['tr' => 'Fiyatlar', 'en' => 'Pricing'],
-                '/fiyatlar',
-                $order++
-            );
-
-            // REFERANSLAR
-            $referanslar = $this->makeItem(
-                $menu,
-                ['tr' => 'Referanslar', 'en' => 'References'],
-                '/referanslar',
+                ['tr' => 'Kurumsal', 'en' => 'Corporate'],
+                '#',
                 $order++
             );
 
             // BLOG
-            $blog = $this->makeItem(
+            $this->makeItem(
                 $menu,
                 ['tr' => 'Blog', 'en' => 'Blog'],
-                '/blog',
+                '/bloglar',
                 $order++
             );
 
             // İLETİŞİM
-            $iletisim = $this->makeItem(
+            $this->makeItem(
                 $menu,
                 ['tr' => 'İletişim', 'en' => 'Contact'],
                 '/iletisim',
@@ -90,272 +74,157 @@ class MenuSeeder extends Seeder
             );
 
             // ===============================
-            // WEB ÇÖZÜMLERİ - MEGA MENU KOLONLARI
+            // HİZMETLERİMİZ - MEGA MENU KOLONLARI
             // ===============================
 
-            // KOLON 1: PAKETLER
-            $paketler = $this->makeMegaColumn(
+            // KOLON 1: WEB PAKETLERİ
+            $webPaketleri = $this->makeMegaColumn(
                 $menu,
-                $webCozumleri->id,
-                ['tr' => 'Paketler', 'en' => 'Packages'],
-                'fas fa-box',
-                ['tr' => 'Hazır çözümlerimiz', 'en' => 'Ready solutions'],
+                $hizmetler->id,
+                ['tr' => 'Web Paketleri', 'en' => 'Web Packages'],
+                'fas fa-globe',
+                ['tr' => 'Hazır web çözümlerimiz', 'en' => 'Ready web solutions'],
                 1
             );
 
-            $this->megaColumnItems($menu, $paketler->id, [
-                [
-                    'title' => ['tr' => 'Kurumsal Web Sitesi', 'en' => 'Corporate Website'],
-                    'url' => '/web-cozumleri/kurumsal-web-sitesi',
-                    'description' => ['tr' => 'Profesyonel firmanız için özel tasarım', 'en' => 'Custom design for your professional company']
-                ],
-                [
-                    'title' => ['tr' => 'E-Ticaret Sitesi', 'en' => 'E-Commerce Website'],
-                    'url' => '/web-cozumleri/e-ticaret-sitesi',
-                    'description' => ['tr' => 'Online satış yapabileceğiniz platform', 'en' => 'Platform to sell online']
-                ],
-                [
-                    'title' => ['tr' => 'Kişisel Web Sitesi', 'en' => 'Personal Website'],
-                    'url' => '/web-cozumleri/kisisel-web-sitesi',
-                    'description' => ['tr' => 'Portfolyo ve kişisel markalaşma', 'en' => 'Portfolio and personal branding']
-                ],
-                [
-                    'title' => ['tr' => 'Landing Page', 'en' => 'Landing Page'],
-                    'url' => '/web-cozumleri/landing-page',
-                    'description' => ['tr' => 'Kampanyalara özel tek sayfa tasarım', 'en' => 'Single page design for campaigns']
-                ],
+            $this->megaColumnItems($menu, $webPaketleri->id, [
+                ['title' => ['tr' => 'Kurumsal Web Sitesi', 'en' => 'Corporate Website'], 'url' => '/kurumsal-web-sitesi'],
+                ['title' => ['tr' => 'E-Ticaret Sitesi', 'en' => 'E-Commerce Website'], 'url' => '/e-ticaret-sitesi'],
+                ['title' => ['tr' => 'Kişisel Web Sitesi', 'en' => 'Personal Website'], 'url' => '/kisisel-web-sitesi'],
+                ['title' => ['tr' => 'Landing Page', 'en' => 'Landing Page'], 'url' => '/landing-page'],
             ]);
 
-            // KOLON 2: ÇÖZÜMLER
-            $cozumler = $this->makeMegaColumn(
+            // KOLON 2: YAZILIM ÇÖZÜMLERİ
+            $yazilimCozumleri = $this->makeMegaColumn(
                 $menu,
-                $webCozumleri->id,
-                ['tr' => 'Çözümler', 'en' => 'Solutions'],
-                'fas fa-tools',
-                ['tr' => 'Özel yazılımlar', 'en' => 'Custom software'],
+                $hizmetler->id,
+                ['tr' => 'Yazılım Çözümleri', 'en' => 'Software Solutions'],
+                'fas fa-code',
+                ['tr' => 'Özel yazılım geliştirme', 'en' => 'Custom software development'],
                 2
             );
 
-            $this->megaColumnItems($menu, $cozumler->id, [
-                [
-                    'title' => ['tr' => 'Özel Yazılım Geliştirme', 'en' => 'Custom Software Development'],
-                    'url' => '/web-cozumleri/ozel-yazilim',
-                    'description' => ['tr' => 'İhtiyacınıza özel web uygulamaları', 'en' => 'Custom web applications']
-                ],
-                [
-                    'title' => ['tr' => 'Mobil Uygulamalar', 'en' => 'Mobile Applications'],
-                    'url' => '/web-cozumleri/mobil-uygulamalar',
-                    'description' => ['tr' => 'iOS ve Android uygulama geliştirme', 'en' => 'iOS and Android app development']
-                ],
-                [
-                    'title' => ['tr' => 'API Entegrasyonları', 'en' => 'API Integrations'],
-                    'url' => '/web-cozumleri/api-entegrasyonlari',
-                    'description' => ['tr' => 'Üçüncü parti sistemlerle entegrasyon', 'en' => 'Third-party system integration']
-                ],
-                [
-                    'title' => ['tr' => 'CRM Sistemleri', 'en' => 'CRM Systems'],
-                    'url' => '/web-cozumleri/crm-sistemleri',
-                    'description' => ['tr' => 'Müşteri ilişkileri yönetim sistemi', 'en' => 'Customer relationship management']
-                ],
+            $this->megaColumnItems($menu, $yazilimCozumleri->id, [
+                ['title' => ['tr' => 'Özel Yazılım Geliştirme', 'en' => 'Custom Software'], 'url' => '/ozel-yazilim-gelistirme'],
+                ['title' => ['tr' => 'Mobil Uygulamalar', 'en' => 'Mobile Apps'], 'url' => '/mobil-uygulamalar'],
+                ['title' => ['tr' => 'API Entegrasyonları', 'en' => 'API Integrations'], 'url' => '/api-entegrasyonlari'],
+                ['title' => ['tr' => 'CRM Sistemleri', 'en' => 'CRM Systems'], 'url' => '/crm-sistemleri'],
             ]);
 
-            // KOLON 3: TASARIM
-            $tasarim = $this->makeMegaColumn(
+            // KOLON 3: DİJİTAL PAZARLAMA
+            $dijitalPazarlama = $this->makeMegaColumn(
                 $menu,
-                $webCozumleri->id,
-                ['tr' => 'Tasarım', 'en' => 'Design'],
-                'fas fa-palette',
-                ['tr' => 'Görsel çözümler', 'en' => 'Visual solutions'],
+                $hizmetler->id,
+                ['tr' => 'Dijital Pazarlama', 'en' => 'Digital Marketing'],
+                'fas fa-bullhorn',
+                ['tr' => 'Online pazarlama hizmetleri', 'en' => 'Online marketing services'],
                 3
             );
 
-            $this->megaColumnItems($menu, $tasarim->id, [
-                [
-                    'title' => ['tr' => 'UI/UX Tasarım', 'en' => 'UI/UX Design'],
-                    'url' => '/web-cozumleri/ui-ux-tasarim',
-                    'description' => ['tr' => 'Kullanıcı deneyimi odaklı arayüzler', 'en' => 'User experience focused interfaces']
-                ],
-                [
-                    'title' => ['tr' => 'Responsive Tasarım', 'en' => 'Responsive Design'],
-                    'url' => '/web-cozumleri/responsive-tasarim',
-                    'description' => ['tr' => 'Tüm cihazlarda uyumlu görünüm', 'en' => 'Compatible view on all devices']
-                ],
-                [
-                    'title' => ['tr' => 'Grafik Tasarım', 'en' => 'Graphic Design'],
-                    'url' => '/web-cozumleri/grafik-tasarim',
-                    'description' => ['tr' => 'Logo, banner ve görsel tasarımlar', 'en' => 'Logo, banner and visual designs']
-                ],
-                [
-                    'title' => ['tr' => 'Web Animasyonları', 'en' => 'Web Animations'],
-                    'url' => '/web-cozumleri/web-animasyonlari',
-                    'description' => ['tr' => 'Etkileyici hareket ve geçişler', 'en' => 'Impressive motions and transitions']
-                ],
+            $this->megaColumnItems($menu, $dijitalPazarlama->id, [
+                ['title' => ['tr' => 'SEO Hizmetleri', 'en' => 'SEO Services'], 'url' => '/seo-hizmetleri'],
+                ['title' => ['tr' => 'Google Ads', 'en' => 'Google Ads'], 'url' => '/google-ads'],
+                ['title' => ['tr' => 'Sosyal Medya Yönetimi', 'en' => 'Social Media'], 'url' => '/sosyal-medya-yonetimi'],
+                ['title' => ['tr' => 'İçerik Pazarlama', 'en' => 'Content Marketing'], 'url' => '/icerik-pazarlama'],
             ]);
 
-            // KOLON 4: OPTİMİZASYON
-            $optimizasyon = $this->makeMegaColumn(
+            // KOLON 4: TASARIM & OPTİMİZASYON
+            $tasarimOptimizasyon = $this->makeMegaColumn(
                 $menu,
-                $webCozumleri->id,
-                ['tr' => 'Optimizasyon', 'en' => 'Optimization'],
-                'fas fa-bolt',
-                ['tr' => 'Performans artışı', 'en' => 'Performance boost'],
+                $hizmetler->id,
+                ['tr' => 'Tasarım & Optimizasyon', 'en' => 'Design & Optimization'],
+                'fas fa-palette',
+                ['tr' => 'Görsel ve performans', 'en' => 'Visual and performance'],
                 4
             );
 
-            $this->megaColumnItems($menu, $optimizasyon->id, [
-                [
-                    'title' => ['tr' => 'Hız Optimizasyonu', 'en' => 'Speed Optimization'],
-                    'url' => '/web-cozumleri/hiz-optimizasyonu',
-                    'description' => ['tr' => 'Sayfa yükleme hızını artırın', 'en' => 'Increase page loading speed']
-                ],
-                [
-                    'title' => ['tr' => 'SEO Optimizasyonu', 'en' => 'SEO Optimization'],
-                    'url' => '/web-cozumleri/seo-optimizasyonu',
-                    'description' => ['tr' => 'Arama motoru dostu yapılandırma', 'en' => 'Search engine friendly structure']
-                ],
-                [
-                    'title' => ['tr' => 'Güvenlik Testleri', 'en' => 'Security Tests'],
-                    'url' => '/web-cozumleri/guvenlik-testleri',
-                    'description' => ['tr' => 'Siber güvenlik ve SSL sertifikası', 'en' => 'Cyber security and SSL certificate']
-                ],
-                [
-                    'title' => ['tr' => 'Performans Analizi', 'en' => 'Performance Analysis'],
-                    'url' => '/web-cozumleri/performans-analizi',
-                    'description' => ['tr' => 'Detaylı raporlama ve iyileştirme', 'en' => 'Detailed reporting and improvement']
-                ],
+            $this->megaColumnItems($menu, $tasarimOptimizasyon->id, [
+                ['title' => ['tr' => 'UI/UX Tasarım', 'en' => 'UI/UX Design'], 'url' => '/ui-ux-tasarim'],
+                ['title' => ['tr' => 'Grafik Tasarım', 'en' => 'Graphic Design'], 'url' => '/grafik-tasarim'],
+                ['title' => ['tr' => 'Hız Optimasyonu', 'en' => 'Speed Optimization'], 'url' => '/hiz-optimasyonu'],
+                ['title' => ['tr' => 'SEO Optimasyonu', 'en' => 'SEO Optimization'], 'url' => '/seo-optimasyonu'],
             ]);
 
             // ===============================
-            // HİZMETLERİMİZ - NORMAL DROPDOWN
+            // KURUMSAL - NORMAL DROPDOWN
             // ===============================
-            $this->children($menu, $hizmetler->id, [
-                [
-                    'title' => ['tr' => 'SEO Hizmetleri', 'en' => 'SEO Services'],
-                    'url' => '/hizmetlerimiz/seo-hizmetleri'
-                ],
-                [
-                    'title' => ['tr' => 'Dijital Pazarlama', 'en' => 'Digital Marketing'],
-                    'url' => '/hizmetlerimiz/dijital-pazarlama'
-                ],
-                [
-                    'title' => ['tr' => 'Sosyal Medya Yönetimi', 'en' => 'Social Media Management'],
-                    'url' => '/hizmetlerimiz/sosyal-medya-yonetimi'
-                ],
-                [
-                    'title' => ['tr' => 'Google Ads', 'en' => 'Google Ads'],
-                    'url' => '/hizmetlerimiz/google-ads'
-                ],
-                [
-                    'title' => ['tr' => 'İçerik Pazarlama', 'en' => 'Content Marketing'],
-                    'url' => '/hizmetlerimiz/icerik-pazarlama'
-                ],
+            $this->children($menu, $kurumsal->id, [
+                ['title' => ['tr' => 'Hakkımızda', 'en' => 'About Us'], 'url' => '/hakkimizda'],
+                ['title' => ['tr' => 'Gizlilik Politikası', 'en' => 'Privacy Policy'], 'url' => '/gizlilik-politikasi'],
+                ['title' => ['tr' => 'KVKK', 'en' => 'KVKK'], 'url' => '/kvkk-aydinlatma-metni'],
             ]);
+
+            // ===============================
+            // FOOTER MENÜSÜ (footer-explore)
+            // ===============================
+            $footerMenu = Menu::where('slug', 'footer-explore')->first();
+            if ($footerMenu) {
+                MenuItem::where('menu_id', $footerMenu->id)->delete();
+                
+                $footerOrder = 1;
+                $this->makeItem($footerMenu, ['tr' => 'Ana Sayfa', 'en' => 'Home'], '/', $footerOrder++);
+                $this->makeItem($footerMenu, ['tr' => 'Hizmetlerimiz', 'en' => 'Services'], '/hizmetlerimiz', $footerOrder++);
+                $this->makeItem($footerMenu, ['tr' => 'Hakkımızda', 'en' => 'About'], '/hakkimizda', $footerOrder++);
+                $this->makeItem($footerMenu, ['tr' => 'Blog', 'en' => 'Blog'], '/bloglar', $footerOrder++);
+                $this->makeItem($footerMenu, ['tr' => 'İletişim', 'en' => 'Contact'], '/iletisim', $footerOrder++);
+            }
         });
     }
 
-    /**
-     * Normal menü öğesi oluştur
-     */
-    private function makeItem(
-        Menu $menu,
-        array $titles,
-        ?string $url,
-        int $order,
-        ?int $parentId = null
-    ): MenuItem {
+    private function makeItem(Menu $menu, array $titles, ?string $url, int $order, ?int $parentId = null): MenuItem
+    {
         $item = MenuItem::create([
             'menu_id'       => $menu->id,
             'parent_id'     => $parentId,
             'title'         => '',
             'url'           => $url,
-            'page_id'       => null,
-            'service_id'    => null,
             'target'        => '_self',
-            'classes'       => null,
-            'rel'           => null,
             'order'         => $order,
             'is_mega_menu'  => false,
-            'icon'          => null,
-            'description'   => null,
             'column_width'  => 1,
         ]);
-
         $item->setTranslations('title', $titles);
         $item->save();
-
         return $item;
     }
 
-    /**
-     * Mega menü ana öğesi oluştur
-     */
-    private function makeMegaMenuItem(
-        Menu $menu,
-        array $titles,
-        ?string $url,
-        int $order
-    ): MenuItem {
+    private function makeMegaMenuItem(Menu $menu, array $titles, ?string $url, int $order): MenuItem
+    {
         $item = MenuItem::create([
             'menu_id'       => $menu->id,
             'parent_id'     => null,
             'title'         => '',
             'url'           => $url,
-            'page_id'       => null,
-            'service_id'    => null,
             'target'        => '_self',
-            'classes'       => null,
-            'rel'           => null,
             'order'         => $order,
-            'is_mega_menu'  => true, // MEGA MENU AKTİF
-            'icon'          => null,
-            'description'   => null,
+            'is_mega_menu'  => true,
             'column_width'  => 4,
         ]);
-
         $item->setTranslations('title', $titles);
         $item->save();
-
         return $item;
     }
 
-    /**
-     * Mega menü kolonu oluştur
-     */
-    private function makeMegaColumn(
-        Menu $menu,
-        int $parentId,
-        array $titles,
-        string $icon,
-        array $descriptions,
-        int $order
-    ): MenuItem {
+    private function makeMegaColumn(Menu $menu, int $parentId, array $titles, string $icon, array $descriptions, int $order): MenuItem
+    {
         $item = MenuItem::create([
             'menu_id'       => $menu->id,
             'parent_id'     => $parentId,
             'title'         => '',
             'url'           => '#',
-            'page_id'       => null,
-            'service_id'    => null,
             'target'        => '_self',
-            'classes'       => null,
-            'rel'           => null,
             'order'         => $order,
             'is_mega_menu'  => false,
             'icon'          => $icon,
             'description'   => '',
             'column_width'  => 1,
         ]);
-
         $item->setTranslations('title', $titles);
         $item->setTranslations('description', $descriptions);
         $item->save();
-
         return $item;
     }
 
-    /**
-     * Mega menü kolon içindeki öğeler
-     */
     private function megaColumnItems(Menu $menu, int $parentId, array $items): void
     {
         $order = 1;
@@ -365,29 +234,16 @@ class MenuSeeder extends Seeder
                 'parent_id'     => $parentId,
                 'title'         => '',
                 'url'           => $data['url'],
-                'page_id'       => null,
-                'service_id'    => null,
                 'target'        => '_self',
-                'classes'       => null,
-                'rel'           => null,
                 'order'         => $order++,
                 'is_mega_menu'  => false,
-                'icon'          => null,
-                'description'   => '',
                 'column_width'  => 1,
             ]);
-
             $item->setTranslations('title', $data['title']);
-            if (isset($data['description'])) {
-                $item->setTranslations('description', $data['description']);
-            }
             $item->save();
         }
     }
 
-    /**
-     * Normal dropdown alt öğeler
-     */
     private function children(Menu $menu, int $parentId, array $items): void
     {
         $order = 1;

@@ -21,7 +21,8 @@ class FixSettingsCommand extends Command
             'footer_info_text',
             'newsletter_title',
             'newsletter_subtitle',
-            'copyright_text'
+            'copyright_text',
+            'copyright_tagline'
         ];
 
         foreach ($jsonFields as $field) {

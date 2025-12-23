@@ -36,6 +36,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Local ortamda HTTP kullan (HTTPS redirect'lerini engelle)
+        if ($this->app->environment('local')) {
+            \Illuminate\Support\Facades\URL::forceScheme('http');
+        }
+
         // Cache Invalidation Observer'larını kaydet
         $this->registerCacheObservers();
 

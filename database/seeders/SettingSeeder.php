@@ -38,11 +38,17 @@ class SettingSeeder extends Seeder
                 'tr' => '© 2025 İzokoç İzolasyon. Tüm Hakları Saklıdır.',
                 'en' => '© 2025 İzokoç Insulation. All rights reserved.'
             ], 'is_translatable' => true],
+            ['key' => 'copyright_tagline', 'value' => [
+                'tr' => 'Geleceğin medyası, bugünden başlar.',
+                'en' => 'The media of the future starts today.'
+            ], 'is_translatable' => true],
 
             // === TEK DİLLİ METİNLER & LİNKLER ===
             ['key' => 'header_cta_url', 'value' => '/iletisim', 'is_translatable' => false],
             ['key' => 'footer_cta_url', 'value' => '/hizmetler', 'is_translatable' => false],
             ['key' => 'footer_contact_phone', 'value' => '+90 555 123 45 67', 'is_translatable' => false],
+            ['key' => 'footer_contact_hours', 'value' => 'Pzt - Cum: 09:00 - 18:00', 'is_translatable' => false],
+            ['key' => 'copyright_start_year', 'value' => '2020', 'is_translatable' => false],
             ['key' => 'whatsapp_phone', 'value' => '+90 555 123 45 67', 'is_translatable' => false],
             // Adres ve e-posta güncellemesi
             ['key' => 'contact_address', 'value' => 'Ataşehir / İstanbul, Türkiye', 'is_translatable' => false],
@@ -51,6 +57,7 @@ class SettingSeeder extends Seeder
             ['key' => 'social_twitter', 'value' => 'https://twitter.com', 'is_translatable' => false],
             ['key' => 'social_linkedin', 'value' => 'https://linkedin.com', 'is_translatable' => false],
             ['key' => 'social_instagram', 'value' => 'https://instagram.com', 'is_translatable' => false],
+            ['key' => 'social_youtube', 'value' => 'https://youtube.com', 'is_translatable' => false],
 
             // === SİSTEM & HARİCİ SERVİSLER ===
             ['key' => 'google_site_verification', 'value' => '', 'is_translatable' => false],

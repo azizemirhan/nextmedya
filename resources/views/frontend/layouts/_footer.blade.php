@@ -9,16 +9,17 @@
     $footerInfoText = data_get($settings, 'footer_info_text.value.' . app()->getLocale(), 'Dijitalin nabzını tutan, geleceğin iletişimini şekillendiren medya platformunuz.');
     $footerContactText = data_get($settings, 'footer_contact_text.value.' . app()->getLocale(), 'Uzman Ekibimizle İletişime Geçin');
     $newsletterTitle = data_get($settings, 'newsletter_title.value.' . app()->getLocale(), 'E-Bülten');
-    $newsletterText = data_get($settings, 'newsletter_text.value.' . app()->getLocale(), 'Sektördeki en son haberleri ve özel teklifleri almak için bültenimize abone olun.');
+    $newsletterText = data_get($settings, 'newsletter_subtitle.value.' . app()->getLocale(), 'Sektördeki en son haberleri ve özel teklifleri almak için bültenimize abone olun.');
     $copyrightText = data_get($settings, 'copyright_text.value.' . app()->getLocale(), 'Tüm hakları saklıdır.');
     $copyrightTagline = data_get($settings, 'copyright_tagline.value.' . app()->getLocale(), 'Geleceğin medyası, bugünden başlar.');
 
     // Çevrilemez Ayarlar
     $footerLogo = data_get($settings, 'footer_logo.value') ? asset($settings['footer_logo']->value) : asset('images/beyaz.png');
-    $footerContactAddress = data_get($settings, 'footer_contact_address.value', 'İstanbul, Türkiye');
-    $footerContactEmail = data_get($settings, 'footer_contact_email.value', 'info@nextmedya.com');
+    $footerContactAddress = data_get($settings, 'contact_address.value', 'İstanbul, Türkiye');
+    $footerContactEmail = data_get($settings, 'contact_email.value', 'info@nextmedya.com');
     $footerContactPhone = data_get($settings, 'footer_contact_phone.value', '+90 (212) 123 45 67');
     $footerContactHours = data_get($settings, 'footer_contact_hours.value', 'Pzt - Cum: 09:00 - 18:00');
+    $copyrightStartYear = data_get($settings, 'copyright_start_year.value', date('Y'));
 
     // Sosyal Medya
     $socialFacebook = data_get($settings, 'social_facebook.value', '#');
@@ -183,7 +184,7 @@
             const nextYearElement = document.getElementById('nextCopyrightYear');
             if (nextYearElement) {
                 // PHP'den gelen başlangıç yılını kullanmak daha dinamik olacaktır
-                const startYear = {{ data_get($settings, 'copyright_start_year.value', date('Y')) }};
+                const startYear = {{ $copyrightStartYear }};
                 const currentYear = new Date().getFullYear();
 
                 if (currentYear > startYear) {

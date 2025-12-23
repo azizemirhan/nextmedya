@@ -275,12 +275,15 @@ class PageController extends Controller
         $page->update($validatedPageData);
 
         // 3. ADIM: Silinecek section'ları yönet
-        $incomingSectionIds = collect($request->input('sections', []))->pluck('id')->filter()->toArray();
-        $sectionsToDelete = $page->sections()->whereNotIn('id', $incomingSectionIds)->get();
+        // Sadece 'sections' verisi gönderildiyse silme işlemi yap
+        if ($request->has('sections')) {
+            $incomingSectionIds = collect($request->input('sections', []))->pluck('id')->filter()->toArray();
+            $sectionsToDelete = $page->sections()->whereNotIn('id', $incomingSectionIds)->get();
 
-        foreach ($sectionsToDelete as $section) {
-            $this->deleteSectionImages($section);
-            $section->delete();
+            foreach ($sectionsToDelete as $section) {
+                $this->deleteSectionImages($section);
+                $section->delete();
+            }
         }
 
         // 4. ADIM: Gelen section'ları işle

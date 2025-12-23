@@ -69,4 +69,4 @@ echo -e "${YELLOW}👷 Restarting queue workers...${NC}"
 php artisan queue:restart
 
 echo -e "${GREEN}✅ Deployment completed successfully!${NC}"
-echo -e "${GREEN}🌐 Site is live at: https://nextbilisim.com${NC}"
+echo -e "${GREEN}🌐 Site is live at: https://nextmedya.com${NC}"

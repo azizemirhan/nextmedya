@@ -187,43 +187,50 @@
                                 <label class="form-label">Paket Seçimi</label>
                                 <div class="package-grid">
                                     <label class="package-card">
-                                        <input type="radio" name="package_type" value="basic">
+                                        <input type="radio" name="package_type" value="wordpress">
                                         <div class="package-content">
-                                            <h5>Temel Paket</h5>
-                                            <div class="package-price">₺5,000</div>
+                                            <h5>WordPress Kurumsal</h5>
+                                            <div class="package-price">₺6.000</div>
+                                            <p class="package-renewal">Yıllık yenileme: 1.000 ₺</p>
                                             <ul class="package-features">
-                                                <li>✓ 5 Sayfa</li>
-                                                <li>✓ Responsive Tasarım</li>
-                                                <li>✓ 3 Revizyon</li>
+                                                <li>✓ 10 Sayfa Özel Tasarım</li>
+                                                <li>✓ Responsive (Mobil Uyumlu)</li>
+                                                <li>✓ Temel SEO Optimizasyonu</li>
+                                                <li>✓ SSL Sertifikası</li>
+                                                <li>✓ 1 Yıl Teknik Destek</li>
                                             </ul>
                                         </div>
                                     </label>
 
                                     <label class="package-card featured">
-                                        <div class="package-badge">EN POPÜLER</div>
-                                        <input type="radio" name="package_type" value="professional">
+                                        <div class="package-badge">ÖNERİLEN</div>
+                                        <input type="radio" name="package_type" value="nextcms">
                                         <div class="package-content">
-                                            <h5>Profesyonel</h5>
-                                            <div class="package-price">₺8,000</div>
+                                            <h5>NextCMS</h5>
+                                            <div class="package-price">₺10.000</div>
+                                            <p class="package-renewal">Yıllık yenileme: 2.000 ₺</p>
                                             <ul class="package-features">
-                                                <li>✓ 10 Sayfa</li>
-                                                <li>✓ SEO Optimizasyonu</li>
-                                                <li>✓ Blog Modülü</li>
-                                                <li>✓ 5 Revizyon</li>
+                                                <li>✓ Laravel Özel CMS Altyapısı</li>
+                                                <li>✓ Gelişmiş SEO Optimizasyonu</li>
+                                                <li>✓ Çoklu Dil Desteği</li>
+                                                <li>✓ Hız Optimizasyonu + CDN</li>
+                                                <li>✓ 1 Yıl Ücretsiz Güncelleme</li>
                                             </ul>
                                         </div>
                                     </label>
 
                                     <label class="package-card">
-                                        <input type="radio" name="package_type" value="premium">
+                                        <input type="radio" name="package_type" value="nextcms_pro">
                                         <div class="package-content">
-                                            <h5>Premium</h5>
-                                            <div class="package-price">₺12,000</div>
+                                            <h5>NextCMS Pro</h5>
+                                            <div class="package-price">₺18.000</div>
+                                            <p class="package-renewal">Yıllık yenileme: 3.500 ₺</p>
                                             <ul class="package-features">
-                                                <li>✓ Sınırsız Sayfa</li>
-                                                <li>✓ E-Ticaret Entegrasyonu</li>
-                                                <li>✓ Özel Tasarım</li>
-                                                <li>✓ 10 Revizyon</li>
+                                                <li>✓ Sınırsız Özel Yazılım</li>
+                                                <li>✓ Sağlık Turizmi / LMS Modülleri</li>
+                                                <li>✓ Headless API Desteği</li>
+                                                <li>✓ Redis Cache Sistemi</li>
+                                                <li>✓ CI/CD Pipeline Garantisi</li>
                                             </ul>
                                         </div>
                                     </label>
@@ -394,7 +401,7 @@
     }
 
     .progress-step.active .step-circle {
-        background: #0d6efd;
+        background: #3b82f6;
         color: white;
         transform: scale(1.1);
     }
@@ -411,7 +418,7 @@
     }
 
     .progress-step.active .step-label {
-        color: #667eea;
+        color: #3b82f6;
         font-weight: 600;
     }
 
@@ -427,7 +434,7 @@
 
     .progress-bar-fill {
         height: 100%;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(90deg, #3b82f6 0%, #1e40af 100%);
         transition: width 0.3s ease;
     }
 
@@ -457,7 +464,7 @@
         font-weight: 600;
         color: #2d3748;
         margin-bottom: 30px;
-        border-bottom: 3px solid #667eea;
+        border-bottom: 3px solid #3b82f6;
         padding-bottom: 15px;
     }
 
@@ -489,14 +496,14 @@
     }
 
     .service-card input[type="radio"]:checked + .card-content {
-        border-color: #667eea;
-        background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        border-color: #3b82f6;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+        box-shadow: 0 5px 20px rgba(59, 130, 246, 0.3);
     }
 
     .service-card .card-content i {
         font-size: 2.5rem;
-        color: #667eea;
+        color: #3b82f6;
         margin-bottom: 15px;
     }
 
@@ -542,14 +549,14 @@
     }
 
     .package-card.featured .package-content {
-        border-color: #667eea;
+        border-color: #3b82f6;
     }
 
     .package-badge {
         position: absolute;
         top: -10px;
         right: 20px;
-        background: #667eea;
+        background: #3b82f6;
         color: white;
         padding: 5px 15px;
         border-radius: 20px;
@@ -558,10 +565,10 @@
     }
 
     .package-card input[type="radio"]:checked + .package-content {
-        border-color: #667eea;
-        background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+        border-color: #3b82f6;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
         transform: scale(1.05);
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
     }
 
     .package-content h5 {
@@ -574,8 +581,15 @@
     .package-price {
         font-size: 2rem;
         font-weight: 700;
-        color: #667eea;
-        margin-bottom: 20px;
+        color: #3b82f6;
+        margin-bottom: 5px;
+    }
+
+    .package-renewal {
+        font-size: 0.85rem;
+        color: #48bb78;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
 
     .package-features {
@@ -608,7 +622,7 @@
     }
 
     .feature-checkbox:hover {
-        border-color: #667eea;
+        border-color: #3b82f6;
         background: #f7fafc;
     }
 
@@ -620,7 +634,7 @@
     }
 
     .feature-checkbox input[type="checkbox"]:checked + span {
-        color: #667eea;
+        color: #3b82f6;
         font-weight: 600;
     }
 
@@ -643,7 +657,7 @@
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
     }
 
     .btn-success {
@@ -695,9 +709,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Package prices
     const packagePrices = {
-        'basic': 5000,
-        'professional': 8000,
-        'premium': 12000
+        'wordpress': 6000,
+        'nextcms': 10000,
+        'nextcms_pro': 18000
     };
 
     // Service type change

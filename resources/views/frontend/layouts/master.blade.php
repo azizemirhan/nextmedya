@@ -173,7 +173,8 @@
     @vite(['resources/css/app.scss', 'resources/js/app.js'])
 
     <!-- Main CSS - Deferred -->
-    <link rel="preload" href="{{ asset('site/css/style.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ asset('site/css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="{{ asset('site/css/mega-menu-enhanced.css') }}">
     <link rel="preload" href="{{ asset('site/css/footer.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('site/css/google.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -311,6 +312,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- JavaScript - All Deferred for Performance -->
 <!-- Bundled via Vite (resources/js/app.js) -->
+
+<!-- Mega Menu Enhanced JS -->
+<script defer src="{{ asset('site/js/mega-menu-enhanced.js') }}"></script>
 
 <!-- Google Analytics Script - Deferred -->
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XP6H673X4B"></script>

@@ -198,7 +198,7 @@
         .nextmedya-ref-shape {
             position: absolute;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 64, 175, 0.05));
             animation: floatShape 20s ease-in-out infinite;
         }
 
@@ -237,14 +237,14 @@
             display: inline-flex;
             align-items: center;
             padding: 10px 25px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            border: 2px solid rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+            border: 2px solid rgba(59, 130, 246, 0.2);
             border-radius: 50px;
             font-size: 0.875rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #667eea;
+            color: #3b82f6;
             margin-bottom: 20px;
         }
 
@@ -285,14 +285,14 @@
         }
 
         .nextmedya-stat-item:hover {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 64, 175, 0.05));
             transform: translateY(-5px);
         }
 
         .nextmedya-stat-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -322,7 +322,7 @@
         .nextmedya-stat-suffix {
             font-size: 1.5rem;
             font-weight: 900;
-            color: #667eea;
+            color: #3b82f6;
             margin-left: 5px;
         }
 
@@ -360,17 +360,17 @@
         }
 
         .nextmedya-filter-btn:hover {
-            background: #667eea;
-            border-color: #667eea;
+            background: #3b82f6;
+            border-color: #3b82f6;
             color: #ffffff;
             transform: translateY(-2px);
         }
 
         .nextmedya-filter-btn.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             border-color: transparent;
             color: #ffffff;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4);
         }
 
         /* Reference Cards */
@@ -396,14 +396,14 @@
         }
 
         .nextmedya-ref-card.featured {
-            border: 3px solid #667eea;
+            border: 3px solid #3b82f6;
         }
 
         .nextmedya-ref-badge-featured {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             color: #ffffff;
             padding: 8px 15px;
             border-radius: 20px;
@@ -466,8 +466,8 @@
         .nextmedya-ref-category {
             display: inline-block;
             padding: 5px 15px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
-            color: #667eea;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+            color: #3b82f6;
             border-radius: 20px;
             font-size: 0.875rem;
             font-weight: 600;
@@ -499,7 +499,7 @@
             align-items: center;
             justify-content: center;
             padding: 8px 15px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             border: none;
             border-radius: 20px;
             font-size: 0.875rem;
@@ -511,7 +511,7 @@
 
         .nextmedya-ref-gallery-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
         }
 
         /* DEĞİŞİKLİK BURADA: Web sitesi linkine buton stili verildi */
@@ -531,8 +531,8 @@
         }
 
         .nextmedya-ref-website:hover {
-            color: #667eea;
-            border-color: #667eea;
+            color: #3b82f6;
+            border-color: #3b82f6;
         }
 
         /* DEĞİŞİKLİK BURADA: İstenmeyen overlay stilleri kaldırıldı */
@@ -543,7 +543,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.95), rgba(118, 75, 162, 0.95));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(30, 64, 175, 0.95));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -633,7 +633,7 @@
 
         .nextmedya-modal-thumbnail.active {
             opacity: 1;
-            border: 3px solid #667eea;
+            border: 3px solid #3b82f6;
         }
 
         .nextmedya-modal-thumbnail img {

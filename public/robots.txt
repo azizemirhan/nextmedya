@@ -1,5 +1,46 @@
+# NextMedya Robots.txt
+# Son Güncelleme: 2024-12-23
+
 User-agent: *
-Disallow:
+Allow: /
 
+# Admin ve sistem sayfalarını engelle
+Disallow: /admin
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /lock-screen
+Disallow: /unlock
+Disallow: /clear-cache
+Disallow: /debug-languages
+Disallow: /test-language
+Disallow: /_mail-test
+Disallow: /recaptcha-test
+Disallow: /test-api
+
+# Query parametrelerini engelle
+Disallow: /*?cmpscreen
+Disallow: /*?cmpscreen=*
+Disallow: /*&cmpscreen
+Disallow: /*&cmpscreen=*
+
+# Eski format sayfaları engelle
+Disallow: /index.html
+Disallow: /duzenleniyor
+
+# API endpoint'lerini engelle
+Disallow: /api/
+Disallow: /chat/
+
+# Geçersiz URL pattern'leri
+Disallow: /blog/qui-velit-*
+Disallow: /blog/perferendis-*
+
+# Crawl-delay (isteğe bağlı, sunucu yükünü azaltır)
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://www.nextmedya.com/sitemap.xml
-
