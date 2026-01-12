@@ -1,202 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-        <loc>https://www.nextmedya.com</loc>
-        <lastmod>2025-11-13T10:34:07+00:00</lastmod>
+        <loc>http://localhost:8888</loc>
+        <lastmod>2026-01-05T20:19:28+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/anasayfa</loc>
-        <lastmod>2025-11-13T09:58:37+00:00</lastmod>
+        <loc>http://localhost:8888/anasayfa</loc>
+        <lastmod>2025-12-23T09:31:18+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/kurumsal-web-sitesi</loc>
+        <loc>http://localhost:8888/kurumsal-web-sitesi</loc>
         <lastmod>2025-11-04T16:45:33+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/e-ticaret-sitesi</loc>
+        <loc>http://localhost:8888/e-ticaret-sitesi</loc>
         <lastmod>2025-11-05T06:17:41+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/kisisel-web-sitesi</loc>
+        <loc>http://localhost:8888/kisisel-web-sitesi</loc>
         <lastmod>2025-11-04T16:39:44+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/landing-page</loc>
+        <loc>http://localhost:8888/landing-page</loc>
         <lastmod>2025-11-04T16:40:05+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/seo-hizmetleri</loc>
+        <loc>http://localhost:8888/seo-hizmetleri</loc>
         <lastmod>2025-11-04T16:40:25+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/dijital-pazarlama</loc>
+        <loc>http://localhost:8888/dijital-pazarlama</loc>
         <lastmod>2025-11-04T16:41:17+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/sosyal-medya-yonetimi</loc>
+        <loc>http://localhost:8888/sosyal-medya-yonetimi</loc>
         <lastmod>2025-11-05T08:26:22+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/google-ads</loc>
+        <loc>http://localhost:8888/google-ads</loc>
         <lastmod>2025-11-04T16:42:09+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/icerik-pazarlama</loc>
+        <loc>http://localhost:8888/icerik-pazarlama</loc>
         <lastmod>2025-11-04T16:44:19+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/iletisim</loc>
+        <loc>http://localhost:8888/iletisim</loc>
         <lastmod>2025-11-04T16:44:04+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/ozel-yazilim-gelistirme</loc>
+        <loc>http://localhost:8888/ozel-yazilim-gelistirme</loc>
         <lastmod>2025-11-05T07:32:10+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/mobil-uygulamalar</loc>
+        <loc>http://localhost:8888/mobil-uygulamalar</loc>
         <lastmod>2025-11-05T07:40:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/api-entegrasyonlari</loc>
+        <loc>http://localhost:8888/api-entegrasyonlari</loc>
         <lastmod>2025-11-05T07:42:54+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/crm-sistemleri</loc>
+        <loc>http://localhost:8888/crm-sistemleri</loc>
         <lastmod>2025-11-05T07:48:07+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/ui-ux-tasarim</loc>
+        <loc>http://localhost:8888/ui-ux-tasarim</loc>
         <lastmod>2025-11-05T07:55:37+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/responsive-tasarim</loc>
+        <loc>http://localhost:8888/responsive-tasarim</loc>
         <lastmod>2025-11-09T09:40:47+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/grafik-tasarim</loc>
+        <loc>http://localhost:8888/grafik-tasarim</loc>
         <lastmod>2025-11-09T08:14:51+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/web-animasyonlari</loc>
-        <lastmod>2025-11-11T13:08:51+00:00</lastmod>
+        <loc>http://localhost:8888/web-animasyonlari</loc>
+        <lastmod>2025-12-09T20:27:21+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/hiz-optimasyonu</loc>
+        <loc>http://localhost:8888/hiz-optimasyonu</loc>
         <lastmod>2025-11-08T10:33:14+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/seo-optimasyonu</loc>
+        <loc>http://localhost:8888/seo-optimasyonu</loc>
         <lastmod>2025-11-08T09:30:47+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/guvenlik-testleri</loc>
+        <loc>http://localhost:8888/guvenlik-testleri</loc>
         <lastmod>2025-11-08T09:24:32+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/performans-analizi</loc>
-        <lastmod>2025-11-08T09:10:05+00:00</lastmod>
+        <loc>http://localhost:8888/performans-analizi</loc>
+        <lastmod>2025-11-19T14:32:40+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/hizmetlerimiz</loc>
-        <lastmod>2025-11-08T08:44:25+00:00</lastmod>
+        <loc>http://localhost:8888/hizmetlerimiz</loc>
+        <lastmod>2025-11-19T14:54:06+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/hakkimizda</loc>
+        <loc>http://localhost:8888/hakkimizda</loc>
         <lastmod>2025-11-08T08:36:36+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/gizlilik-politikasi</loc>
+        <loc>http://localhost:8888/gizlilik-politikasi</loc>
         <lastmod>2025-11-08T08:35:19+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/kullanim-sartlari</loc>
+        <loc>http://localhost:8888/kullanim-sartlari</loc>
         <lastmod>2025-11-08T08:34:58+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/cerez-politikasi</loc>
+        <loc>http://localhost:8888/cerez-politikasi</loc>
         <lastmod>2025-11-08T08:32:52+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/kvkk-aydinlatma-metni</loc>
+        <loc>http://localhost:8888/kvkk-aydinlatma-metni</loc>
         <lastmod>2025-11-08T08:31:57+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/referanslarimiz</loc>
-        <lastmod>2025-11-11T17:06:59+00:00</lastmod>
+        <loc>http://localhost:8888/referanslarimiz</loc>
+        <lastmod>2025-12-16T13:13:14+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/dijital-dunyada-guclu-bir-varlik-olusturmanin-onemi</loc>
+        <loc>http://localhost:8888/bloglar/dijital-dunyada-guclu-bir-varlik-olusturmanin-onemi</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/seo-dijital-basarinin-anahtari</loc>
+        <loc>http://localhost:8888/bloglar/seo-dijital-basarinin-anahtari</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/e-ticaret-basarisinin-sirlari</loc>
+        <loc>http://localhost:8888/bloglar/e-ticaret-basarisinin-sirlari</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/entegre-dijital-pazarlama</loc>
+        <loc>http://localhost:8888/bloglar/entegre-dijital-pazarlama</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/hazir-web-sitaesi-mi-ozel-yazilim-mi-isletmeniz-icin-dogru-secim-2026-rehberi</loc>
-        <lastmod>2025-11-11T04:48:29+00:00</lastmod>
+        <loc>http://localhost:8888/bloglar/hazir-web-sitaesi-mi-ozel-yazilim-mi-isletmeniz-icin-dogru-secim-2026-rehberi</loc>
+        <lastmod>2025-11-19T13:24:15+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/kategori/dijital-pazarlama</loc>
+        <loc>http://localhost:8888/bloglar/seo-stratejileri-2024-google-siralamalarinda-ust-siralara-cikma</loc>
+        <lastmod>2025-12-23T08:50:36+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost:8888/bloglar/modern-web-tasarim-trendleri-kullanici-deneyimi</loc>
+        <lastmod>2025-12-23T08:50:36+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost:8888/bloglar/sosyal-medya-pazarlama-stratejileri-marka-buyutme</loc>
+        <lastmod>2025-12-23T08:50:36+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost:8888/bloglar/e-ticaret-sitesi-kurulumu-online-magaza-acma</loc>
+        <lastmod>2025-12-23T08:50:36+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost:8888/bloglar/dijital-donusum-rehberi-isletmenizi-gelecege-tasiyin</loc>
+        <lastmod>2025-12-23T08:50:36+00:00</lastmod>
+
+            </url>
+    <url>
+        <loc>http://localhost:8888/bloglar/kategori/dijital-pazarlama</loc>
         <lastmod>2025-11-05T12:39:05+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/kategori/e-ticaret</loc>
+        <loc>http://localhost:8888/bloglar/kategori/e-ticaret</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/kategori/web-tasarim</loc>
+        <loc>http://localhost:8888/bloglar/kategori/web-tasarim</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>
     <url>
-        <loc>https://www.nextmedya.com/bloglar/kategori/seo-ve-icerik</loc>
+        <loc>http://localhost:8888/bloglar/kategori/seo-ve-icerik</loc>
         <lastmod>2025-11-04T19:23:02+00:00</lastmod>
 
             </url>

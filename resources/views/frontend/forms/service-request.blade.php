@@ -190,8 +190,8 @@
                                         <input type="radio" name="package_type" value="wordpress">
                                         <div class="package-content">
                                             <h5>WordPress Kurumsal</h5>
-                                            <div class="package-price">₺6.000</div>
-                                            <p class="package-renewal">Yıllık yenileme: 1.000 ₺</p>
+                                            <div class="package-price">₺10.000</div>
+                                            <p class="package-renewal">Yıllık yenileme: 2.000 ₺</p>
                                             <ul class="package-features">
                                                 <li>✓ 10 Sayfa Özel Tasarım</li>
                                                 <li>✓ Responsive (Mobil Uyumlu)</li>
@@ -207,8 +207,8 @@
                                         <input type="radio" name="package_type" value="nextcms">
                                         <div class="package-content">
                                             <h5>NextCMS</h5>
-                                            <div class="package-price">₺10.000</div>
-                                            <p class="package-renewal">Yıllık yenileme: 2.000 ₺</p>
+                                            <div class="package-price">₺15.000</div>
+                                            <p class="package-renewal">Yıllık yenileme: 4.000 ₺</p>
                                             <ul class="package-features">
                                                 <li>✓ Laravel Özel CMS Altyapısı</li>
                                                 <li>✓ Gelişmiş SEO Optimizasyonu</li>
@@ -223,9 +223,10 @@
                                         <input type="radio" name="package_type" value="nextcms_pro">
                                         <div class="package-content">
                                             <h5>NextCMS Pro</h5>
-                                            <div class="package-price">₺18.000</div>
-                                            <p class="package-renewal">Yıllık yenileme: 3.500 ₺</p>
+                                            <div class="package-price custom-offer">Özel Teklif Al</div>
+                                            <p class="package-renewal">İhtiyaçlarınıza göre fiyatlandırma</p>
                                             <ul class="package-features">
+                                                <li>✓ İşletmenize özel modül kodlama</li>
                                                 <li>✓ Sınırsız Özel Yazılım</li>
                                                 <li>✓ Sağlık Turizmi / LMS Modülleri</li>
                                                 <li>✓ Headless API Desteği</li>
@@ -709,9 +710,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Package prices
     const packagePrices = {
-        'wordpress': 6000,
-        'nextcms': 10000,
-        'nextcms_pro': 18000
+        'wordpress': 10000,
+        'nextcms': 15000,
+        'nextcms_pro': 0
     };
 
     // Service type change

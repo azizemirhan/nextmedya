@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (text.includes('Yıl')) {
                 element.textContent = Math.floor(current) + ' Yıl';
             } else if (text.includes('/')) {
-                element.textContent = text;
+                const suffix = text.substring(text.indexOf('/'));
+                element.textContent = Math.floor(current) + suffix;
             } else {
                 element.textContent = Math.floor(current);
             }

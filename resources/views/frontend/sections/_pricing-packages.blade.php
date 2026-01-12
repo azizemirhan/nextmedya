@@ -693,14 +693,7 @@
     .next-tech-logo {
         height: 80px;
         width: auto;
-        filter: grayscale(100%);
-        opacity: 0.6;
         transition: all 0.3s ease;
-    }
-
-    .next-tech-logo:hover {
-        filter: grayscale(0%);
-        opacity: 1;
     }
 
     .next-brands-section {
