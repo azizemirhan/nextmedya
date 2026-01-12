@@ -11,14 +11,22 @@
         const header = document.querySelector('.main-header');
         const topBanner = document.querySelector('.desktop-top-banner');
         const topBar = document.querySelector('.top-bar');
-        
+
         let totalHeight = 0;
-        
-        if (header) {
-            const headerRect = header.getBoundingClientRect();
-            totalHeight = headerRect.bottom;
+
+        // Tüm header elementlerinin yüksekliklerini topla
+        if (topBanner && window.getComputedStyle(topBanner).display !== 'none') {
+            totalHeight += topBanner.offsetHeight;
         }
-        
+
+        if (topBar && window.getComputedStyle(topBar).display !== 'none') {
+            totalHeight += topBar.offsetHeight;
+        }
+
+        if (header) {
+            totalHeight += header.offsetHeight;
+        }
+
         // Set CSS variable for mega menu positioning
         document.documentElement.style.setProperty('--header-height', `${totalHeight}px`);
     }
