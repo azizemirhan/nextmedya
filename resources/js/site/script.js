@@ -23,13 +23,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Close sidebar
     function closeMobileSidebar() {
-        mobileSidebar.classList.remove('active');
-        sidebarOverlay.classList.remove('active');
+        if (mobileSidebar) {
+            mobileSidebar.classList.remove('active');
+        }
+        if (sidebarOverlay) {
+            sidebarOverlay.classList.remove('active');
+        }
         document.body.style.overflow = '';
+
+        // Tüm expanded submenu'leri de kapat
+        document.querySelectorAll('.sidebar-item.expanded').forEach(item => {
+            item.classList.remove('expanded');
+        });
     }
 
     closeSidebar.addEventListener('click', closeMobileSidebar);
     sidebarOverlay.addEventListener('click', closeMobileSidebar);
+
+    // Sayfa geçişlerinde sidebar'ı kapat (state cleanup)
+    window.addEventListener('beforeunload', function () {
+        closeMobileSidebar();
+    });
+
+    // Sayfa yüklendiğinde sidebar'ın kapalı olduğundan emin ol
+    closeMobileSidebar();
+
+    // ESC tuşu ile sidebar'ı kapat
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+            closeMobileSidebar();
+        }
+    });
 
     // Expandable menu items
     const expandableButtons = document.querySelectorAll('.sidebar-link[data-expand]');
@@ -56,24 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
         e.stopPropagation();
     });
 
-    // Dropdown Menu Enhancement
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    dropdowns.forEach(dropdown => {
-        let timeout;
-
-        dropdown.addEventListener('mouseenter', function () {
-            clearTimeout(timeout);
-            this.querySelector('.dropdown-menu').style.display = 'block';
-        });
-
-        dropdown.addEventListener('mouseleave', function () {
-            const menu = this.querySelector('.dropdown-menu');
-            timeout = setTimeout(() => {
-                menu.style.display = '';
-            }, 200);
-        });
-    });
+    // Dropdown Menu Enhancement - CSS hover ile çalışıyor, JavaScript müdahalesine gerek yok
+    // Inline style yerine CSS :hover kullanılıyor (style.css satır 366-370)
+    // Bu sayede smooth transition çalışıyor
 
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
