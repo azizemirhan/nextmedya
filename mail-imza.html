@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Medya - E-Posta İmzaları</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h1 {
+            font-size: 32px; font-weight: 800; color: #0f172a;
+            margin-bottom: 10px;
+        }
+        .signature-section { max-width: 700px; margin: 0 auto 60px; }
+        .section-title {
+            background: #ffffff; padding: 15px 20px; border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .section-title h2 { font-size: 18px; color: #334155; }
+        .copy-btn { 
+            font-size: 12px; color: #ffffff; background: #3b82f6; 
+            padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer;
+            font-weight: 600; transition: background 0.2s;
+        }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #10b981; }
+        .signature-container {
+            background: #ffffff; padding: 40px; border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Next Medya İmzalar</h1>
+        <p style="color: #64748b;">Aşağıdaki butonlara tıklayarak imzayı kopyalayın.</p>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 1. GENEL / INFO -->
+    <!-- ============================================== -->
+    <div class="signature-section">
+        <div class="section-title">
+            <h2>1. Next Medya (Genel)</h2>
+            <button class="copy-btn" onclick="copySignature('sig1', this)">Kopyala</button>
+        </div>
+        
+        <div class="signature-container" id="sig1">
+            <!-- İMZA BAŞLANGIÇ -->
+            <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Inter', Arial, Helvetica, sans-serif; max-width: 580px; color: #334155; font-size: 13px;">
+                <tr>
+                    <td style="padding-right: 20px; vertical-align: top; border-right: 1px solid #e2e8f0;">
+                         <img src="public/assets/img/email/icon.png" alt="N" width="80" height="80" style="border-radius: 16px; display: block; object-fit: contain;">
+                    </td>
+                    <td style="padding-left: 20px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 4px;">
+                                    <span style="font-size: 20px; font-weight: 700; color: #0f172a;">Next Medya</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 12px;">
+                                    <span style="color: #3b82f6; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Dijital Dönüşüm Ajansı</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 10px;">
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/phone.png" width="16" height="16" alt="Phone">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="tel:+905300215291" style="color: #475569; text-decoration: none;">+90 530 021 52 91</a>
+                                    <span style="color: #cbd5e1; margin: 0 5px;">|</span>
+                                    <a href="tel:+905326437544" style="color: #475569; text-decoration: none;">+90 532 643 75 44</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/mail.png" width="16" height="16" alt="Mail">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="mailto:info@nextmedya.com" style="color: #475569; text-decoration: none; font-weight: 500;">info@nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/web.png" width="16" height="16" alt="Web">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="https://nextmedya.com" style="color: #3b82f6; text-decoration: none; font-weight: 600;">nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: top; padding-top: 2px;">
+                                    <img src="public/assets/img/email/icons/pin.png" width="16" height="16" alt="Pin">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: top;">
+                                    <span style="color: #64748b; font-size: 12px; line-height: 1.4;">Şehit Kubilay Mah. Estergon Cad. 25/8<br>Keçiören / Ankara</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 15px; border-top: 1px solid #f1f5f9; padding-top: 15px; width: 100%;">
+                            <tr>
+                                <td style="vertical-align: middle;">
+                                    <img src="public/assets/img/email/logo.png" alt="Next Medya" height="40" style="display: block; height: 40px; width: auto; object-fit: contain;">
+                                </td>
+                                <td style="text-align: right; vertical-align: middle;">
+                                    <a href="https://facebook.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/facebook.png" width="20" height="20" alt="Facebook"></a>
+                                    <a href="https://instagram.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/instagram.png" width="20" height="20" alt="Insta"></a>
+                                    <a href="https://linkedin.com/company/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/linkedin.png" width="20" height="20" alt="In"></a>
+                                    <a href="https://x.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/x.png" width="20" height="20" alt="X"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- İMZA BİTİŞ -->
+        </div>
+    </div>
+
+
+    <!-- ============================================== -->
+    <!-- 2. AZİZ EMİRHAN ÖZDEMİR -->
+    <!-- ============================================== -->
+    <div class="signature-section">
+        <div class="section-title">
+            <h2>2. Aziz Emirhan Özdemir</h2>
+            <button class="copy-btn" onclick="copySignature('sig2', this)">Kopyala</button>
+        </div>
+        
+        <div class="signature-container" id="sig2">
+            <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Inter', Arial, Helvetica, sans-serif; max-width: 580px; color: #334155; font-size: 13px;">
+                <tr>
+                    <td style="padding-right: 20px; vertical-align: top; border-right: 1px solid #e2e8f0;">
+                         <img src="public/assets/img/email/icon.png" alt="N" width="80" height="80" style="border-radius: 16px; display: block; object-fit: contain;">
+                    </td>
+                    <td style="padding-left: 20px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 4px;">
+                                    <span style="font-size: 20px; font-weight: 700; color: #0f172a;">Aziz Emirhan Özdemir</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 12px;">
+                                    <span style="color: #3b82f6; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Web Tasarım & Yazılım</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 10px;">
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/phone.png" width="16" height="16" alt="Phone">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="tel:+905300215291" style="color: #475569; text-decoration: none;">+90 530 021 52 91</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/mail.png" width="16" height="16" alt="Mail">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="mailto:azizemirhanozdemir@nextmedya.com" style="color: #475569; text-decoration: none; font-weight: 500;">azizemirhanozdemir@nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/web.png" width="16" height="16" alt="Web">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="https://nextmedya.com" style="color: #3b82f6; text-decoration: none; font-weight: 600;">nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: top; padding-top: 2px;">
+                                    <img src="public/assets/img/email/icons/pin.png" width="16" height="16" alt="Pin">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: top;">
+                                    <span style="color: #64748b; font-size: 12px; line-height: 1.4;">Şehit Kubilay Mah. Estergon Cad. 25/8<br>Keçiören / Ankara</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 15px; border-top: 1px solid #f1f5f9; padding-top: 15px; width: 100%;">
+                            <tr>
+                                <td style="vertical-align: middle;">
+                                    <img src="public/assets/img/email/logo.png" alt="Next Medya" height="40" style="display: block; height: 40px; width: auto; object-fit: contain;">
+                                </td>
+                                <td style="text-align: right; vertical-align: middle;">
+                                    <a href="https://facebook.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/facebook.png" width="20" height="20" alt="Facebook"></a>
+                                    <a href="https://instagram.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/instagram.png" width="20" height="20" alt="Insta"></a>
+                                    <a href="https://linkedin.com/company/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/linkedin.png" width="20" height="20" alt="In"></a>
+                                    <a href="https://x.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/x.png" width="20" height="20" alt="X"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 3. DEMİRHAN ÖZDEMİR -->
+    <!-- ============================================== -->
+    <div class="signature-section">
+        <div class="section-title">
+            <h2>3. Demirhan Özdemir</h2>
+            <button class="copy-btn" onclick="copySignature('sig3', this)">Kopyala</button>
+        </div>
+        
+        <div class="signature-container" id="sig3">
+            <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Inter', Arial, Helvetica, sans-serif; max-width: 580px; color: #334155; font-size: 13px;">
+                <tr>
+                    <td style="padding-right: 20px; vertical-align: top; border-right: 1px solid #e2e8f0;">
+                         <img src="public/assets/img/email/icon.png" alt="N" width="80" height="80" style="border-radius: 16px; display: block; object-fit: contain;">
+                    </td>
+                    <td style="padding-left: 20px; vertical-align: top;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="padding-bottom: 4px;">
+                                    <span style="font-size: 20px; font-weight: 700; color: #0f172a;">Demirhan Özdemir</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 12px;">
+                                    <span style="color: #3b82f6; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Grafik Tasarım & Reklam</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 10px;">
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/phone.png" width="16" height="16" alt="Phone">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="tel:+905326437544" style="color: #475569; text-decoration: none;">+90 532 643 75 44</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/mail.png" width="16" height="16" alt="Mail">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="mailto:demirhanozdemir@nextmedya.com" style="color: #475569; text-decoration: none; font-weight: 500;">demirhanozdemir@nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: middle;">
+                                    <img src="public/assets/img/email/icons/web.png" width="16" height="16" alt="Web">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: middle;">
+                                    <a href="https://nextmedya.com" style="color: #3b82f6; text-decoration: none; font-weight: 600;">nextmedya.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom: 8px; vertical-align: top; padding-top: 2px;">
+                                    <img src="public/assets/img/email/icons/pin.png" width="16" height="16" alt="Pin">
+                                </td>
+                                <td style="padding-bottom: 8px; padding-left: 10px; vertical-align: top;">
+                                    <span style="color: #64748b; font-size: 12px; line-height: 1.4;">Şehit Kubilay Mah. Estergon Cad. 25/8<br>Keçiören / Ankara</span>
+                                </td>
+                            </tr>
+                        </table>
+
+                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 15px; border-top: 1px solid #f1f5f9; padding-top: 15px; width: 100%;">
+                            <tr>
+                                <td style="vertical-align: middle;">
+                                    <img src="public/assets/img/email/logo.png" alt="Next Medya" height="40" style="display: block; height: 40px; width: auto; object-fit: contain;">
+                                </td>
+                                <td style="text-align: right; vertical-align: middle;">
+                                    <a href="https://facebook.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/facebook.png" width="20" height="20" alt="Facebook"></a>
+                                    <a href="https://instagram.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/instagram.png" width="20" height="20" alt="Insta"></a>
+                                    <a href="https://linkedin.com/company/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/linkedin.png" width="20" height="20" alt="In"></a>
+                                    <a href="https://x.com/nextmedya" style="text-decoration: none; margin-left: 5px;"><img src="public/assets/img/email/icons/x.png" width="20" height="20" alt="X"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function copySignature(id, btn) {
+            const element = document.getElementById(id);
+            const range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+                document.execCommand('copy');
+                // btn argümanı artık doğrudan geliyor
+                btn.textContent = 'Kopyalandı!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Kopyala';
+                    btn.classList.remove('copied');
+                }, 2000);
+            } catch (err) {
+                alert('Kopyalama başarısız. Lütfen manuel olarak seçip kopyalayın.');
+            }
+            
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
+</body>
+</html>

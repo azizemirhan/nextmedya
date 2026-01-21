@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   # Laravel Octane App (Swoole)
@@ -91,10 +91,49 @@ services:
     profiles:
       - build
 
+  # Mail Server (docker-mailserver)
+  mail:
+    image: mailserver/docker-mailserver:latest
+    container_name: nextmedya_mail
+    restart: unless-stopped
+    hostname: mail
+    domainname: nextmedya.com
+    ports:
+      - "25:25" # SMTP
+      - "143:143" # IMAP (STARTTLS)
+      - "587:587" # SMTP Submission
+      - "993:993" # IMAP SSL
+    environment:
+      - DMS_DEBUG=0
+      - ENABLE_SPAMASSASSIN=0
+      - ENABLE_CLAMAV=0
+      - ENABLE_FAIL2BAN=1
+      - ENABLE_POSTGREY=0
+      - ONE_DIR=1
+      - SSL_TYPE=manual
+      - SSL_CERT_PATH=/tmp/docker-mailserver/ssl/letsencrypt/cert.pem
+      - SSL_KEY_PATH=/tmp/docker-mailserver/ssl/letsencrypt/key.pem
+      - POSTMASTER_ADDRESS=postmaster@nextmedya.com
+    volumes:
+      - nextmedya_mail_data:/var/mail
+      - nextmedya_mail_state:/var/mail-state
+      - nextmedya_mail_logs:/var/log/mail
+      - ./docker/mail/config:/tmp/docker-mailserver
+    networks:
+      - nextmedya_network
+    cap_add:
+      - NET_ADMIN
+
 networks:
   nextmedya_network:
     driver: bridge
 
 volumes:
   nextmedya_db_data:
+    driver: local
+  nextmedya_mail_data:
+    driver: local
+  nextmedya_mail_state:
+    driver: local
+  nextmedya_mail_logs:
     driver: local
