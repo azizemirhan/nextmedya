@@ -53,9 +53,10 @@
             }
         }, { passive: true });
 
-        // Add smooth hover delay for mega menu
-        const megaDropdowns = document.querySelectorAll('.mega-dropdown');
-        megaDropdowns.forEach(function(dropdown) {
+        // Add smooth hover delay for mega menu and regular dropdowns
+        const allDropdowns = document.querySelectorAll('.mega-dropdown, .nav-item.dropdown, .dropdown-submenu');
+        
+        allDropdowns.forEach(function(dropdown) {
             let timeoutId;
             
             dropdown.addEventListener('mouseenter', function() {

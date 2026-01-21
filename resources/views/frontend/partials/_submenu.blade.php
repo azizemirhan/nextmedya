@@ -71,9 +71,26 @@
             </a>
             <div class="dropdown-menu">
                 @foreach($item->children as $child)
-                    <a href="{{ $child->url ?? '#' }}">
-                        {{ $child->getTranslation('label', app()->getLocale()) }}
-                    </a>
+                    {{-- Check for Level 3 (Nested Dropdown) --}}
+                    @if($child->children && $child->children->isNotEmpty())
+                        <div class="dropdown-submenu has-submenu">
+                            <a href="{{ $child->url ?? '#' }}" class="dropdown-item">
+                                {{ $child->getTranslation('label', app()->getLocale()) }}
+                                <span class="arrow"><i class="fas fa-chevron-right" style="font-size: 10px;"></i></span>
+                            </a>
+                            <div class="dropdown-menu">
+                                @foreach($child->children as $grandChild)
+                                    <a href="{{ $grandChild->url ?? '#' }}" class="dropdown-item">
+                                        {{ $grandChild->getTranslation('label', app()->getLocale()) }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    @else
+                        <a href="{{ $child->url ?? '#' }}" class="dropdown-item">
+                            {{ $child->getTranslation('label', app()->getLocale()) }}
+                        </a>
+                    @endif
                 @endforeach
             </div>
         </li>
