@@ -313,6 +313,24 @@
   position: relative;
 }
 
+/* Hover bridge - fills the gap between nav-link and dropdown */
+.nav-item.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  z-index: 199;
+  pointer-events: none;
+}
+
+.nav-item.dropdown:hover::after,
+.nav-item.dropdown.is-hovering::after {
+  pointer-events: auto;
+}
+
 .nav-item.dropdown > .dropdown-menu {
   position: absolute !important;
   top: 100% !important;
@@ -333,8 +351,20 @@
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   z-index: 200 !important;
   padding: 12px 0 !important;
-  margin-top: 12px !important;
+  margin-top: 8px !important;
   overflow: visible; /* Changed to allow nested dropdowns */
+}
+
+/* Extended hover area above dropdown */
+.nav-item.dropdown > .dropdown-menu::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background: transparent;
+  z-index: -1;
 }
 
 .nav-item.dropdown > .dropdown-menu::before {
