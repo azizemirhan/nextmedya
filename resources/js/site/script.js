@@ -1,27 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Mobile Menu Toggle - Sidebar Version
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    // ... rest of the file ... (Wait, I need to be careful with replace_file_content replacing mostly everything. 
-    // Since I can't see the whole file to replace specifically, I should read it first or append start/end. 
-    // But `replace_file_content` requires exact match. 
-    // `script.js` content starts with `// Mobile Menu Toggle`.
-    // I already read lines 1-50.
-    // I can't wrap the whole file easily without reading it all.
-    // However, I can just wrap the start and end? No, that's not how replace works.
-    // I will read `script.js` fully first to do a full replace or smart replace.
-    // ... rest of the file ...
     const mobileSidebar = document.getElementById('mobileSidebar');
     const sidebarOverlay = document.getElementById('sidebarOverlay');
-    const closeSidebar = document.getElementById('closeSidebar');
+    const closeSidebarBtn = document.getElementById('closeSidebar');
 
-    // Open sidebar
-    mobileMenuToggle.addEventListener('click', function () {
-        mobileSidebar.classList.add('active');
-        sidebarOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-
-    // Close sidebar
+    // Close sidebar function
     function closeMobileSidebar() {
         if (mobileSidebar) {
             mobileSidebar.classList.remove('active');
@@ -37,8 +21,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    closeSidebar.addEventListener('click', closeMobileSidebar);
-    sidebarOverlay.addEventListener('click', closeMobileSidebar);
+    // Open sidebar
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function () {
+            if (mobileSidebar) {
+                mobileSidebar.classList.add('active');
+            }
+            if (sidebarOverlay) {
+                sidebarOverlay.classList.add('active');
+            }
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Close sidebar button
+    if (closeSidebarBtn) {
+        closeSidebarBtn.addEventListener('click', closeMobileSidebar);
+    }
+
+    // Close on overlay click
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', closeMobileSidebar);
+    }
 
     // Sayfa geçişlerinde sidebar'ı kapat (state cleanup)
     window.addEventListener('beforeunload', function () {
@@ -50,16 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ESC tuşu ile sidebar'ı kapat
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+        if (e.key === 'Escape' && mobileSidebar && mobileSidebar.classList.contains('active')) {
             closeMobileSidebar();
         }
     });
 
-    // Expandable menu items
+    // Expandable menu items (mobile submenu toggle)
     const expandableButtons = document.querySelectorAll('.sidebar-link[data-expand]');
 
     expandableButtons.forEach(button => {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
             const parentItem = this.closest('.sidebar-item');
             const targetId = this.getAttribute('data-expand');
 
@@ -71,14 +78,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // Toggle current item
-            parentItem.classList.toggle('expanded');
+            if (parentItem) {
+                parentItem.classList.toggle('expanded');
+            }
         });
     });
 
     // Prevent closing when clicking inside sidebar
-    mobileSidebar.addEventListener('click', function (e) {
-        e.stopPropagation();
-    });
+    if (mobileSidebar) {
+        mobileSidebar.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    }
 
     // Dropdown Menu Enhancement - CSS hover ile çalışıyor, JavaScript müdahalesine gerek yok
     // Inline style yerine CSS :hover kullanılıyor (style.css satır 366-370)
